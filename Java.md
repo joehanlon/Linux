@@ -17,4 +17,11 @@ Nano : Ctrl+X --> Exit (prompted to save changes); Ctrl+O should work too. Overw
 ## verify!  
 echo $JAVA_HOME  
   
-readlink -f $(which java)
+## Find location of Java 
+### Method 1
+readlink -f $(which java)  
+### Method 2
+whereis java  --> "/usr/bin/java  ..."  
+ls -l /usr/bin/java  --> "/etc/alternatives/java"  
+ls -l /etc/alternatives/java  --> "/usr/lib/jvm/java-11-openjdk-amd64/bin/java"  
+
