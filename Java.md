@@ -50,3 +50,42 @@ source /path/to/file_that_was_updated
 
 ## Edit PATH 
 add ":$JAVA_HOME/bin" to the end of the PATH string  
+
+## Maven 
+https://maven.apache.org/download.cgi  
+https://maven.apache.org/install.html  
+https://www.javahelps.com/2017/10/install-apache-maven-on-linux.html  
+https://tecadmin.net/install-apache-maven-on-ubuntu/  
+
+Needs java JDK and JAVA_HOME already
+### Install with Apt
+sudo apt update  
+sudo apt install maven  
+mvn -version  
+### Latest Release of Apache Maven 
+#### Download from official website
+cd /usr/local  
+export VER="3.6.1"  
+wget http://www-eu.apache.org/dist/maven/maven-3/${VER}/binaries/apache-maven-${VER}-bin.tar.gz  
+sudo tar -xzf apache-maven-${VER}-bin.tar.gz  
+sudo ln -s apache-maven-${VER} apache-maven  
+#### Copy the extracted directory to the /opt/directory : 
+cp -r apache-maven-${VER} /opt/maven  
+
+### Environment Variables 
+#### Method 1  
+export JAVA_HOME=/usr/lib/jvm/default-java  
+export M2_HOME=/opt/maven  
+export MAVEN_HOME=/opt/maven  
+export PATH=${M2_HOME}/bin:${PATH}  
+#### Method 2
+sudo nano /etc/environment  
+add to PATH =":${M2_HOME}/bin"  
+add M2_HOME="/usr/share/maven"  
+add MAVEN_HOME="/usr/share/maven"  
+
+### Verify 
+mvn -version  
+### Where is Maven?
+ls -lsa /usr/share/maven  
+ls -lsa /etc/maven  
