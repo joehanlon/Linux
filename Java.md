@@ -101,6 +101,7 @@ ls -lsa /etc/maven
 
 ## Tomcat
 https://www.javahelps.com/2015/03/install-apache-tomcat-on-ubuntu.html  
+https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-8-on-ubuntu-16-04  
 ### Tomcat should not be run under the root user. Create a new system user named "tomcat" and group with home directory /opt/tomcat that will run the Tomcat service :
 sudo useradd -r -m -U -d /opt/tomcat -s /bin/false tomcat  
 #### Download Tomcat 
