@@ -129,3 +129,27 @@ $CATALINA_HOME/bin/startup.sh
 http://localhost:8080  
 #### Stop the Server : 
 $CATALINA_HOME/bin/shutdown.sh  
+
+wget http://www-us.apache.org/dist/tomcat/tomcat-9/v9.0.24/bin/apache-tomcat-9.0.24.tar.gz  
+tar xzf apache-tomcat-9.0.24.tar.gz  
+sudo mv apache-tomcat-9.0.24 /usr/local/apache-tomcat9  
+sudo rm apache-tomcat-9.0.24.tar.gz  
+chmod +x ./bin/startup.sh  
+chmod +x ./bin/shutdown.sh  
+sudo gedit /etc/environment --> CATALINA_HOME="/usr/local/apache-tomcat9"  
+
+cd /usr/local/apache-tomcat9  
+chmod +x ./bin/startup.sh  
+chmod +x ./bin/shutdown.sh  
+cd /usr/local/apache-tomcat9/bin  
+./startup.sh  
+GOTO : http://localhost:8080  
+./shutdown.sh  
+
+https://www.cyberciti.biz/faq/unix-linux-bsd-chmod-numeric-permissions-notation-command/  
+
+## SPRING
+sudo add-apt-repository ppa:spring  
+sudo apt-get update  
+sudo apt-get install spring  
+spring --version  
