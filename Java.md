@@ -17,3 +17,4 @@ Nano : Ctrl+X --> Exit (prompted to save changes); Ctrl+O should work too. Overw
 ## verify!  
 echo $JAVA_HOME  
   
+readlink -f $(which java)
