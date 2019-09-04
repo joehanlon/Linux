@@ -28,3 +28,10 @@ Nano : Ctrl+X --> Exit (prompted to save changes); Ctrl+O should work too. Overw
 echo $JAVA_HOME  
 ## If nothing shows up, set JAVA_HOME to where /bin/java is located :
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/  
+
+
+## You can install multiple JRE / JDK at a time. 
+## You need to select the number on the far left to choose one
+sudo update-alternatives --config java   
+## Similarly you can configure your JDK :
+sudo update-alternatives --config javac   
