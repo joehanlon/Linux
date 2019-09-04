@@ -153,3 +153,17 @@ sudo add-apt-repository ppa:spring
 sudo apt-get update  
 sudo apt-get install spring  
 spring --version  
+sudo apt-get remove spring  
+#### remove dependent packages
+sudo apt-get remvoe --auto-remove spring  
+#### also delete config files 
+sudo apt-get purge spring  
+sudo apt-get purge --auto-remove spring  
+https://jeromejaglale.com/doc/spring4_tutorial/installation_ubuntu  
+
+wget https://repo.spring.io/release/org/springframework/boot/spring-boot-cli/2.1.7.RELEASE/spring-boot-cli-2.1.7.RELEASE-bin.tar.gz  
+tar xzf spring-boot-cli-2.1.7.RELEASE-bin.tar.gz  
+sudo mv spring-2.1.7.RELEASE /usr/local/spring  
+
+https://howtoprogram.xyz/2016/08/28/install-spring-boot-command-line-interface-on-linux/
+https://stackoverflow.com/questions/49889906/how-do-i-install-spring-boot-cli-in-ubuntu
