@@ -110,9 +110,12 @@ https://tomcat.apache.org/download-80.cgi
 cd /opt/  
 #### Extract Tomcat 
 sudo tar -xvzf ~/Downloads/apache-tomcat-9.0.24-fulldocs.tar.gz  
+sudo tar -xvzf ~/Downloads/apache-tomcat-9.0.24.tar.gz  
 #### (Optional) Rename the folder to 'apache-tomcat' 
 /opt$ ls --> tomcat-9.0-doc  
-sudo mv tomcat-9.0-doc/ apache-tomcat/  
+sudo mv tomcat-9.0-doc/ apache-tomcat-doc/  
+/opt$ ls --> apache-tomcat-9.0.24  
+sudo mv apache-tomcat-9.0.24/ apache-tomcat/
 #### (Optional) start Tomcat without root privilege
 sudo chmod -R 777 apache-tomcat/  
 #### Edit the environment variables 
