@@ -56,6 +56,7 @@ https://maven.apache.org/download.cgi
 https://maven.apache.org/install.html  
 https://www.javahelps.com/2017/10/install-apache-maven-on-linux.html  
 https://tecadmin.net/install-apache-maven-on-ubuntu/  
+https://askubuntu.com/questions/275704/how-to-permanently-set-environmental-variables-path-and-m2-home-in-ubuntu-for-ma  
 
 Needs java JDK and JAVA_HOME already
 ### Install with Apt
@@ -86,6 +87,41 @@ add MAVEN_HOME="/usr/share/maven"
 
 ### Verify 
 mvn -version  
-### Where is Maven?
+### Where is Maven?  
+#### Find the executable   
+whereis mvn  
+#### Find libs and repo  
+locate maven  
+#### Locate command, then find a particular library  
+locate maven | grep 'jetty'  
+
 ls -lsa /usr/share/maven  
 ls -lsa /etc/maven  
+
+
+## Tomcat
+https://www.javahelps.com/2015/03/install-apache-tomcat-on-ubuntu.html  
+### Tomcat should not be run under the root user. Create a new system user named "tomcat" and group with home directory /opt/tomcat that will run the Tomcat service :
+sudo useradd -r -m -U -d /opt/tomcat -s /bin/false tomcat  
+#### Download Tomcat 
+https://tomcat.apache.org/download-80.cgi  
+#### Change the directory 
+cd /opt/  
+#### Extract Tomcat 
+sudo tar -xvzf ~/Downloads/apache-tomcat-9.0.24-fulldocs.tar.gz  
+#### (Optional) Rename the folder to 'apache-tomcat' 
+/opt$ ls --> tomcat-9.0-doc  
+sudo mv tomcat-9.0-doc/ apache-tomcat/  
+#### (Optional) start Tomcat without root privilege
+sudo chmod -R 777 apache-tomcat/  
+#### Edit the environment variables 
+sudo gedit /etc/environment  
+#### Add this to the end of the line 
+CATALINA_HOME="/opt/apache-tomcat"  
+source /etc/environment  
+#### Start the Tomcat Server :
+$CATALINA_HOME/bin/startup.sh  
+#### Go to the following URL :
+http://localhost:8080  
+#### Stop the Server : 
+$CATALINA_HOME/bin/shutdown.sh  
