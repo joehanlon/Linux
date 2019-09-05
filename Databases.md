@@ -67,6 +67,8 @@ sammy=# \dt
 sammy=# INSERT INTO playground (type, color, location, install_date) VALUES ('slide', 'blue', 'south', '2017-04-28');  
 sammy=# INSERT INTO playground (type, color, location, install_date) VALUES ('swing', 'yellow', 'northwest', '2018-08-16');  
 
+COMMIT;  
+
 #### Select 
 sammy=# SELECT * FROM playground;  
 #### Delete 
