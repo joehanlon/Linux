@@ -21,3 +21,5 @@ Create Links : ln
 Change Permissions : chmod  
 Create Empty Files : touch  
 A Full File Manager : mc --> sudo apt-get install mc  
+
+https://unix.stackexchange.com/questions/11544/what-is-the-difference-between-opt-and-usr-local
