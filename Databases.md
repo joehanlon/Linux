@@ -75,7 +75,7 @@ sammy=# ALTER TABLE playground DROP last_maint;
 #### Update Data in a Table 
 sammy=# UPDATE playground SET color = 'red' WHERE type = 'swing';  
 
-## Install PostgreSQL Server on Ubuntu
+### Install PostgreSQL Server on Ubuntu
 https://tecadmin.net/install-postgresql-server-on-ubuntu/
 
 #### Import GPG key for Postgres packages
@@ -96,14 +96,14 @@ psql
 postgres-# \conninfo  
 postgres-# \q  
 
-## Install pgAdmin4 on Ubuntu
+### Install pgAdmin4 on Ubuntu
 https://tecadmin.net/install-pgadmin4-on-ubuntu/  
 sudo apt-get install pgadmin4 pgadmin4-apache2  
 ```
 Use servers IP address or domain name followed by /pgAdmin4 as subdirectory URL.
 ```
 
-## Install phpPgAdmin on Ubuntu 
+### Install phpPgAdmin on Ubuntu 
 https://tecadmin.net/install-phppgadmin-in-ubuntu/  
 **Requires PHP and Apache2 to be installed**  
 sudo apt-get update  
