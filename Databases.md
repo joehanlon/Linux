@@ -117,3 +117,33 @@ http://localhost/phppgadmin
 sudo nano /etc/apache2/conf-enabled/phppgadmin.conf  
 sudo service apache2 reload  
 
+### Remove Postgres
+https://www.liquidweb.com/kb/how-to-remove-postgresql/  
+#### List the postgres packages 
+dpkg -l | grep postgres  
+#### Delete the Postgres packages 
+apt-get --purge remove command  
+sudo apt-get --purge remove _(list of packages like : pgdg-keyring postgresql-10 postgresql-client-10 postgresql-client-common postgresql-common)_  
+#### Verifying the Deletion of Postgres
+root@newclient:~# dpkg -l | grep postgres  
+root@newclient:~#  
+
+#### Delete the database and directories at the same time 
+rm -rf /usr/local/pgsql  
+#### Remove the postgres user account 
+userdel postgres  
+
+#### Simplest way is :
+sudo apt-get --purge remove postgresql  
+--OR, delete it in parts--  
+dpkg -l | grep postgres  
+sudo apt-get --purge remove _postgresql postgresql-doc postgresql-common ..._  
+sudo deluser postgres  
+#### Completely remove postgres in terminal 
+sudo apt-get --purge remove postgresql\*  
+--OR--  
+sudo apt-get --purge remove postgresql*  
+
+#### Confirm 
+whereis postgres  
+whereis postgresql  
