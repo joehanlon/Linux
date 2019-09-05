@@ -147,3 +147,9 @@ sudo apt-get --purge remove postgresql*
 #### Confirm 
 whereis postgres  
 whereis postgresql  
+
+#### Misc.
+psql -V  
+locate bin/psql  
+=# SELECT version();  
+=# SHOW server_version;  
