@@ -4,6 +4,8 @@ sudo apt update
 sudo apt install postgresql postgresql-contrib  
 sudo -i -u postgres _(switch over to the **postgres** account on your server)_  
 psql _(access a Postgres prompt)_  
+#### Default pw for postgres is nothing, so set it with : 
+ALTER USER postgres PASSWORD 'newpassword';  
 #### Moved to : 
 postgres=#   
 #### Exit out of the PostgreSQL prompt by typing :
@@ -153,3 +155,7 @@ psql -V
 locate bin/psql  
 =# SELECT version();  
 =# SHOW server_version;  
+
+#### Get back to Ubuntu root user 
+\q to quit out of postgres  
+su joseph _(my ubuntu id)_  --> enter joseph pw  
