@@ -186,7 +186,7 @@ hello-world
    |  |           |_ HelloApplication.java 
    |  |_ resources  
    |     |_ application.properties  
-   |     |_ static 
+   |     |_ static  
    |     |_ templates  
    |_ test  
 
