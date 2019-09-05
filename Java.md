@@ -193,3 +193,10 @@ hello-world
 ## Build the app
 #### From the directory with the pom.xml file 
 mvn install _OR_ maven package 
+
+#### This will create a /target directory with "hello-world-0.0.1-SNAPSHOT.jar" ready to run
+#### Run Spring Boot with Jar command :
+java -jar target/hello-world-0.0.1-SNAPSHOT.jar  
+
+#### Run Spring Boot using Maven :
+mvn spring-boot:run  
