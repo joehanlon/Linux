@@ -10,7 +10,7 @@ java -version
 cd /usr/local  
 sudo wget https://downloads.jboss.org/keycloak/7.0.0/keycloak-7.0.0.tar.gz   _(This will be a LONG download. ~30min)_  
 sudo tar -xvzf keycloak-7.0.0.tar.gz  
-sudo mv keycloak-7.0.0 /keycloak  
+sudo mv keycloak-7.0.0 /usr/local/keycloak  
 
 ```
 We should not run Keycloak under the root user for security reasons.  
