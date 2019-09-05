@@ -167,3 +167,29 @@ sudo mv spring-2.1.7.RELEASE /usr/local/spring
 
 https://howtoprogram.xyz/2016/08/28/install-spring-boot-command-line-interface-on-linux/
 https://stackoverflow.com/questions/49889906/how-do-i-install-spring-boot-cli-in-ubuntu
+https://www.linode.com/docs/development/java/how-to-deploy-spring-boot-applications-nginx-ubuntu-16-04/
+http://appsdeveloperblog.com/run-spring-boot-app-from-a-command-line/
+cd /home/joseph/Desktop
+spring init --build=maven --dependencies=web --name=hello hello-world
+### ^^ This creates a folder named "hello-world" with the following structure :
+hello-world  
+|_ HELP.md  
+|_ mvnw  
+|_ mvnw.cmd  
+|_ pom.xml  
+|_ src  
+   |_ main  
+   |  |_ java  
+   |  |  |_ com  
+   |  |     |_ example  
+   |  |        |_ helloworld  
+   |  |           |_ HelloApplication.java 
+   |  |_ resources  
+   |     |_ application.properties  
+   |     |_ static 
+   |     |_ templates  
+   |_ test  
+
+## Build the app
+#### From the directory with the pom.xml file 
+mvn install _OR_ maven package 
