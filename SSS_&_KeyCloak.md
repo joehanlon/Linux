@@ -13,18 +13,24 @@
 ### Methods of communication
 
 ### [Types of Bindings](https://docs.oasis-open.org/security/saml/v2.0/saml-bindings-2.0-os.pdf "SAML2.0 Docs") 
-- [HTTP **Artifact** Binding](https://everything1know.wordpress.com/2019/02/19/saml-2-0-artifact-binding/ "Explanation")  
+1. [HTTP **Artifact** Binding](https://everything1know.wordpress.com/2019/02/19/saml-2-0-artifact-binding/ "Explanation")  
    * SAML requests & responses are sent by "artifact" reference. 
    * Can be combined with Redirect and POST 
-- HTTP **Redirect** Binding  
+   * Its purpose is to provide an option in SAML 1.x SSO where SPs didn't have to validate XML Digital Signatures over each SAML Assertion
+   * Allowed the signature to be optional, and instead allowed the deployer to leverage transport level security
+2. HTTP **Redirect** Binding  
    * Allows for SAML messages to be embedded within URL parameters
-- HTTP **POST** Binding  
+3. HTTP **POST** Binding  
    * SAML message is transmitted within the base64-encoded content within an HTML form
-- SAML **SOAP** Binding  
+4. SAML **SOAP** Binding  
    * Turn SAML message into Simple Object Access Protocol (SOAP) message  
-- Reverse SOAP (**PAOS**) Binding  
+   * Performance optimization for SLO, as opposed to having an IdP redirect the browser to every SP to indicate a logout has occurred
+   * Each SP is required to track local user session state in some backend database so that the user session can be cancelled without the browser being present
+   * Common practice is to maintain user session state in a browser cookie (which obviously requires the browser to be present)
+   * SOAP SLO has limited use
+5. Reverse SOAP (**PAOS**) Binding  
    * Allows an HTTP requestor to act as a SOAP responder or process SOAP messages containing messages  
-- SAML **URI** Binding  
+6. SAML **URI** Binding  
    * A Uniform Resource Identifier refers to a resource independent of the protocol being used.
    * This binding is the combination of an AssertionIDRequest message with an AssertionIDRef message into a single URI
    * Similar to SOAP, URI can be transported by multiple protocols
@@ -33,6 +39,13 @@
 - [Bindings](http://blog.pistolstar.us/blog/2012/12/14/security-assertion-markup-language-saml-bindings-explained/ "6 types")
 - [Redirect & POST](https://www.samltool.com/generic_sso_req.php "Authentication Request")
 
+#### SAML Bindings Best Practices
+- Avoid back channel bindings --> federation will run more smoothly 
+- Disallow username/password login  
+- Disallow password resets  
+- Disallow email address change  
+- Enforce session timeouts  
+- Force sign-in  
 
 ## Links  
 - [Spring Security SAML](https://projects.spring.io/spring-security-saml/)  
@@ -40,3 +53,4 @@
 - [SSO](https://en.wikipedia.org/wiki/Single_sign-on "Single Sign On")  
 - [Keycloak](https://www.keycloak.org)  
 - [OneLogin Overview of SAML](https://developers.onelogin.com/saml)  
+- [OneLogin Best Practices](https://developers.onelogin.com/saml/best-practices-and-faqs)  
