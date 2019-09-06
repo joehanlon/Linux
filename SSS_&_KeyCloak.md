@@ -22,6 +22,9 @@
    * Allows for SAML messages to be embedded within URL parameters
 3. HTTP **POST** Binding  
    * SAML message is transmitted within the base64-encoded content within an HTML form
+   * SAML requestors and responders to communicate by using an HTTP user agent as an intermediary
+   * The agent might be necessary if the communicating entities don't have direct path of communication
+   * The intermediary might also be necessary if the responder requires interaction with a user agent such as an authentication agent
 4. SAML **SOAP** Binding  
    * Turn SAML message into Simple Object Access Protocol (SOAP) message  
    * Performance optimization for SLO, as opposed to having an IdP redirect the browser to every SP to indicate a logout has occurred
@@ -54,3 +57,4 @@
 - [Keycloak](https://www.keycloak.org)  
 - [OneLogin Overview of SAML](https://developers.onelogin.com/saml)  
 - [OneLogin Best Practices](https://developers.onelogin.com/saml/best-practices-and-faqs)  
+- [IBM SAML2.0 Bindings](https://www.ibm.com/support/knowledgecenter/SSPREK_9.0.3/com.ibm.isam.doc/config/concept/fed_SAML20_bindings.html "Redirect, POST, Artifact & SOAP")
