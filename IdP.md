@@ -69,3 +69,21 @@ sudo systemctl start keycloak
 #### Check the status
 sudo systemctl status keycloak  
 
+#### Can also tail the Keycloak server logs 
+sudo tail -f /usr/local/keycloak/standalone/log/server.log  
+
+#### Now access the Keycloak server at : 
+```
+http://<instance-public-ip>:8080/auth/  
+e.g. : 
+http://localhost:8080/auth
+```
+Since we are accessing the server from outside of localhost,  
+we have to use the bash script (add-user-keycloak.sh)  
+available under /usr/local/keycloak/bin/ directory  
+to create the initial administrator account.  
+
+sudo /usr/local/keycloak/bin/add-user-keycloak.sh -r master -u <username> -p <password>  
+  
+sudo systemctl restart keycloak  
+navigate to http://<instance-public-ip>:8080/auth/  
