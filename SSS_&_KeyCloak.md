@@ -59,7 +59,7 @@
    * SAML requestors and responders to communicate by using an HTTP user agent as an intermediary
    * The agent might be necessary if the communicating entities don't have direct path of communication
    * The intermediary might also be necessary if the responder requires interaction with a user agent such as an authentication agent
-4. SAML **SOAP** Binding  
+4. [SAML **SOAP** Binding](https://kb.novaordis.com/index.php/SAML_SOAP_Binding "Wiki")  
    * Turn SAML message into Simple Object Access Protocol (SOAP) message  
    * Performance optimization for SLO, as opposed to having an IdP redirect the browser to every SP to indicate a logout has occurred
    * Each SP is required to track local user session state in some backend database so that the user session can be cancelled without the browser being present
@@ -97,3 +97,8 @@
 - [IBM SAML2.0 Profiles](https://www.ibm.com/support/knowledgecenter/SSPREK_9.0.3/com.ibm.isam.doc/config/concept/fed_SAML20_profiles.html)
 - [IBM SAML2.0 Bindings](https://www.ibm.com/support/knowledgecenter/SSPREK_9.0.3/com.ibm.isam.doc/config/concept/fed_SAML20_bindings.html "Redirect, POST, Artifact & SOAP")
 - [How SAML Works](https://gravitational.com/blog/how-saml-authentication-works/)
+- [1. SAML Use Cases](https://medium.com/@sagarag/reloading-saml-do-you-really-need-saml-931976b3b5e3)
+- [2. SAML Basics](https://medium.com/@sagarag/reloading-saml-saml-basics-b8999995c73e)
+- [3. SAML Metadata](https://medium.com/@sagarag/reloading-saml-why-do-you-need-metadata-3fbeb43320c3)
+- [4. SAML IdP](https://medium.com/@sagarag/reloading-saml-idp-discovery-693b6bff45f0)
+- [5. SAML Web Browser SSO](https://medium.com/@sagarag/reloading-saml-web-browser-sso-profile-1b1775539101)
