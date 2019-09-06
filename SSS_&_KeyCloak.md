@@ -102,3 +102,6 @@
 - [3. SAML Metadata](https://medium.com/@sagarag/reloading-saml-why-do-you-need-metadata-3fbeb43320c3)
 - [4. SAML IdP](https://medium.com/@sagarag/reloading-saml-idp-discovery-693b6bff45f0)
 - [5. SAML Web Browser SSO](https://medium.com/@sagarag/reloading-saml-web-browser-sso-profile-1b1775539101)
+- [CAS Protocol](https://apereo.github.io/cas/4.2.x/protocol/CAS-Protocol.html)
+- [Intro to SAML2.0](https://wso2.com/library/articles/2014/02/introduction-to-security-assertion-markup-language-2.0/)
+- [Spring Security SAML & Keycloak](https://blog.codecentric.de/en/2019/03/secure-spring-boot-app-saml-keycloak/)
