@@ -88,5 +88,89 @@ sudo /usr/local/keycloak/bin/add-user-keycloak.sh -r master -u <username> -p <pa
 sudo systemctl restart keycloak  
 navigate to http://<instance-public-ip>:8080/auth/  
 
+/usr/local/keycloak/bin/kcadm.sh --> Admin CLI  
+Admin CLI works by making HTTP requests to Admin REST endpoints.  
+Access to them is protected and requires authentication.  
+
+#### Login, in order to CRUD
+sudo /usr/local/keycloak/bin/kcadm.sh config credentials --server http://localhost:8080/auth --realm master --user <admin-username> –-password <admin-password>  
+
+sudo /usr/local/keycloak/bin/kcadm.sh update realms/master -s sslRequired=NONE  
+http://<instance-public-ip>:8080/auth/admin/  
+
+sudo nano /etc/keycloak/keycloak.conf  
+--OR--  
+sudo gedit /etc/keycloak.keycloak.conf  
+
+#### Add this to the end of the file 
+```
+# The address console to bind to 
+WILDFLY_MANAGEMENT_CONSOLE_BIND=0.0.0.0
+```
+
+#### Open launch.sh in /usr/local/keycloak/bin/ directory and change its contents
+sudo gedit /usr/local/keycloak/launch.sh  
+
+```
+#!/bin/bash
+
+if ["x$WILDFLY_HOME" = "X" ]; then
+  $WILDFLY_HOME="/usr/local/keycloak"
+
+fi 
+
+if [[ "$1" == "domain" ]]; then
+  $WILDFLY_HOME/bin/domain.sh -c $2 -b $3 -bmanagement $4
+else 
+  $WILDFLY_HOME/bin/standalone.sh -c $2 -b $3 -bmanagement $4
+fi 
+```
+
+#### Open Keycloak's system service definition file and make the following changes
+sudo gedit /etc/systemd/system/keycloak.service  
+```
+add $WILDFLY_MANAGEMENT_CONSOLE_BIND to ExecStart line (near the bottom)
+```
+sudo systemctl daemon-reload  
+sudo systemctl restart keycloak  
+Go to http://<instance-public-ip>:9990  
+
+#### Create a management user 
+sudo /usr/local/keycloak/bin/add-user.sh  
+- What type of user do you wish to add? a) Management User , b) Application User  
+a  
+- Enter username  
+wf  
+- Enter password  
+<pw>  
+- Are you sure you want to use this password? 
+yes  
+- What groups do you want to add the user to?  
+<left blank>
+- Is this correct?  
+yes  
+
+```
+Added user 'wf' with groups to file '/usr/local/keycloak/standalone/configuration/mgmt-users.properties  
+Added user 'wf' with groups to file '/usr/local/keycloak/domain/configuration/mgmt-users.properties  
+```
+- Is this new user going to be used for one AS process to connect to another AS process?  
+yes  
+
+#### Restart Keycloak
+sudo systemctl restart keycloak  
+#### Now refresh the browser, which will now prompt for the WildFly credentials 
+## Now we have setup a Keycloak server and enable / configured remote access to admin and management console
+https://www.keycloak.org/docs/latest/getting_started/index.html?source=post_page-----ed8c7c79a2d9----------------------  
+https://www.keycloak.org/docs/6.0/server_admin/?source=post_page-----ed8c7c79a2d9----------------------  
+https://www.keycloak.org/docs-api/6.0/rest-api/index.html?source=post_page-----ed8c7c79a2d9----------------------  
+https://www.keycloak.org/docs/6.0/server_installation/?source=post_page-----ed8c7c79a2d9----------------------  
+https://www.keycloak.org/downloads.html?source=post_page-----ed8c7c79a2d9----------------------  
+https://www.comakeit.com/quick-guide-using-keycloak-identity-access-management/  
+https://www.baeldung.com/spring-boot-keycloak  
+https://medium.com/@techgeek628/easily-secure-your-spring-boot-applications-with-keycloak-41e09acc88fd?source=post_page-----ed8c7c79a2d9----------------------  
+http://www.mastertheboss.com/jboss-frameworks/keycloak/introduction-to-keycloak  
+
+
 https://bgasparotto.com/start-stop-restart-wildfly/  
 https://hiplab.mc.vanderbilt.edu/projects/soempi/jboss_startstop.html  
