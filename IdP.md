@@ -87,3 +87,6 @@ sudo /usr/local/keycloak/bin/add-user-keycloak.sh -r master -u <username> -p <pa
   
 sudo systemctl restart keycloak  
 navigate to http://<instance-public-ip>:8080/auth/  
+
+https://bgasparotto.com/start-stop-restart-wildfly/  
+https://hiplab.mc.vanderbilt.edu/projects/soempi/jboss_startstop.html  
