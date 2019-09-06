@@ -33,12 +33,15 @@
          1. Redirect  
          2. POST  
 - [Profiles](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language#Profiles "Wiki")
-   * _How SAML assertions, protocols, and bindings combine to support a defined use case_  
-         1. Web Browser SSO 
-         2. Single Logout
-         3. Name Identifier Management
-         4. Etc..
-- [Security](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language#Security "Wiki")
+   * _How SAML assertions, protocols, and bindings combine to support a defined use case_   
+         1. Web Browser SSO  
+         2. Single Logout  
+         3. Name Identifier Management  
+         4. Etc..  
+- [Security](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language#Security "Wiki") 
+   * _Requirements are often phrased in terms of (mutual) authentication, integrity, and confidentiality, leaving the choice of security mechanism to implementers and deployers. Examples include :_  
+         1. TLS  
+         2. XML Signature & XML Encryption for message-level security  
 
 ### Methods of communication
 
