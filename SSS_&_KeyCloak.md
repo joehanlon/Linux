@@ -105,3 +105,4 @@
 - [CAS Protocol](https://apereo.github.io/cas/4.2.x/protocol/CAS-Protocol.html)
 - [Intro to SAML2.0](https://wso2.com/library/articles/2014/02/introduction-to-security-assertion-markup-language-2.0/)
 - [Spring Security SAML & Keycloak](https://blog.codecentric.de/en/2019/03/secure-spring-boot-app-saml-keycloak/)
+- [Spring Security SAML Example Project](https://github.com/vdenotaris/spring-boot-security-saml-sample/blob/master/pom.xml "Vincenzo De Notaris")
