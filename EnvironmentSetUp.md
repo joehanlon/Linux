@@ -1,3 +1,4 @@
+## Table of Contents
 ## Follow this list of instructions in order to setup the following in Ubuntu : 
    1. [Java](https://github.com/joehanlon/Linux/blob/master/Java.md#installing-java)
    2. [Maven](https://github.com/joehanlon/Linux/blob/master/Java.md#installing-maven)
