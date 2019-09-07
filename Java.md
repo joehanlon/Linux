@@ -1,62 +1,84 @@
-Launch terminal by pressing Ctrl+Alt+T  
+## Follow this list of instructions in order to setup the following in Ubuntu : 
+   1. Java
+   2. Maven
+   3. Tomcat
+   4. Spring Boot CLI
+### Note : Each package will require editing environment variables
 
+Launch terminal by pressing Ctrl+Alt+T  
+### Installing Java 
+```console
+# Check if java is installed, if not, install the latest default package
 java --version  
 sudo apt update  
 sudo apt-get update  
 sudo apt-get install default-jdk  
-  
+
+# Manually install a particular version by updating the PPA
 sudo apt-get install software-properties-common  
 sudo add-apt-repository ppa:linuxuprising/java  
 sudo apt-get install oracle-java11-installer  
-  
+
+# Choose a version of Java if you have multiple by selecting the number then press Enter
 sudo update-alternatives --config java  
-## Enter the version number (in the Selection column) then press Enter  
-  
-## Find location of Java 
-### Method 1
-readlink -f $(which java)  
-### Method 2
-whereis java  --> "/usr/bin/java  ..."  
-ls -l /usr/bin/java  --> "/etc/alternatives/java"  
-ls -l /etc/alternatives/java  --> "/usr/lib/jvm/java-11-openjdk-amd64/bin/java"  
 
-## Environment Variables !!!
-## Edit the environment file   
-sudo nano /etc/environment  
-## Add JAVA_HOME at the end of the file  
-JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"  
-Nano : Ctrl+X --> Exit (prompted to save changes); Ctrl+O should work too. Overwrite the name if needed.  
-## verify!  
+# Similarly you can configure your JDK :
+sudo update-alternatives --config javac   
+```
+### Find Java
+```
+# Method 1
+readlink -f $(which java)
+
+# Method 2 
+$ whereis java 
+Output: 
+/usr/bin/java ...
+
+$ ls -l /usr/bin/java 
+Output:
+/etc/alternatives/java
+
+$ ls -l /etc/alternatives/java
+Output :
+"/usr/lib/jvm/java-11-openjdk-amd64/bin/java" 
+```
+[PPA](https://itsfoss.com/ppa-guide/ "Personal Package Archive")
+
+### Java Environment Variables 
+```
+# Use either of the following to open the environment file
+sudo nano /etc/environment 
+sudo gedit /etc/environment
+
+# Add JAVA_HOME at the end of the file
+# This should be where /bin/java is located
+JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
+
+# Save and Exit Nano or Gedit
+# Verify it worked :
 echo $JAVA_HOME  
-## If nothing shows up, set JAVA_HOME to where /bin/java is located :
-export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/  
-### or
-sudo nano /etc/environment  
-### add this line in the environment file : 
-JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"  
 
-## You can install multiple JRE / JDK at a time. 
-## You need to select the number on the far left to choose one
-sudo update-alternatives --config java   
-## Similarly you can configure your JDK :
-sudo update-alternatives --config javac     
+# Edit PATH 
+add ":$JAVA_HOME/bin" to the end of the PATH string  
+```
 
-## If PATH gets messed up : 
+### If PATH gets messed up in the process : 
+```
+# Define PATH again with the route to gedit / nano, then edit it 
 export PATH="$PATH:/usr/bin"  
 sudo nano /etc/environment  
-### Refresh the file when done : 
+
+# Refresh the file when done with "source /path/to/file_that_was_updated" : 
 source /etc/environment  
-source /path/to/file_that_was_updated  
+```
 
-## Edit PATH 
-add ":$JAVA_HOME/bin" to the end of the PATH string  
-
-## Maven 
-https://maven.apache.org/download.cgi  
-https://maven.apache.org/install.html  
-https://www.javahelps.com/2017/10/install-apache-maven-on-linux.html  
-https://tecadmin.net/install-apache-maven-on-ubuntu/  
-https://askubuntu.com/questions/275704/how-to-permanently-set-environmental-variables-path-and-m2-home-in-ubuntu-for-ma  
+### Installing Maven 
+[Download](https://maven.apache.org/download.cgi)  
+[Install](https://maven.apache.org/install.html)  
+[How to Install on Linux](https://www.javahelps.com/2017/10/install-apache-maven-on-linux.html)  
+[Install Maven on Ubuntu](https://tecadmin.net/install-apache-maven-on-ubuntu/)  
+[Maven Environment Variables](https://askubuntu.com/questions/275704/how-to-permanently-set-environmental-variables-path-and-m2-home-in-ubuntu-for-ma)  
 
 Needs java JDK and JAVA_HOME already
 ### Install with Apt
