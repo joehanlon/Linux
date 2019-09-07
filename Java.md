@@ -4,6 +4,7 @@
    3. [Tomcat](https://github.com/joehanlon/Linux/blob/master/Java.md#installing-tomcat)
    4. [Spring Boot CLI](https://github.com/joehanlon/Linux/blob/master/Java.md#installing-spring)
    5. [Git](https://github.com/joehanlon/Linux/blob/master/Java.md#installing-git)
+   6. [Docker](https://github.com/joehanlon/Linux/blob/master/Java.md#installing-docker)
 ### Note : Each package will require editing environment variables
 
 Launch terminal by pressing Ctrl+Alt+T  
