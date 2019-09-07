@@ -1,7 +1,7 @@
 ## Follow this list of instructions in order to setup the following in Ubuntu : 
    1. Java
    2. Maven
-   3. Tomcat
+   3. [Tomcat](https://github.com/joehanlon/Linux/blob/master/Java.md#tomcat)
    4. Spring Boot CLI
 ### Note : Each package will require editing environment variables
 
