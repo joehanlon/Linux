@@ -196,10 +196,10 @@ cd /usr/local/apache-tomcat9/bin
 
 ## Installing SPRING
 [1) Install Spring on Ubuntu](https://jeromejaglale.com/doc/spring4_tutorial/installation_ubuntu)  
-[2) Install Spring on Ubuntu](https://stackoverflow.com/questions/49889906/how-do-i-install-spring-boot-cli-in-ubuntu)
-[3) Install Spring on Ubuntu](https://howtoprogram.xyz/2016/08/28/install-spring-boot-command-line-interface-on-linux/)
-[Spring Boot from Command Line](http://appsdeveloperblog.com/run-spring-boot-app-from-a-command-line/)
-[Deploy Spring with NGINX](https://www.linode.com/docs/development/java/how-to-deploy-spring-boot-applications-nginx-ubuntu-16-04/)
+[2) Install Spring on Ubuntu](https://stackoverflow.com/questions/49889906/how-do-i-install-spring-boot-cli-in-ubuntu)  
+[3) Install Spring on Ubuntu](https://howtoprogram.xyz/2016/08/28/install-spring-boot-command-line-interface-on-linux/)  
+[Spring Boot from Command Line](http://appsdeveloperblog.com/run-spring-boot-app-from-a-command-line/)  
+[Deploy Spring with NGINX](https://www.linode.com/docs/development/java/how-to-deploy-spring-boot-applications-nginx-ubuntu-16-04/)  
 
 ```
 # Check if it's installed
@@ -222,7 +222,7 @@ cd /home/joseph/Desktop
 # Initialize the project
 spring init --build=maven --dependencies=web --name=hello hello-world
 
-Output :
+Approximate Output Structure:
 hello-world  
 |_ HELP.md  
 |_ mvnw  
@@ -240,18 +240,21 @@ hello-world
    |     |_ static  
    |     |_ templates  
    |_ test  
-```
-## Build the app
-#### From the directory with the pom.xml file 
+
+
+# Build the app
+# From the directory with the pom.xml file (i.e. 'hello-world' here)
+# This will create a /target directory with "hello-world-0.0.1-SNAPSHOT.jar" ready to run
 mvn install _OR_ maven package 
 
-#### This will create a /target directory with "hello-world-0.0.1-SNAPSHOT.jar" ready to run
-#### Run Spring Boot with Jar command :
+# Run Spring Boot with Jar command :
 java -jar target/hello-world-0.0.1-SNAPSHOT.jar  
 
-#### Run Spring Boot using Maven :
+# Run Spring Boot using Maven :
 mvn spring-boot:run  
 
+# GOTO : http://localhost:8080
+```
 
 ## Links
 [PPA](https://itsfoss.com/ppa-guide/ "Personal Package Archive")
