@@ -1,12 +1,11 @@
-https://git-scm.com/  
-https://github.com/topics/git  
-https://help.ubuntu.com/lts/serverguide/git.html  
+[Git Website](https://git-scm.com/)  
 
-## Installing Git w/ Default Packages
+#### Installing Git w/ Default Packages
+```
 sudo apt update  
 sudo apt install git-all  
-## For the latest stable version for your release of Debian / Ubuntu
-sudo apt-get install git
+```
+
 ## For Ubuntu, this PPA provides the latest stable upstream Git version
 sudo add-apt-repository ppa:git-core/ppa  
 sudo apt update  
