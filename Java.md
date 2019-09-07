@@ -284,6 +284,22 @@ git clone username@hostname:/path/to/repository
 [Git Cheatsheet 3](https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf)  
 [Git Cheatsheet 4](https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet)  
 
+## Installing Docker 
+[Install Docker on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04)  
+
+#### Install Docker  
+```
+sudo apt update  
+sudo apt install apt-transport ca-certificates curl software-properties-common  
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -  
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"  
+sudo apt update  
+apt-cache policy docker-ce  
+sudo apt install docker-ce  
+sudo systemctl status docker  
+```
+
+
 
 ## Links
 [PPA](https://itsfoss.com/ppa-guide/ "Personal Package Archive")
