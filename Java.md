@@ -1,8 +1,8 @@
 ## Follow this list of instructions in order to setup the following in Ubuntu : 
-   1. Java
-   2. Maven
-   3. [Tomcat](https://github.com/joehanlon/Linux/blob/master/Java.md#tomcat)
-   4. Spring Boot CLI
+   1. [Java](https://github.com/joehanlon/Linux/blob/master/Java.md#installing-java)
+   2. [Maven](https://github.com/joehanlon/Linux/blob/master/Java.md#installing-maven)
+   3. [Tomcat](https://github.com/joehanlon/Linux/blob/master/Java.md#installing-tomcat)
+   4. [Spring Boot CLI](https://github.com/joehanlon/Linux/blob/master/Java.md#installing-spring)
 ### Note : Each package will require editing environment variables
 
 Launch terminal by pressing Ctrl+Alt+T  
@@ -134,7 +134,7 @@ ls -lsa /usr/share/maven
 ls -lsa /etc/maven  
 ```
 
-## Tomcat
+## Installing Tomcat
 https://www.javahelps.com/2015/03/install-apache-tomcat-on-ubuntu.html  
 https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-8-on-ubuntu-16-04  
 ### Tomcat should not be run under the root user. Create a new system user named "tomcat" and group with home directory /opt/tomcat that will run the Tomcat service :
@@ -183,7 +183,7 @@ GOTO : http://localhost:8080
 
 https://www.cyberciti.biz/faq/unix-linux-bsd-chmod-numeric-permissions-notation-command/  
 
-## SPRING
+## Installing SPRING
 sudo add-apt-repository ppa:spring  
 sudo apt-get update  
 sudo apt-get install spring  
