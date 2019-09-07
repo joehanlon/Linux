@@ -286,8 +286,12 @@ git clone username@hostname:/path/to/repository
 
 ## Installing Docker 
 [Install Docker on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04)  
-
-#### Install Docker  
+[Install Docker-CE Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+### Uninstall old versions 
+```
+sudo apt-get remove docker docker-engine docker.io  
+```
+### Install Docker  
 ```
 sudo apt update  
 sudo apt install apt-transport ca-certificates curl software-properties-common  
@@ -297,6 +301,35 @@ sudo apt update
 apt-cache policy docker-ce  
 sudo apt install docker-ce  
 sudo systemctl status docker  
+```
+
+### Install Docker from the Official Repository  
+```
+sudo apt-get update  
+sudo apt-get install apt-transport-https ca-certificates curl software-properties-common  
+```
+To clarify, here’s a brief breakdown of each command:
+  - **apt-transport-https** : Allows the package manager to transfer files and data over https
+  - **ca-certificates** : Allows the system (and web browser) to check security certificates
+  - **curl** : This is a tool for transferring data
+  - **software-properties-common** : Adds scripts for managing software
+```
+# Add Dockers GPG Key
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add –  
+# Install the Docker Repo
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu  $(lsb_release -cs)  stable"  
+```
+The command **$(lsb_release –cs)** scans and returns the codename of your Ubuntu installation (bionic).  
+Also, the final word of the command (stable) is the type of Docker release.
+
+```
+sudo apt-get update  
+# Install latest
+sudo apt-get install docker-ce 
+# (Optional) Pick a version method 1
+apt-cache madison docker-ce  
+# (Optional) Pick a version method 2
+sudo apt-get install docker-ce=<VERSION>  
 ```
 
 
