@@ -5,6 +5,7 @@
    4. [Spring Boot CLI](https://github.com/joehanlon/Linux/blob/master/Java.md#installing-spring)
    5. [Git](https://github.com/joehanlon/Linux/blob/master/Java.md#installing-git)
    6. [Docker](https://github.com/joehanlon/Linux/blob/master/Java.md#installing-docker)
+   7. [Postgres](https://github.com/joehanlon/Linux/blob/master/Java.md#installing-postgres)
 ### Note : Each package will require editing environment variables
 
 Launch terminal by pressing Ctrl+Alt+T  
@@ -333,7 +334,149 @@ apt-cache madison docker-ce
 sudo apt-get install docker-ce=<VERSION>  
 ```
 
+## Installing Postgres 
+[Install PostreSQL on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-18-04)  
+[Install PostgreSQL Server on Ubuntu](https://tecadmin.net/install-postgresql-server-on-ubuntu/)  
+[Install pgAdmin4 on Ubuntu](https://tecadmin.net/install-pgadmin4-on-ubuntu/)  
+[Create and Manage Tables](https://www.digitalocean.com/community/tutorials/how-to-create-remove-manage-tables-in-postgresql-on-a-cloud-server)  
+[Remove Postgres](https://www.liquidweb.com/kb/how-to-remove-postgresql/)  
+```
+sudo apt update  
+sudo apt install postgresql postgresql-contrib  
+# Switch over to the postgres account on your server
+sudo -i -u postgres 
+# Access the Postgres through the CLI psql
+psql 
 
+# Default pw for postgres is nothing, so set it with : 
+ALTER USER postgres PASSWORD 'newpassword';  
+# Moved to : 
+postgres=#   
+# Exit out of the PostgreSQL prompt by typing :
+postgres=# \q  
+# Access Postgres w/o Switchin Accounts
+sudo -u postgres psql  
+
+# Create a New Role
+# Note : --interactive will prompt you for the name and permissions
+postgres@server:~$ createuser --interactive 
+# --OR--  
+sudo -u postgres createuser --interactive  
+
+# Output : 
+Enter name of role to add: sammy  
+Shall the new role be a superuser? (y/n) y  
+# Check out options by looking at the man page 
+man createuser  
+
+# Create a New Database 
+postgres@server:~$ createdb sammy  
+# --OR--
+sudo -u postgres createdb sammy  
+
+# Open Postgres Prompt with New Role
+sudo adduser sammy  
+sudo -i -u sammy  
+psql  
+
+# --OR-- 
+sudo -u sammy psql  
+
+# If you want your user to connect to a different database, specify the new one like this :
+psql -d postgres  
+# Once logged in, check the current connection info by typing : 
+sammy=# \conninfo  
+
+# Create a Table (Syntax)
+CREATE TABLE table_name (  
+    column_name1 col_type (field_length) column_constraints,  
+    column_name2 col_type (field_length),  
+    column_name3 col_type (field_length)  
+);  
+
+# Mock Table
+CREATE TABLE playground (  
+    equip_id serial PRIMARY KEY,  
+    type varchar (50) NOT NULL,  
+    color varchar (25) NOT NULL,  
+    location varchar(25) check (location in ('north', 'south', 'west', 'east', 'northeast', 'southeast', 'southwest', 'northwest')),  
+    install_date date  
+);  
+
+# View the new table :
+sammy=# \d  
+
+# View the table w/o the sequence :
+sammy=# \dt  
+
+# Insert Data into the Table
+sammy=# INSERT INTO playground (type, color, location, install_date) VALUES ('slide', 'blue', 'south', '2017-04-28');  
+sammy=# INSERT INTO playground (type, color, location, install_date) VALUES ('swing', 'yellow', 'northwest', '2018-08-16');  
+COMMIT;  
+
+# Select 
+sammy=# SELECT * FROM playground;  
+# Delete 
+sammy=# DELETE FROM playground WHERE type = 'slide';  
+# Alter by adding / dropping a column
+sammy=# ALTER TABLE playground ADD last_maint date;   
+sammy=# ALTER TABLE playground DROP last_maint;  
+# Update Data in a Table 
+sammy=# UPDATE playground SET color = 'red' WHERE type = 'swing';  
+
+# Connect to Postgres
+sudo su - postgres  
+psql  
+
+# Check login info 
+postgres-# \conninfo  
+postgres-# \q  
+
+# Install PgAdmin4
+# Use servers IP address or domain name followed by /pgAdmin4 as subdirectory URL.
+sudo apt-get install pgadmin4 pgadmin4-apache2  
+```
+### Remove Postgres
+```
+# List the postgres packages 
+dpkg -l | grep postgres  
+# Delete the Postgres packages 
+apt-get --purge remove command  
+sudo apt-get --purge remove _(list of packages like : pgdg-keyring postgresql-10 postgresql-client-10 postgresql-client-common postgresql-common)_  
+# Verifying the Deletion of Postgres
+root@newclient:~# dpkg -l | grep postgres  
+root@newclient:~#  
+
+# Delete the database and directories at the same time 
+rm -rf /usr/local/pgsql  
+# Remove the postgres user account 
+userdel postgres  
+
+# Simplest way is :
+sudo apt-get --purge remove postgresql  
+# --OR, delete it in parts--  
+dpkg -l | grep postgres  
+sudo apt-get --purge remove _postgresql postgresql-doc postgresql-common ..._  
+sudo deluser postgres  
+
+# Completely remove postgres in terminal 
+sudo apt-get --purge remove postgresql\*  
+# --OR--  
+sudo apt-get --purge remove postgresql*  
+
+# Confirm 
+whereis postgres  
+whereis postgresql  
+
+# Misc.
+psql -V  
+locate bin/psql  
+=# SELECT version();  
+=# SHOW server_version;  
+
+# Get back to Ubuntu root user 
+\q to quit out of postgres  
+```
 
 ## Links
 [PPA](https://itsfoss.com/ppa-guide/ "Personal Package Archive")
