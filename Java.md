@@ -6,7 +6,7 @@
 ### Note : Each package will require editing environment variables
 
 Launch terminal by pressing Ctrl+Alt+T  
-### Installing Java 
+## Installing Java 
 ```console
 # Check if java is installed, if not, install the latest default package
 java --version  
@@ -43,7 +43,6 @@ $ ls -l /etc/alternatives/java
 Output :
 "/usr/lib/jvm/java-11-openjdk-amd64/bin/java" 
 ```
-[PPA](https://itsfoss.com/ppa-guide/ "Personal Package Archive")
 
 ### Java Environment Variables 
 ```
@@ -73,7 +72,7 @@ sudo nano /etc/environment
 source /etc/environment  
 ```
 
-### Installing Maven 
+## Installing Maven 
 [Download](https://maven.apache.org/download.cgi)  
 [Install](https://maven.apache.org/install.html)  
 [How to Install on Linux](https://www.javahelps.com/2017/10/install-apache-maven-on-linux.html)  
@@ -135,78 +134,95 @@ ls -lsa /etc/maven
 ```
 
 ## Installing Tomcat
-https://www.javahelps.com/2015/03/install-apache-tomcat-on-ubuntu.html  
-https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-8-on-ubuntu-16-04  
-### Tomcat should not be run under the root user. Create a new system user named "tomcat" and group with home directory /opt/tomcat that will run the Tomcat service :
-sudo useradd -r -m -U -d /opt/tomcat -s /bin/false tomcat  
+[Install Tomcat on Ubuntu](https://www.javahelps.com/2015/03/install-apache-tomcat-on-ubuntu.html)  
+[Install Tomcat8 on Ubuntu16.04](https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-8-on-ubuntu-16-04)  
+
 #### Download Tomcat 
 https://tomcat.apache.org/download-80.cgi  
-#### Change the directory 
+**Note : Tomcat should not be run under the root user. Create a new system user named "tomcat" and group with home directory /opt/tomcat that will run the Tomcat service :**
+```
+sudo useradd -r -m -U -d /opt/tomcat -s /bin/false tomcat  
+
+# Change the directory 
 cd /opt/  
-#### Extract Tomcat 
+
+# Extract Tomcat 
 sudo tar -xvzf ~/Downloads/apache-tomcat-9.0.24-fulldocs.tar.gz  
 sudo tar -xvzf ~/Downloads/apache-tomcat-9.0.24.tar.gz  
-#### (Optional) Rename the folder to 'apache-tomcat' 
+
+# (Optional) Rename the folder to 'apache-tomcat' 
 /opt$ ls --> tomcat-9.0-doc  
 sudo mv tomcat-9.0-doc/ apache-tomcat-doc/  
 /opt$ ls --> apache-tomcat-9.0.24  
 sudo mv apache-tomcat-9.0.24/ apache-tomcat/
-#### (Optional) start Tomcat without root privilege
+
+# (Optional) start Tomcat without root privilege
 sudo chmod -R 777 apache-tomcat/  
-#### Edit the environment variables 
+
+# Edit the environment variables 
 sudo gedit /etc/environment  
-#### Add this to the end of the line 
+# Add this to the end of the line 
 CATALINA_HOME="/opt/apache-tomcat"  
 source /etc/environment  
-#### Start the Tomcat Server :
-$CATALINA_HOME/bin/startup.sh  
-#### Go to the following URL :
-http://localhost:8080  
-#### Stop the Server : 
-$CATALINA_HOME/bin/shutdown.sh  
 
+# Start the Tomcat Server :
+$CATALINA_HOME/bin/startup.sh  
+# Go to the following URL :
+http://localhost:8080  
+# Stop the Server : 
+$CATALINA_HOME/bin/shutdown.sh  
+```
+#### Download Tomcat from the Terminal
+```
 wget http://www-us.apache.org/dist/tomcat/tomcat-9/v9.0.24/bin/apache-tomcat-9.0.24.tar.gz  
 tar xzf apache-tomcat-9.0.24.tar.gz  
 sudo mv apache-tomcat-9.0.24 /usr/local/apache-tomcat9  
 sudo rm apache-tomcat-9.0.24.tar.gz  
-chmod +x ./bin/startup.sh  
-chmod +x ./bin/shutdown.sh  
-sudo gedit /etc/environment --> CATALINA_HOME="/usr/local/apache-tomcat9"  
 
-cd /usr/local/apache-tomcat9  
+# Make the .sh files executable
 chmod +x ./bin/startup.sh  
 chmod +x ./bin/shutdown.sh  
+
+# Add this to the end of the file : CATALINA_HOME="/usr/local/apache-tomcat9"  
+sudo gedit /etc/environment 
+
+# Start Tomcat
 cd /usr/local/apache-tomcat9/bin  
 ./startup.sh  
-GOTO : http://localhost:8080  
-./shutdown.sh  
 
-https://www.cyberciti.biz/faq/unix-linux-bsd-chmod-numeric-permissions-notation-command/  
+# GOTO : http://localhost:8080  
+./shutdown.sh  
+```
 
 ## Installing SPRING
-sudo add-apt-repository ppa:spring  
-sudo apt-get update  
-sudo apt-get install spring  
+[1) Install Spring on Ubuntu](https://jeromejaglale.com/doc/spring4_tutorial/installation_ubuntu)  
+[2) Install Spring on Ubuntu](https://stackoverflow.com/questions/49889906/how-do-i-install-spring-boot-cli-in-ubuntu)
+[3) Install Spring on Ubuntu](https://howtoprogram.xyz/2016/08/28/install-spring-boot-command-line-interface-on-linux/)
+[Spring Boot from Command Line](http://appsdeveloperblog.com/run-spring-boot-app-from-a-command-line/)
+[Deploy Spring with NGINX](https://www.linode.com/docs/development/java/how-to-deploy-spring-boot-applications-nginx-ubuntu-16-04/)
+
+```
+# Check if it's installed
 spring --version  
+# Remove existing files
 sudo apt-get remove spring  
-#### remove dependent packages
-sudo apt-get remvoe --auto-remove spring  
-#### also delete config files 
+# remove dependent packages
+sudo apt-get remove --auto-remove spring  
+# also delete config files 
 sudo apt-get purge spring  
 sudo apt-get purge --auto-remove spring  
-https://jeromejaglale.com/doc/spring4_tutorial/installation_ubuntu  
 
+# Download, Unpack and Rename
 wget https://repo.spring.io/release/org/springframework/boot/spring-boot-cli/2.1.7.RELEASE/spring-boot-cli-2.1.7.RELEASE-bin.tar.gz  
 tar xzf spring-boot-cli-2.1.7.RELEASE-bin.tar.gz  
 sudo mv spring-2.1.7.RELEASE /usr/local/spring  
 
-https://howtoprogram.xyz/2016/08/28/install-spring-boot-command-line-interface-on-linux/
-https://stackoverflow.com/questions/49889906/how-do-i-install-spring-boot-cli-in-ubuntu
-https://www.linode.com/docs/development/java/how-to-deploy-spring-boot-applications-nginx-ubuntu-16-04/
-http://appsdeveloperblog.com/run-spring-boot-app-from-a-command-line/
+# Go to a desired project directory
 cd /home/joseph/Desktop
+# Initialize the project
 spring init --build=maven --dependencies=web --name=hello hello-world
-### ^^ This creates a folder named "hello-world" with the following structure :
+
+Output :
 hello-world  
 |_ HELP.md  
 |_ mvnw  
@@ -224,7 +240,7 @@ hello-world
    |     |_ static  
    |     |_ templates  
    |_ test  
-
+```
 ## Build the app
 #### From the directory with the pom.xml file 
 mvn install _OR_ maven package 
@@ -235,3 +251,8 @@ java -jar target/hello-world-0.0.1-SNAPSHOT.jar
 
 #### Run Spring Boot using Maven :
 mvn spring-boot:run  
+
+
+## Links
+[PPA](https://itsfoss.com/ppa-guide/ "Personal Package Archive")
+[Linux Permissions](https://www.cyberciti.biz/faq/unix-linux-bsd-chmod-numeric-permissions-notation-command/)  
