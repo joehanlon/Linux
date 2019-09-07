@@ -1,5 +1,5 @@
 ## Table of Contents
-## Follow this list of instructions in order to setup the following in Ubuntu : 
+#### _Follow this list of instructions in order to setup the following in Ubuntu_ : 
    1. [Java](https://github.com/joehanlon/Linux/blob/master/Java.md#installing-java)
    2. [Maven](https://github.com/joehanlon/Linux/blob/master/Java.md#installing-maven)
    3. [Tomcat](https://github.com/joehanlon/Linux/blob/master/Java.md#installing-tomcat)
@@ -30,7 +30,7 @@ sudo update-alternatives --config java
 sudo update-alternatives --config javac   
 ```
 ### Find Java
-```
+```console
 # Method 1
 readlink -f $(which java)
 
@@ -49,7 +49,7 @@ Output :
 ```
 
 ### Java Environment Variables 
-```
+```console 
 # Use either of the following to open the environment file
 sudo nano /etc/environment 
 sudo gedit /etc/environment
@@ -67,7 +67,7 @@ add ":$JAVA_HOME/bin" to the end of the PATH string
 ```
 
 ### If PATH gets messed up in the process : 
-```
+```console
 # Define PATH again with the route to gedit / nano, then edit it 
 export PATH="$PATH:/usr/bin"  
 sudo nano /etc/environment  
@@ -77,6 +77,8 @@ source /etc/environment
 ```
 
 ## Installing Maven 
+[ToC](https://github.com/joehanlon/Linux/blob/master/EnvironmentSetUp.md#table-of-contents)
+
 [Download](https://maven.apache.org/download.cgi)  
 [Install](https://maven.apache.org/install.html)  
 [How to Install on Linux](https://www.javahelps.com/2017/10/install-apache-maven-on-linux.html)  
@@ -84,14 +86,14 @@ source /etc/environment
 [Maven Environment Variables](https://askubuntu.com/questions/275704/how-to-permanently-set-environmental-variables-path-and-m2-home-in-ubuntu-for-ma)  
 
 ### Install with Apt
-```
+```console
 # Install the latest version
 sudo apt update  
 sudo apt install maven  
 mvn -version  
 ```
 ### Download from official website
-```
+```console
 # Navigate to the directory where you want to install
 cd /usr/local  
 
@@ -107,7 +109,7 @@ sudo ln -s apache-maven-${VER} apache-maven
 cp -r apache-maven-${VER} /opt/maven  
 ```
 ### Environment Variables 
-```
+```console
 # Method 1  
 export JAVA_HOME=/usr/lib/jvm/default-java  
 export M2_HOME=/opt/maven  
@@ -125,7 +127,7 @@ mvn -version
 ```
 
 ### Where is Maven?  
-```
+```console
 # Find the executable   
 whereis mvn  
 # Find libs and repo  
@@ -138,13 +140,15 @@ ls -lsa /etc/maven
 ```
 
 ## Installing Tomcat
+[ToC](https://github.com/joehanlon/Linux/blob/master/EnvironmentSetUp.md#table-of-contents)
+
 [Install Tomcat on Ubuntu](https://www.javahelps.com/2015/03/install-apache-tomcat-on-ubuntu.html)  
 [Install Tomcat8 on Ubuntu16.04](https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-8-on-ubuntu-16-04)  
 
 #### Download Tomcat 
-https://tomcat.apache.org/download-80.cgi  
+[Download Tomcat](https://tomcat.apache.org/download-80.cgi)  
 **Note : Tomcat should not be run under the root user. Create a new system user named "tomcat" and group with home directory /opt/tomcat that will run the Tomcat service :**
-```
+```console
 sudo useradd -r -m -U -d /opt/tomcat -s /bin/false tomcat  
 
 # Change the directory 
@@ -177,7 +181,7 @@ http://localhost:8080
 $CATALINA_HOME/bin/shutdown.sh  
 ```
 #### Download Tomcat from the Terminal
-```
+```console
 wget http://www-us.apache.org/dist/tomcat/tomcat-9/v9.0.24/bin/apache-tomcat-9.0.24.tar.gz  
 tar xzf apache-tomcat-9.0.24.tar.gz  
 sudo mv apache-tomcat-9.0.24 /usr/local/apache-tomcat9  
@@ -199,13 +203,15 @@ cd /usr/local/apache-tomcat9/bin
 ```
 
 ## Installing SPRING
+[ToC](https://github.com/joehanlon/Linux/blob/master/EnvironmentSetUp.md#table-of-contents)
+
 [1) Install Spring on Ubuntu](https://jeromejaglale.com/doc/spring4_tutorial/installation_ubuntu)  
 [2) Install Spring on Ubuntu](https://stackoverflow.com/questions/49889906/how-do-i-install-spring-boot-cli-in-ubuntu)  
 [3) Install Spring on Ubuntu](https://howtoprogram.xyz/2016/08/28/install-spring-boot-command-line-interface-on-linux/)  
 [Spring Boot from Command Line](http://appsdeveloperblog.com/run-spring-boot-app-from-a-command-line/)  
 [Deploy Spring with NGINX](https://www.linode.com/docs/development/java/how-to-deploy-spring-boot-applications-nginx-ubuntu-16-04/)  
 
-```
+```console
 # Check if it's installed
 spring --version  
 # Remove existing files
@@ -261,16 +267,18 @@ mvn spring-boot:run
 ```
 
 ## Installing Git
+[ToC](https://github.com/joehanlon/Linux/blob/master/EnvironmentSetUp.md#table-of-contents)
+
 [Git Website](https://git-scm.com/)  
 
 #### Installing Git w/ Default Packages
-```
+```console
 sudo apt update  
 sudo apt install git-all  
 ```
 
 #### For Ubuntu, this PPA provides the latest stable upstream Git version
-```
+```console
 sudo add-apt-repository ppa:git-core/ppa  
 sudo apt update  
 sudo apt install git  
@@ -287,15 +295,17 @@ git clone username@hostname:/path/to/repository
 [Git Cheatsheet 3](https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf)  
 [Git Cheatsheet 4](https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet)  
 
-## Installing Docker 
+## Installing Docker
+[ToC](https://github.com/joehanlon/Linux/blob/master/EnvironmentSetUp.md#table-of-contents)
+
 [Install Docker on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04)  
 [Install Docker-CE Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
 ### Uninstall old versions 
-```
+```console
 sudo apt-get remove docker docker-engine docker.io  
 ```
 ### Install Docker  
-```
+```console
 sudo apt update  
 sudo apt install apt-transport ca-certificates curl software-properties-common  
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -  
@@ -307,7 +317,7 @@ sudo systemctl status docker
 ```
 
 ### Install Docker from the Official Repository  
-```
+```console
 sudo apt-get update  
 sudo apt-get install apt-transport-https ca-certificates curl software-properties-common  
 ```
@@ -316,7 +326,7 @@ To clarify, here’s a brief breakdown of each command:
   - **ca-certificates** : Allows the system (and web browser) to check security certificates
   - **curl** : This is a tool for transferring data
   - **software-properties-common** : Adds scripts for managing software
-```
+```console
 # Add Dockers GPG Key
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add –  
 # Install the Docker Repo
@@ -325,7 +335,7 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 The command **$(lsb_release –cs)** scans and returns the codename of your Ubuntu installation (bionic).  
 Also, the final word of the command (stable) is the type of Docker release.
 
-```
+```console
 sudo apt-get update  
 # Install latest
 sudo apt-get install docker-ce 
@@ -336,12 +346,14 @@ sudo apt-get install docker-ce=<VERSION>
 ```
 
 ## Installing Postgres 
+[ToC](https://github.com/joehanlon/Linux/blob/master/EnvironmentSetUp.md#table-of-contents)
+
 [Install PostreSQL on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-18-04)  
 [Install PostgreSQL Server on Ubuntu](https://tecadmin.net/install-postgresql-server-on-ubuntu/)  
 [Install pgAdmin4 on Ubuntu](https://tecadmin.net/install-pgadmin4-on-ubuntu/)  
 [Create and Manage Tables](https://www.digitalocean.com/community/tutorials/how-to-create-remove-manage-tables-in-postgresql-on-a-cloud-server)  
 [Remove Postgres](https://www.liquidweb.com/kb/how-to-remove-postgresql/)  
-```
+```console
 sudo apt update  
 sudo apt install postgresql postgresql-contrib  
 # Switch over to the postgres account on your server
@@ -438,7 +450,7 @@ postgres-# \q
 sudo apt-get install pgadmin4 pgadmin4-apache2  
 ```
 ### Remove Postgres
-```
+```console
 # List the postgres packages 
 dpkg -l | grep postgres  
 # Delete the Postgres packages 
@@ -480,6 +492,8 @@ locate bin/psql
 ```
 
 ## Links
+[ToC](https://github.com/joehanlon/Linux/blob/master/EnvironmentSetUp.md#table-of-contents)
+
 [PPA](https://itsfoss.com/ppa-guide/ "Personal Package Archive")
 [Linux Permissions](https://www.cyberciti.biz/faq/unix-linux-bsd-chmod-numeric-permissions-notation-command/)  
 
