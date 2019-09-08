@@ -1,3 +1,19 @@
+
+[Spring Security SAML + Keycloak](https://qiita.com/daian183/items/e4388e1be6634b2dc789)
+https://hotchpotchj37.wordpress.com/2018/07/23/spring-security-saml%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6saml%E8%AA%8D%E8%A8%BC%E3%81%AB%E3%83%81%E3%83%A3%E3%83%AC%E3%83%B3%E3%82%B8%E3%81%97%E3%81%9F%E3%83%A1%E3%83%A2/  
+http://www.java2s.com/  
+https://gitee.com/caiman/spring-boot-security-saml-sample  
+https://devhub.io/repos/ulisesbocchio-spring-boot-security-saml  
+https://www.owasp.org/index.php/SAML_Security_Cheat_Sheet  
+
+
+
+[SS + Keycloak + OIDC](https://www.javaland.eu/formes/pubfiles/11145218/2019-nn-thomas_darimont-sichere_spring-anwendungen_mit_keycloak-praesentation.pdf)
+
+[Secure Spring Boot Microservices w/ Keycloak Pt1](https://www.youtube.com/watch?v=Bdg_DjuoX0A "DevNation Live")
+
+[Common Issues w/ SAML Authentication](https://help.blackboard.com/Learn/Administrator/SaaS/Authentication/Implement_Authentication/SAML_Authentication_Provider_Type/Common_Issues_with_SAML_Authentication)
+
 ### Our protocol for Single Sign On (SSO) is SAML. 
 - Mature protocol, very secure, operates over a web browser
 - Utilizes XML files 
@@ -99,11 +115,29 @@ In Web Browser SSO profile, we have two main categories :
 
 ### Okta Spring Security SAML Overview
 [Okta Spring Security SAML Overview](https://developer.okta.com/code/java/spring_security_saml/)
-```
-java --version
-mvn --version
+Dependencies : 
+   1. Java
+   2. Maven or Gradle
+   3. Tomcat or some other Java web server
 
+#### Download the Spring SAML Extension
+```console
+git clone https://github.com/spring-projects/spring-security-saml.git
 ```
+#### Checkout Okta's Mac OS Sample App
+```console
+git clone https://github.com/nshobayo/okta-SpringSAML.git
+
+# Copy the sample Okta app into the Extension's "src" folder
+rm -rf spring-security-saml/sample/src/main
+cp -r okta-SpringSAML/src/main spring-security-saml/sample/src
+```
+#### Compilation
+```
+cd spring-security-saml/sample
+../gradlew build install
+```
+#### Etc etc etc
 
 ### Spring Security SAML Documentation
 [Documentation](https://docs.spring.io/spring-security-saml/docs/ "All Spring Security SAML Docs")  
@@ -133,3 +167,5 @@ mvn --version
 - [Spring Security SAML & Keycloak](https://blog.codecentric.de/en/2019/03/secure-spring-boot-app-saml-keycloak/)
 - [Spring Security SAML Example Project](https://github.com/vdenotaris/spring-boot-security-saml-sample/blob/master/pom.xml "Vincenzo De Notaris")
 - [SSOCirle IdP](https://www.ssocircle.com/en/portfolio/publicidp/?source=post_page-----7ffe0dd38465----------------------)
+- https://www.future-processing.pl/blog/exploring-spring-boot-and-spring-security-custom-token-based-authentication-of-rest-services-with-spring-security-and-pinch-of-spring-java-configuration-and-spring-integration-testing/  
+- 
