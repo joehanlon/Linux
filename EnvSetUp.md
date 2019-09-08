@@ -179,8 +179,14 @@ source /etc/environment
 
 # Start the Tomcat Server :
 $CATALINA_HOME/bin/startup.sh  
+# Or
+catalina start  
 # Go to the following URL :
 http://localhost:8080  
+
+# View available commands
+catalina -h
+
 # Stop the Server : 
 $CATALINA_HOME/bin/shutdown.sh  
 ```
