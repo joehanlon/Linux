@@ -84,7 +84,18 @@
 - Enforce session timeouts  
 - Force sign-in  
 
-
+In Web Browser SSO profile, we have two main categories : 
+   1. SP-Initiated SSO 
+      * Our Server + Hello World app
+         * Spring Boot 
+         * Maven 
+         * Tomcat
+   2. IdP-Initiated SSO 
+      * Our Identity Provider
+         * Keycloak --> PingFederate
+         * Wildfly Server --> ???
+         
+### Example 
 
 ## Links  
 - [Spring Security SAML](https://projects.spring.io/spring-security-saml/)  
@@ -106,3 +117,4 @@
 - [Intro to SAML2.0](https://wso2.com/library/articles/2014/02/introduction-to-security-assertion-markup-language-2.0/)
 - [Spring Security SAML & Keycloak](https://blog.codecentric.de/en/2019/03/secure-spring-boot-app-saml-keycloak/)
 - [Spring Security SAML Example Project](https://github.com/vdenotaris/spring-boot-security-saml-sample/blob/master/pom.xml "Vincenzo De Notaris")
+- [SSOCirle IdP](https://www.ssocircle.com/en/portfolio/publicidp/?source=post_page-----7ffe0dd38465----------------------)
