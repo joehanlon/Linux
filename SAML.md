@@ -1,5 +1,5 @@
 
-[Spring Security SAML + Keycloak](https://qiita.com/daian183/items/e4388e1be6634b2dc789)
+[Spring Security SAML + Keycloak](https://qiita.com/daian183/items/e4388e1be6634b2dc789)  
 https://hotchpotchj37.wordpress.com/2018/07/23/spring-security-saml%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6saml%E8%AA%8D%E8%A8%BC%E3%81%AB%E3%83%81%E3%83%A3%E3%83%AC%E3%83%B3%E3%82%B8%E3%81%97%E3%81%9F%E3%83%A1%E3%83%A2/  
 http://www.java2s.com/  
 https://gitee.com/caiman/spring-boot-security-saml-sample  
@@ -146,6 +146,49 @@ cd spring-security-saml/sample
 [GitHub](https://github.com/spring-projects/spring-security-saml)
 
 
+## Spring Boot CLI Tutorial
+[Spring Boot CLI Tutorial](https://www.tutorialspoint.com/springbootcli/index.htm "tutorialspoint.com")
+
+
+## Integrating Keycloak into Spring Boot App
+Need to declare a Spring Bean for Keycloak as the IdP.  
+Most likely needs to be added to the **WebSecurityConfig** class.  
+Need to ensure that the Keycloak IdP definition is automatically picked up by the Spring Security SAML infrastructure.  
+This is done by modifying the **metadata** bean to let Spring autowire all available **MedadataProvider** instances via the **providers** parameter.  
+
+Create a **realm** with a name, e.g. "demo".  
+Might need to adapt the URL to your Keycloak server in the **application.properties**  config file of the Spring Boot app or just pass a JVM System Property like:
+```
+-Dkeycloak.auth-server-url=http://localhost:8081/auth/realms/demo
+```
+
+In this **demo** realm, we need to create a client configuration for our Spring Boot app. 
+#### Set-up Keycloak Client
+   1. Create a new **SAML** client in Keycloak with the client-id **com:vdenotaris:spring:sp**. 
+   2. In the client **settings** tab, configure the following :
+      * Include AuthnStatement On
+      * Include OneTimeUse Condition Off
+      * Sign Documents On
+      * Optimize REDIRECT signing key lookup Off
+      * Sign Assertions On
+      * Signature Algorithm RSA_SHA256
+      * SAML Signature Key Name KEY_ID
+      * Canonicalization Method EXCLUSIVE
+      * Encrypt Assertions Off
+      * Client Signature Required On
+      * Force POST Binding On
+      * Front Channel Logout On
+      * Force Name ID Format Off
+      * Name ID Format username
+      * Root URL http://localhost:8080
+      * Valid Redirect URIs /saml/*
+      * Base URL /
+      * Open Fine Grain SAML Endpoint Configuration
+      * Assertion Consumer Service POST Binding URL /saml/SSO
+      * Logout Service POST Binding URL /saml/logout
+      
+      
+      
 ## Links  
 - [Spring Security SAML](https://projects.spring.io/spring-security-saml/)  
 - [SAML](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language "Security Assertion Markup Language")  
