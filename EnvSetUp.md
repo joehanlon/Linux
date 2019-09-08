@@ -1,13 +1,13 @@
 ## Table of Contents
 #### _Follow this list of instructions in order to setup the following in Ubuntu_ : 
-   1. [Java](https://github.com/joehanlon/Linux/blob/master/Java.md#installing-java)
-   2. [Maven](https://github.com/joehanlon/Linux/blob/master/Java.md#installing-maven)
-   3. [Tomcat](https://github.com/joehanlon/Linux/blob/master/Java.md#installing-tomcat)
-   4. [Spring Boot CLI](https://github.com/joehanlon/Linux/blob/master/Java.md#installing-spring)
-   5. [Git](https://github.com/joehanlon/Linux/blob/master/Java.md#installing-git)
-   6. [Docker](https://github.com/joehanlon/Linux/blob/master/Java.md#installing-docker)
-   7. [Postgres](https://github.com/joehanlon/Linux/blob/master/Java.md#installing-postgres)
-   8. [Keycloak](https://github.com/joehanlon/Linux/blob/master/Java.md#installing-keycloak)
+   1. [Java](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#installing-java)
+   2. [Maven](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#installing-maven)
+   3. [Tomcat](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#installing-tomcat)
+   4. [Spring Boot CLI](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#installing-spring)
+   5. [Git](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#installing-git)
+   6. [Docker](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#installing-docker)
+   7. [Postgres](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#installing-postgres)
+   8. [Keycloak](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#installing-keycloak)
 ### Note : Each package will require editing environment variables
 
 Launch terminal by pressing Ctrl+Alt+T  
