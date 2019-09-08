@@ -187,7 +187,23 @@ In this **demo** realm, we need to create a client configuration for our Spring 
       * Assertion Consumer Service POST Binding URL /saml/SSO
       * Logout Service POST Binding URL /saml/logout
       
+   3. In the SAML Keys tab you need to import the Keystore of the example app.
+      * Click on import
+      * Archive Format JKS
+      * Key-Alias apollo
+      * Store pass nalle123
+      * Select configure the path to src/main/resources/saml/samlKeystore.jks
       
+   ** Your client is now set-up to use the POST binding method of the Web SSO SAML Profile **
+   
+   4. Playing with the setup: Login and logout
+      You can now try to log in via Keycloak:
+      * Browse to http://localhost:8080
+      * Click on Getting started
+      * Under Select your Identity Provider choose http://localhost:8081/auth/realms/demo and click Start 3rd Party Login
+      * Login with a user, I named mine tester
+      * Should see a nyan cat 
+
       
 ## Links  
 - [Spring Security SAML](https://projects.spring.io/spring-security-saml/)  
