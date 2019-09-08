@@ -12,6 +12,8 @@
 
 Launch terminal by pressing Ctrl+Alt+T  
 ## Installing Java 
+[ToC](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#table-of-contents) 
+
 ```console
 # Check if java is installed, if not, install the latest default package
 java --version  
@@ -78,7 +80,7 @@ source /etc/environment
 ```
 
 ## Installing Maven 
-[ToC](https://github.com/joehanlon/Linux/blob/master/EnvironmentSetUp.md#table-of-contents)
+[ToC](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#table-of-contents)
 
 [Download](https://maven.apache.org/download.cgi)  
 [Install](https://maven.apache.org/install.html)  
@@ -141,7 +143,7 @@ ls -lsa /etc/maven
 ```
 
 ## Installing Tomcat
-[ToC](https://github.com/joehanlon/Linux/blob/master/EnvironmentSetUp.md#table-of-contents)
+[ToC](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#table-of-contents)
 
 [Install Tomcat on Ubuntu](https://www.javahelps.com/2015/03/install-apache-tomcat-on-ubuntu.html)  
 [Install Tomcat8 on Ubuntu16.04](https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-8-on-ubuntu-16-04)  
@@ -204,7 +206,7 @@ cd /usr/local/apache-tomcat9/bin
 ```
 
 ## Installing SPRING
-[ToC](https://github.com/joehanlon/Linux/blob/master/EnvironmentSetUp.md#table-of-contents)
+[ToC](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#table-of-contents)
 
 [1) Install Spring on Ubuntu](https://jeromejaglale.com/doc/spring4_tutorial/installation_ubuntu)  
 [2) Install Spring on Ubuntu](https://stackoverflow.com/questions/49889906/how-do-i-install-spring-boot-cli-in-ubuntu)  
@@ -268,7 +270,7 @@ mvn spring-boot:run
 ```
 
 ## Installing Git
-[ToC](https://github.com/joehanlon/Linux/blob/master/EnvironmentSetUp.md#table-of-contents)
+[ToC](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#table-of-contents)
 
 [Git Website](https://git-scm.com/)  
 
@@ -297,7 +299,7 @@ git clone username@hostname:/path/to/repository
 [Git Cheatsheet 4](https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet)  
 
 ## Installing Docker
-[ToC](https://github.com/joehanlon/Linux/blob/master/EnvironmentSetUp.md#table-of-contents)
+[ToC](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#table-of-contents)
 
 [Install Docker on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04)  
 [Install Docker-CE Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
@@ -347,7 +349,7 @@ sudo apt-get install docker-ce=<VERSION>
 ```
 
 ## Installing Postgres 
-[ToC](https://github.com/joehanlon/Linux/blob/master/EnvironmentSetUp.md#table-of-contents)
+[ToC](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#table-of-contents)
 
 [Install PostreSQL on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-18-04)  
 [Install PostgreSQL Server on Ubuntu](https://tecadmin.net/install-postgresql-server-on-ubuntu/)  
@@ -493,7 +495,7 @@ locate bin/psql
 ```
 
 ## Installing KeyCloak 
-[ToC](https://github.com/joehanlon/Linux/blob/master/EnvironmentSetUp.md#table-of-contents)
+[ToC](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#table-of-contents)
 
 [Install Keycloak on Ubuntu 18.04](https://medium.com/@hasnat.saeed/setup-keycloak-server-on-ubuntu-18-04-ed8c7c79a2d9)  
 [Download Keycloak](https://www.keycloak.org/downloads.html)  
