@@ -793,7 +793,8 @@ nvm use default
 [Install & Uninstall Node 1](https://ircama.github.io/osm-carto-tutorials/nodejs-commands/)
 [Install & Uninstall Node 2](https://dxtright.com/index.php/2018/09/20/install-nvm-node-js-globally-linux-based-system/)
 
-```
+```console
+sudo apt remove npm
 sudo apt remove nodejs
 sudo apt purge nodejs
 sudo apt autoremove
