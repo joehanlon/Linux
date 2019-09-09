@@ -9,6 +9,7 @@
    7. [Postgres](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#installing-postgres)
    8. [Keycloak](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#installing-keycloak)
    9. [VSCode](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#installing-VSCode)
+   10. [Node](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#installing-Node)
 ### Note : Each package will require editing environment variables
 
 Launch terminal by pressing Ctrl+Alt+T  
@@ -733,6 +734,82 @@ sudo apt upgrade
 Pull up extensions : ctrl+shift+x  
 Pull up command palette : ctrl+shift+p  
 
+## Installing Node
+[ToC](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#table-of-contents)
+
+[How to install Node & npm on Ubuntu 18.04](https://linuxize.com/post/how-to-install-node-js-on-ubuntu-18.04/ "Linuxize")
+[How to install Node on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-18-04 "Digital Ocean")
+#### Install through the Terminal
+```console
+sudo apt update
+sudo apt install nodejs
+sudo apt isntall npm
+
+# Verify install
+node -v
+npm -v
+```
+#### Install using PPA
+[Install Node on Ubuntu](https://github.com/nodesource/distributions#debinstall "Nodesource")
+```console
+# Install with sudo privileges
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
+#### Install using NVM (Node Version Manager)
+[NVM Github](https://github.com/nvm-sh/nvm)
+```console
+# Download and install the package with either of the following commands 
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+# Or 
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+
+# Configure
+export NVM_DIR=”$HOME/.nvm”
+[ -s “$NVM_DIR/nvm.sh” ] && \. “$NVM_DIR/nvm.sh”
+[ -s "$NVM_DIR/bash_completion" ] && \.   "$NVM_DIR/bash_completion"
+
+# Verify
+nvm --version
+
+# List Node.js versions available 
+nvm ls-remote
+
+# Install a specific version 
+nvm install 8.11.1
+# Switch to using most recently installed version
+nvm use 8.11.1
+
+# List multiple Node versions installed 
+nvm ls
+
+# Make a version your default type 
+# This version will now be automatically used
+nvm alias default 8.11.1
+# It can also be referenced as "default"
+nvm use default
+```
+#### Remove Node
+[Install & Uninstall Node 1](https://ircama.github.io/osm-carto-tutorials/nodejs-commands/)
+[Install & Uninstall Node 2](https://dxtright.com/index.php/2018/09/20/install-nvm-node-js-globally-linux-based-system/)
+
+```
+sudo apt remove nodejs
+sudo apt purge nodejs
+sudo apt autoremove
+
+# To uninstall a version you have enabled using nvm 
+nvm current
+nvm uninstall node_version
+nvm deactivate
+```
+
+
+#### (Optional) Install Build Tools
+```console
+# To compile and install native addons from npm you may also need to install build tools
+sudo apt-get install -y build-essential
+```
 
 ## Links
 [ToC](https://github.com/joehanlon/Linux/blob/master/EnvironmentSetUp.md#table-of-contents)
