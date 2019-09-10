@@ -82,6 +82,7 @@ Defaults (as of 9/2019):
 - Spring Boot Actuator
 #### Download the project, unzip it in a preferred directory
 ```
+# Default Maven Project Structure, based on what we selected in Spring Initializr
 ./spring5webapp/
    |_ .mvn/
    | |_ wrapper/
@@ -115,3 +116,13 @@ Defaults (as of 9/2019):
 ```
 #### Below are details for the files created :
 - mvnw : Maven wrapper. This allows us to run Maven commands w/o having Maven installed. (You should still install Maven though).
+- Spring5webappApplication.java : This is the one application file that we have right now.
+
+Spring Boot has parent-child relationships. <parent> is tagged in the pom.xml file, and the project inherits curated dependencies / information from other releases when they occur. 
+   
+ #### To Run the App, Using the Maven Wrapper
+ ```console
+ # in Windows CMD
+ cd spring5wepapp
+ mvnw spring-boot:run
+ ```
