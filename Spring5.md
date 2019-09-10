@@ -135,3 +135,8 @@ JPA is only a specification, NOT a concrete implementation.
 It is an ORM : Object Relational Mapper.  
 This means that it serves as a bridge between Java objects and data stored in relational databases.  
 JPA offers Java developers database intependence since 1 API will support many relational databases.  
+
+## Best Practices w/ Hibernate
+Should have unique keys for your data.  
+equals() and hashCode()  
+ 
