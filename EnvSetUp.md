@@ -34,6 +34,11 @@ sudo update-alternatives --config java
 # Similarly you can configure your JDK :
 sudo update-alternatives --config javac   
 ```
+### Verify the install
+```console
+java -version  #Java 
+javac -version #JDK / compiler
+```
 ### Find Java
 ```console
 # Method 1
@@ -52,7 +57,6 @@ $ ls -l /etc/alternatives/java
 Output :
 "/usr/lib/jvm/java-11-openjdk-amd64/bin/java" 
 ```
-
 ### Java Environment Variables 
 ```console 
 # Use either of the following to open the environment file
@@ -70,7 +74,6 @@ echo $JAVA_HOME
 # Edit PATH 
 add ":$JAVA_HOME/bin" to the end of the PATH string  
 ```
-
 ### If PATH gets messed up in the process : 
 ```console
 # Define PATH again with the route to gedit / nano, then edit it 
