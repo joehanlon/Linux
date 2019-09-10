@@ -790,8 +790,9 @@ nvm alias default 8.11.1
 nvm use default
 ```
 #### Remove Node
-[Install & Uninstall Node 1](https://ircama.github.io/osm-carto-tutorials/nodejs-commands/)
-[Install & Uninstall Node 2](https://dxtright.com/index.php/2018/09/20/install-nvm-node-js-globally-linux-based-system/)
+[Install & Uninstall Node 1]
+[Install & Uninstall Node 2](https://ircama.github.io/osm-carto-tutorials/nodejs-commands/)
+[Install & Uninstall Node 3](https://dxtright.com/index.php/2018/09/20/install-nvm-node-js-globally-linux-based-system/)
 
 ```console
 sudo apt remove npm
@@ -817,4 +818,4 @@ sudo apt-get install -y build-essential
 
 [PPA](https://itsfoss.com/ppa-guide/ "Personal Package Archive")
 [Linux Permissions](https://www.cyberciti.biz/faq/unix-linux-bsd-chmod-numeric-permissions-notation-command/)  
-
+[GraphQL Java](https://www.graphql-java.com/documentation/v12/)
