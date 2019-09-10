@@ -743,7 +743,9 @@ Pull up command palette : ctrl+shift+p
 ```console
 sudo apt update
 sudo apt install nodejs
-sudo apt isntall npm
+
+# (Optional) Update NPM
+sudo npm install npm@latest -g
 
 # Verify install
 node -v
@@ -805,13 +807,28 @@ nvm current
 nvm uninstall node_version
 nvm deactivate
 ```
-
-
 #### (Optional) Install Build Tools
 ```console
 # To compile and install native addons from npm you may also need to install build tools
 sudo apt-get install -y build-essential
 ```
+#### Install & Create a New React Project
+```console
+# 2 Steps
+npm install -g create-react-app
+create-react-app my_project
+
+# 1 Step
+npx create-react-app my_project
+```
+#### Run the React App
+```console
+cd my_project
+npm start
+# Go to http://localhost:3000
+```
+
+
 
 ## Links
 [ToC](https://github.com/joehanlon/Linux/blob/master/EnvironmentSetUp.md#table-of-contents)
@@ -819,3 +836,13 @@ sudo apt-get install -y build-essential
 [PPA](https://itsfoss.com/ppa-guide/ "Personal Package Archive")
 [Linux Permissions](https://www.cyberciti.biz/faq/unix-linux-bsd-chmod-numeric-permissions-notation-command/)  
 [GraphQL Java](https://www.graphql-java.com/documentation/v12/)
+[Postman](https://www.getpostman.com/)
+[Install Postman on Ubuntu 18.04 1](https://linuxize.com/post/how-to-install-postman-on-ubuntu-18-04/)
+[Install Postman on Ubuntu 18.04 2](http://ubuntuhandbook.org/index.php/2018/09/install-postman-app-easily-via-snap-in-ubuntu-18-04/)
+[InVision](https://www.invisionapp.com/)
+[Draw.io](https://www.draw.io/)
+[Download MySQL](https://dev.mysql.com/downloads/)
+[Install MySQL on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04)
+
+[Install IntelliJ on Ubuntu 18.04 1](https://linuxize.com/post/how-to-install-intellij-idea-on-ubuntu-18-04/)
+[Install IntelliJ on Ubuntu 18.04 2](https://linuxconfig.org/install-intellij-on-ubuntu-18-04-bionic-beaver-linux)
