@@ -3,17 +3,17 @@
 ## Spring Initializr  
 https://start.spring.io/  
 
-Defaults :  
+Defaults (as of 9/2019):  
    - Project : Maven  
    - Language : Java  
    - Spring Boot : 2.1.8  
    - Project Metadata :
-      - Group : com.example  --> guru.springframework  
-      - Artifact : demo  --> spring5webapp  
-      - Name : demo --> Same as Artifact
-      - Package Name : com.example.demo  --> Group + Artifact (Name)
+      - Group : com.example   
+      - Artifact : demo  
+      - Name : demo 
+      - Package Name : com.example.demo  
       - Packaging : Jar    
-      - Java : 8 --> 12  
+      - Java : 8 
    - Developer Tools
       - Spring Boot DevTools  
       - Lombok
@@ -68,5 +68,50 @@ Defaults :
       - Spring Boot Admin (Server)
    - Etc. Etc. Etc. 
       
-      
-
+## First Project
+#### Make the following changes / dependency selections
+- Group : com.example  --> guru.springframework  
+- Artifact : demo  --> spring5webapp  
+- Name : demo --> Same as Artifact
+- Package Name : com.example.demo  --> Group + Artifact (Name)
+- Java : 8 --> 12  
+- Spring Web
+- Thymeleaf
+- Spring Data JPA
+- H2 Database
+- Spring Boot Actuator
+#### Download the project, unzip it in a preferred directory
+```
+./spring5webapp/
+   |_ .mvn/
+   | |_ wrapper/
+   |   |_ maven-wrapper.jar
+   |   |_ maven-wrapper.properties
+   |   |_ MavenWrapperDownloader.java
+   |_ src/
+   | |_ main/
+   | | |_ java/
+   | | | |_ guru/
+   | | |   |_ springframework/
+   | | |     |_ spring5webapp/
+   | | |       |_ Spring5webappApplication.java
+   | | |_ resources/
+   | |   |_ static/
+   | |   | |_ <EMPTY>
+   | |   |_ templates/
+   | |   | |_ <EMPTY>
+   | |   |_ application.properties
+   | |_ test/
+   |   |_ java/ 
+   |     |_ guru/
+   |       |_ springframework/
+   |         |_ spring5webapp/
+   |           |_ Spring5webappApplicationTests.java
+   |_ .gitignore
+   |_ HELP.md
+   |_ mvnw 
+   |_ mvnw.cmd
+   |_ pom.xml 
+```
+#### Below are details for the files created :
+- mvnw : Maven wrapper. This allows us to run Maven commands w/o having Maven installed. (You should still install Maven though).
