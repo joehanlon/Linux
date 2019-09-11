@@ -184,3 +184,19 @@ Java has many template engines to choose from.
 Templates are a way to generate dynamic HTML.  
 It is a "natural" template engine, meaning you can see it naturally in your browser.  
 
+## Software Layers 
+1. Views :  
+   1a) JSP w/ custom tags
+      - Boostrap (CSS)
+   1b) webjars 
+      - custom LESS
+2. Controller :  
+   - Spring @MVC annotations   
+      - Bean Validation
+3. Service :  
+   - @Cacheable  
+      - @Transactional   
+4. Repository (Spring profiles) :  
+   - Spring Data JPA  
+   - JPA (default)
+   - JDBC  
