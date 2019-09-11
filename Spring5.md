@@ -140,3 +140,47 @@ JPA offers Java developers database intependence since 1 API will support many r
 Should have unique keys for your data.  
 equals() and hashCode()  
  
+Common to see people create a new package for repositories.  
+Spring Data JPA is a huge time saver compared to JDBC.  
+Sets up interfaces with CRUD operations for the classes we want to store very quickly.  
+
+Make sure JDBC URL is : jdbc:h2:mem:testdb  
+
+## Spring MVC == Model View Controller
+- MVC is a common design pattern for GUI and Web apps.  
+- Does a great job of separating concerns.  
+```
+                           --> Model
+                         /    
+Clients <--> Controller <
+                         \
+                           --> View
+```
+
+**Client** (mobile phone, browser, etc) makes requests to **Controller** (traffic cop for data)  
+Controller goes out to get the **Model** (e.g. POJO),  
+and returns the Model to the **View** (e.g. Thymeleaf templating engine).  
+The View Component renders the view for the Client.  
+
+#### Spring MVC
+```
+                      / <--> Handler Mapping
+                     /          --> Controller <--> Service <--> Data
+                    /          /        |
+Clients <--> Dispatch Servlet < <--Model|
+                    \          \
+                     \           --> View (JSP, Thymeleaf)
+                      \                ^
+                       \               |
+                        \ ----> Model  |
+```
+**Web Request** comes in, which goes to a **Dispatch Servlet**.  
+First goes to a **Handler Mapping** which determines which **Controller** to go to.  
+The Controller typically has a Service Layer and Data wired up to it.  
+The Controller gives the **Model**, which then gets rendered for the client in the **View**.
+
+#### Thymeleaf template engine
+Java has many template engines to choose from.  
+Templates are a way to generate dynamic HTML.  
+It is a "natural" template engine, meaning you can see it naturally in your browser.  
+
