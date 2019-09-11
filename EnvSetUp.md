@@ -241,6 +241,20 @@ wget https://repo.spring.io/release/org/springframework/boot/spring-boot-cli/2.1
 tar xzf spring-boot-cli-2.1.7.RELEASE-bin.tar.gz  
 sudo mv spring-2.1.7.RELEASE /usr/local/spring  
 
+# Add SPRING CLI to PATH
+sudo gedit /etc/environment
+# Add \spring-boot-cli-{$VERSION}.RELEASE\bin to PATH
+# E.g. : \usr\local\spring-boot-cli-1.2.3.RELEASE\bin
+# Verify :
+spring --version
+spring --help
+
+# Run Spring Boot Groovy scripts :
+spring run <SpringBoot-Groovy-Scriptname>
+# https://www.journaldev.com/8195/spring-boot-cli-setup-and-helloworld-example
+spring run HelloWorld.groovy
+
+
 # Go to a desired project directory
 cd /home/joseph/Desktop
 # Initialize the project
