@@ -86,6 +86,8 @@ Defaults (as of 9/2019):
                - Use a pre-2019 version, defined in the pom.xml file
                - OR start the server, then change the field "JDBC URL:" from "jdbc:h2:~/test" to "jdbc:h2:mem:testdb"
                - [Reference](https://github.com/h2database/h2database/commit/8b53f3999c6c5c3d5ca29020e2657968f4f59ec4)
+            * [H2 DB Example](https://howtodoinjava.com/spring-boot2/h2-database-example/)
+            * [H2 DB Install & Tutorial](https://www.tutorialspoint.com/h2_database/h2_database_installation.htm)
       - JDBC API
       - MyBatis Framework
       - PostgreSQL Driver
