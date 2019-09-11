@@ -200,3 +200,17 @@ It is a "natural" template engine, meaning you can see it naturally in your brow
    - Spring Data JPA  
    - JPA (default)
    - JDBC  
+
+[Spring Pet Clinic](https://github.com/spring-projects/spring-petclinic)
+```
+cd spring-petclinic  
+mvn spring-boot:run
+```
+
+Spring Boot brings a number of opinionated configurations, which makes it opinionated.  
+Opinionated just means there is one way of doing things.  
+Un-opinionated means then that you can do something however you choose.  
+
+Don't change the source code without an issue.  
+Keep the visibility and traceability.  
+
