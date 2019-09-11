@@ -258,11 +258,21 @@ This avoids issues caused by the user trying to get things himself.
       - Follows Interface Segregation Principle of S.O.L.I.D.
       - Makes the code more testable
    - Concrete Classes should be avoided
+#### Three types of DI dependencies
+1. By Property
+2. By Setter
+3. By Constructor
+   * This requires the dependency to be injected when the class is instantiated.
+   * Very bad practice. 
+- Is it good practice to use concrete classes for dependency injection?
+   - You should use interfaces, which will allow the runtime environment to determine the implementation to inject.
+
 
 ## Inversion of Control, IoC
 - Technique to allow dependencies to be injected at runtime
 - Dependencies are not predetermined
 - Gives frameworks the power to serve as extensible skeletons in applications
+- The runtime environment (or framework) which injects dependencies
 
 ## IoC vs DI
 - DI refers to the composition of you classes, i.e. you compose your classes with DI in mind
@@ -330,3 +340,15 @@ This avoids issues caused by the user trying to get things himself.
 - ServletConfigAware : Set the ServletConfig that this object runs in. 
 - ServletContextAware : Set the ServletContext that this object runs in. 
 
+* What is the annotation used in Spring to indicat you want a dependency injected?
+   - @Autowired
+* If you have 2 beans of the same type, how do you specify a preference for 1 over the other?
+   - @Primary 
+* What are the 2 callback interfaces you can implement to tap into the bean lifecycle?
+   1. InitializingBean
+   2. DisposableBean
+* What 2 annotations can be used to access the Spring Bean lifecycle?
+   1. @PostConstruct
+   2. @PreDestroy
+* How do you specify a bean name you want injected?
+  - Use the @Qualifier annotation
