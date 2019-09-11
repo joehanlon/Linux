@@ -602,7 +602,7 @@ StandardOutput=null
 WantedBy=multi-user.target
 ```
 
-```
+```console
 # Reload the systemd manager config and enable keycloak service on system startup
 sudo systemctl daemon-reload  
 sudo systemctl enable keycloak  
@@ -626,7 +626,7 @@ we have to use the bash script (add-user-keycloak.sh)
 available under /usr/local/keycloak/bin/ directory  
 to create the initial administrator account.  
 
-```
+```console
 # Create new master user
 sudo /usr/local/keycloak/bin/add-user-keycloak.sh -r master -u <username> -p <password>  
 
@@ -845,7 +845,19 @@ npm start
 # Go to http://localhost:3000
 ```
 
+## Installing SDKMan
+[Install SDKMan](https://sdkman.io/install)
+[SDKMan GitHub](https://github.com/sdkman/sdkman-cli)
 
+```console
+curl -s "https://get.sdkman.io" | bash
+
+# Open new terminal then enter :
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# Verify installation succeeded :
+sdk version
+```
 
 ## Links
 [ToC](https://github.com/joehanlon/Linux/blob/master/EnvironmentSetUp.md#table-of-contents)
