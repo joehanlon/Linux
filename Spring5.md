@@ -1,4 +1,25 @@
+[Spring Boot Tutorials : Mkyong](https://www.mkyong.com/tutorials/spring-boot-tutorials/)
+
 [Intro to Spring Boot Web App : Lecture 10](https://bah.udemy.com/course/spring-framework-5-beginner-to-guru/learn/lecture/11162448#overview)
+
+## Spring Best Practices
+[Article](https://www.e4developer.com/2018/08/06/spring-boot-best-practices/)
+1. Use auto-configuration
+2. Use Spring Initializr for starting new Spring Boot projects
+3. Consider creating your own auto-configuration for common organizational concerns
+4. Structure your code correctly
+5. Keep your @Controller's clean and focused
+6. Build your @Service's around business capabilities
+7. Make your database a detail - abstract it from the core logic
+8. Keep your business logic free of Spring Boot code
+9. Favour Constructor Injection
+10. Be familiar with the concurrency model
+11. Externalise and mature your configuration management
+12. Provide global exception handling
+13. Use a logging framework
+14. Test your code
+15. Use testing slices to make your testing easier and more focused
+
 
 ## Spring Initializr  
 https://start.spring.io/  
@@ -101,7 +122,7 @@ Defaults (as of 9/2019):
    | |   | |_ <EMPTY>
    | |   |_ templates/
    | |   | |_ <EMPTY>
-   | |   |_ application.properties
+   | |   |_ application.properties <EMPTY>
    | |_ test/
    |   |_ java/ 
    |     |_ guru/
@@ -118,6 +139,8 @@ Defaults (as of 9/2019):
 - mvnw : Maven wrapper. This allows us to run Maven commands w/o having Maven installed. (You should still install Maven though).
 - Spring5webappApplication.java : This is the one application file that we have right now.
 - application.properties : This is where we can define overrides for certain app settings.
+   - application.properties should be in the classpath. Using Maven or Gradle, it should be under /src/main/resources
+   - There we can add server.port = xxxx to change the default port from 8080
 Spring Boot has parent-child relationships. <parent> is tagged in the pom.xml file, and the project inherits curated dependencies / information from other releases when they occur. 
    
  #### To Run the App, Using the Maven Wrapper
