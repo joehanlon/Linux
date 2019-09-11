@@ -245,3 +245,50 @@ Version control and dependency injection is the cornerstone of Spring.
    * Details should not depend upon abstractions
    * Important that higher level and lower level objects depend on the same abstract interaction
    * This is NOT dependency injection
+
+## Dependency Injection, DI
+State your need, then the framework will make sure that you have it.  
+This avoids issues caused by the user trying to get things himself.  
+- Dependency Injection is where a needed dependency is injected by another object.  
+- The class being injected has no responsibility in instantiating the object being injected.  
+- Some say you avoid declaring objects using 'new' but this isn't 100% correct...  
+- DI can be done with Concrete Classes or with Interfaces
+   - Interfaces are preferred
+      - Allows runtime to decide implementation to inject
+      - Follows Interface Segregation Principle of S.O.L.I.D.
+      - Makes the code more testable
+   - Concrete Classes should be avoided
+
+## Inversion of Control, IoC
+- Technique to allow dependencies to be injected at runtime
+- Dependencies are not predetermined
+- Gives frameworks the power to serve as extensible skeletons in applications
+
+## IoC vs DI
+- DI refers to the composition of you classes, i.e. you compose your classes with DI in mind
+- IoC is the runtime environment of your code, i.e. Spring Framework's IoC container
+
+## Spring Qualifier Annotations
+## Primary Annotation for Spring Beans
+## Getters and Setters
+## Controllers
+## Services
+## Repositories
+## Resources 
+## Beans
+## Templates
+## Models / POJOs
+## Spring Profiles
+
+## Spring Bean Life Cycle
+1. Instantiate
+2. Populate Properties
+3. Call setBeanName of BeanNameAware
+4. Call setBeanFactory of BeanFactoryAware
+5. Call setApplicationContext of ApplicationContextAware
+6. Preinitialization (Bean PostProcessors)
+7. afterPropertiesSet of Initializing Beans
+8. Custom Init Method
+9. Post Initialization (BeanPostProcessors)
+10. Bean is ready to use!
+
