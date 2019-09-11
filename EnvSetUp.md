@@ -900,3 +900,4 @@ sdk version
 [Install MongoDB on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-mongodb-on-ubuntu-18-04)
 [Prisma.io](https://www.prisma.io/docs/1.1/faq/pricing-fae2ooth2u)
 [Jenkins](https://jenkins.io/)
+[Install Gradle](https://www.tutorialspoint.com/gradle/gradle_installation.htm)
