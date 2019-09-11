@@ -254,6 +254,11 @@ spring run <SpringBoot-Groovy-Scriptname>
 # https://www.journaldev.com/8195/spring-boot-cli-setup-and-helloworld-example
 spring run HelloWorld.groovy
 
+## Start the embedded shell :
+spring shell
+version
+run [SCRIPT_NAME].groovy
+
 
 # Go to a desired project directory
 cd /home/joseph/Desktop
