@@ -1,6 +1,21 @@
 [Spring Boot Tutorials : Mkyong](https://www.mkyong.com/tutorials/spring-boot-tutorials/)
-
 [Intro to Spring Boot Web App : Lecture 10](https://bah.udemy.com/course/spring-framework-5-beginner-to-guru/learn/lecture/11162448#overview)
+[Spring Framework Petclinic](https://github.com/spring-petclinic/spring-framework-petclinic)
+[Spring Petclinic GraphQL](https://github.com/spring-petclinic/spring-petclinic-graphql)
+
+https://spring.io/projects
+https://spring.io/projects/spring-security#learn
+https://spring.io/guides/gs/securing-web/
+https://spring.io/guides/gs/spring-boot/
+https://spring.io/projects/spring-boot#learn
+https://spring.io/projects/spring-boot#samples
+https://spring.io/guides/topicals/spring-security-architecture
+
+https://docs.spring.io/spring-boot/docs/current/
+https://docs.spring.io/spring-boot/docs/current/api/
+https://docs.spring.io/spring-boot/docs/current/maven-plugin/
+https://docs.spring.io/spring-boot/docs/current/actuator-api/html/
+https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/
 
 ## Spring Best Practices
 [Article](https://www.e4developer.com/2018/08/06/spring-boot-best-practices/)
@@ -62,6 +77,10 @@ Defaults (as of 9/2019):
       - Spring Data JDBC
       - MySQL Driver
       - H2 Database
+         - Add dependency to pom.xml
+         - Access the H2 Console spring.h2.console.enabled=true
+         - Navigate to http://localhost:8080/h2-console to view
+         - The credentials can be specified in the application.properties file
       - JDBC API
       - MyBatis Framework
       - PostgreSQL Driver
