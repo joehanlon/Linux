@@ -214,3 +214,34 @@ Un-opinionated means then that you can do something however you choose.
 Don't change the source code without an issue.  
 Keep the visibility and traceability.  
 
+Dependency Injection == where Spring shines.  
+Version control and dependency injection is the cornerstone of Spring.  
+
+#### S.O.L.I.D. OOP Principles 
+- From Robert Martin 1995
+- 5 principles focus on dependency management
+- avoid god classes
+1. **Single Responsibility**
+   * Every class should have 1 responsibility
+   * Never should be more than 1 reason for a class to change
+   * Classes should be small -- No God Classes
+2. **Open-Closed**
+   * Classes should be open for extension
+   * BUT closed for modification
+   * Use private variables w/ getters and setters - ONLY when you need them
+   * Use abstract base classes
+3. **Liskov Substitution**
+   * Objects in a program would be replaceable w/ instances of their subtypes WITHOUT altering the correctness of the program
+   * Violations will often fail the classification test
+      - A square is a rectangle
+      - But a rectangle is not a square : FAIL
+4. **Interface Segregation**
+   * Make fine-grained interfaces that are client specific
+   * Many client-specific interfaces are better than one "general purpose" interface
+   * Keep your components focused and minimize dependencies between them
+5. **Dependency Inversion**
+   * Would you solder a lamp directly to the electrical wiring in a wall rather than using a plug?
+   * Abstractions should not upon the details
+   * Details should not depend upon abstractions
+   * Important that higher level and lower level objects depend on the same abstract interaction
+   * This is NOT dependency injection
