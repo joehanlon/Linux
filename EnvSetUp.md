@@ -147,6 +147,18 @@ ls -lsa /usr/share/maven
 ls -lsa /etc/maven  
 ```
 
+### Building an Executable JAR
+```console
+# Run the App in the directory with the pom.xml file
+./mvnw spring-boot:run
+
+# Or, build the JAR file then run it
+./mvnw clean package
+java -jar target/gs-securing-web-0.1.0.jar
+
+# Go to http://localhost:8080
+```
+
 ## Installing Tomcat
 [ToC](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#table-of-contents)
 
