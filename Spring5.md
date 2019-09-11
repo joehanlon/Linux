@@ -291,4 +291,42 @@ This avoids issues caused by the user trying to get things himself.
 8. Custom Init Method
 9. Post Initialization (BeanPostProcessors)
 10. Bean is ready to use!
+#### ~~~~
+11. Container Shutdown
+12. Disposable Bean's destroy() method
+13. Call Custom Destroy Method 
+14. TERMINATED
+
+## Callback Interfaces
+- Spring has 2 interfaces you can implement for call back events
+- InitializingBean.afterPropertiesSet()
+   - called after properties are set
+- DisposableBean.destroy()
+   - Called during bean destruction in shutdown
+
+## Bean Post Processors
+- Gives you a means to tap into the Spring context life cycle and interact w/ beans as they are processed
+- Implement interface BeanPostProcessor
+   - postProcessBeforeInitialization : Called before bean initialization method
+   - postProcessAfterInitialization : Called after bean initialization
+
+## 'Aware' Interfaces
+- Spring has over 14 'Aware' interfaces
+- These are used to access the Spring Framework infrastructure
+- These are largely used within the framework
+- Rarely used by Spring developers
+- ApplicationContextAware : Interface to be implemented by any object that wishes to be notified of the ApplicationContext that it runs in.
+- ApplicationEventPublisherAware : Set the ApplicationEventPublisher that this object runs in.
+- BeanClassLoaderAware : Callback that supplies the bean class loader to a bean instance.
+- BeanFactoryAware : Callback that supplies the owning factory to a bean instance.
+- BeanNameAware : Set the name of the bean in the bean factory that created this bean. 
+- BootstrapContextAware : Set the BootstrapContext that this object runs in. 
+- LoadTimeWeaverAware : Set the LoadTimeWeaver of this object's containing ApplicationContext. 
+- MessageSourceAware : Set the MessageSource that this object run in. 
+- NotificationPublisherAware : Set the NotificationPublisher instance for the current managed resource instance. 
+- PortletConfigAware : Set the PortletConfig this object runs in. 
+- PortletContextAware : Set the PortletContext that this object runs in. 
+- ResourceLoaderAware : Set the ResourceLoader that this object runs in. 
+- ServletConfigAware : Set the ServletConfig that this object runs in. 
+- ServletContextAware : Set the ServletContext that this object runs in. 
 
