@@ -81,6 +81,11 @@ Defaults (as of 9/2019):
          - Access the H2 Console spring.h2.console.enabled=true
          - Navigate to http://localhost:8080/h2-console to view
          - The credentials can be specified in the application.properties file
+         - [StackOverflow](https://stackoverflow.com/questions/55349373/database-not-found-and-ifexists-true-so-we-cant-auto-create-it)
+            * 2019 Versions of H2 will not auto-create an in-memory database. 
+               - Use a pre-2019 version, defined in the pom.xml file
+               - OR start the server, then change the field "JDBC URL:" from "jdbc:h2:~/test" to "jdbc:h2:mem:testdb"
+               - [Reference](https://github.com/h2database/h2database/commit/8b53f3999c6c5c3d5ca29020e2657968f4f59ec4)
       - JDBC API
       - MyBatis Framework
       - PostgreSQL Driver
