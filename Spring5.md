@@ -97,9 +97,11 @@ spring-security-saml-1.0.9.RELEASE\
    | |     | | |_ head.jsp
    | |     | | |_ navigation.jsp
    | |     | | |_ sidebar.jsp
+   | |     | |
    | |     | |_ saml-servlet.xml
    | |     | |_ securityContext.xml
    | |     | |_ web.xml
+   | |     |
    | |     |_ error.jsp
    | |     |_ index.jsp
    | |     |_ logout.jsp
