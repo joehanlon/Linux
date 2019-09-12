@@ -38,13 +38,16 @@ git clone https://github.com/spring-projects/spring-security-saml.git
 #### Proceeding with Building from a Release (Version 1.0.9 as of 9/12/2019)
 ```console
 spring-security-saml-1.0.9.RELEASE\
+   |
    |_ docs\
    | |_ api\
    | |_ reference\
+   |
    |_ libs\
    | |_ spring-security-saml2-core-1.0.9.RELEASE.jar
    | |_ spring-security-saml2-core-1.0.9.RELEASE-javadoc.jar
    | |_ spring-security-saml2-core-1.0.9.RELEASE-sources.jar
+   |
    |_ sample\
    | |_ src\
    | | |_ main\
@@ -57,20 +60,25 @@ spring-security-saml-1.0.9.RELEASE\
    | |   |           |_ MetadataController.java
    | |   |           |_ MetadataForm.java
    | |   |           |_ MetadataValidator.java
+   | |   |
    | |   |_ resources\
    | |   | |_ metadata\
    | |   | | |_ idp.xml
+   | |   | |
    | |   | |_ security\
    | |   | | |_ samlKeystore.jks
    | |   | |_ log4j.properties
+   | |   |
    | |   |_ webapp\
    | |     |_ css\
    | |     | |_ style.css
+   | |     | 
    | |     |_ images\
    | |     | |_ favicon.png
    | |     | |_ logo.png
    | |     | |_ main-two-columns.gif
    | |     | |_ main-two-columns-left.gif
+   | |     |
    | |     |_ WEB-INF\
    | |     | |_ security\
    | |     | | |_ adminLogin.jsp
@@ -79,6 +87,7 @@ spring-security-saml-1.0.9.RELEASE\
    | |     | | |_ metadataList.jsp
    | |     | | |_ metadataView.jsp
    | |     | | |_ providerView.jsp
+   | |     | | 
    | |     | |_ templates\
    | |     | | |_ footer.jsp
    | |     | | |_ head.jsp
