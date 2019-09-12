@@ -887,6 +887,8 @@ sdk version
 [Good Presentation Java Web Security](https://events.static.linuxfound.org/sites/events/files/slides/anatomy-secure-web-app-acna-2017-v2.pdf)
 [SAML SSO w/ Tomcat](https://dzone.com/articles/saml-single-sign-on-with-tomcat-and-picketlink)
 [StackOverflow Spring Security SAML Tomcat](https://stackoverflow.com/questions/25212087/spring-security-saml-metadata-url-on-tomcat)
+[Spring Security Authentication](https://www.baeldung.com/spring-security-authentication-provider)
+
 
 ## Links
 [ToC](https://github.com/joehanlon/Linux/blob/master/EnvironmentSetUp.md#table-of-contents)
