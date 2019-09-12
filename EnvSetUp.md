@@ -888,7 +888,7 @@ sdk version
 [SAML SSO w/ Tomcat](https://dzone.com/articles/saml-single-sign-on-with-tomcat-and-picketlink)
 [StackOverflow Spring Security SAML Tomcat](https://stackoverflow.com/questions/25212087/spring-security-saml-metadata-url-on-tomcat)
 [Spring Security Authentication](https://www.baeldung.com/spring-security-authentication-provider)
-
+[Sample SAML App](https://github.com/Endeios/samlv2app)
 
 ## Links
 [ToC](https://github.com/joehanlon/Linux/blob/master/EnvironmentSetUp.md#table-of-contents)
