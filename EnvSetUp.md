@@ -875,6 +875,18 @@ source "$HOME/.sdkman/bin/sdkman-init.sh"
 # Verify installation succeeded :
 sdk version
 ```
+## Spring Security
+[Spring Security](https://spring.io/projects/spring-security)
+[Spring Security SAML](https://projects.spring.io/spring-security-saml/)
+[Spring Security SAML GitHub](https://github.com/spring-projects/spring-security-saml)
+[Spring Security SAML Reference](https://docs.spring.io/spring-security-saml/docs/current/reference/htmlsingle/)
+[Spring Security SAML API](https://docs.spring.io/spring-security-saml/docs/current/api/)
+[Keycloak SAML Tomcat Adapter](https://www.keycloak.org/docs/5.0/securing_apps/index.html#_saml-tomcat-adapter)
+[Keycloak Documentation](https://github.com/keycloak/keycloak-documentation/blob/master/securing_apps/topics/oidc/java/spring-security-adapter.adoc)
+[Keycloak Downloads](https://www.keycloak.org/downloads.html)
+[Good Presentation Java Web Security](https://events.static.linuxfound.org/sites/events/files/slides/anatomy-secure-web-app-acna-2017-v2.pdf)
+[SAML SSO w/ Tomcat](https://dzone.com/articles/saml-single-sign-on-with-tomcat-and-picketlink)
+[StackOverflow Spring Security SAML Tomcat](https://stackoverflow.com/questions/25212087/spring-security-saml-metadata-url-on-tomcat)
 
 ## Links
 [ToC](https://github.com/joehanlon/Linux/blob/master/EnvironmentSetUp.md#table-of-contents)
