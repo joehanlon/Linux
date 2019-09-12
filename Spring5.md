@@ -99,12 +99,107 @@ spring-security-saml-1.0.9.RELEASE\
    | |     |_ error.jsp
    | |     |_ index.jsp
    | |     |_ logout.jsp
+   | |
    | |_ target\
    | |_ pom.xml
    |_ license.txt
-   
-
 ```
+
+#### Configuration of IDP metadata
+**Modify file securityContext.xml and replace the metadata bean**
+_The settings tell system to download IDP metadata from the given URL with timeout of 5 seconds. In
+production system metadata should be either stored as a local file or be downloaded from a source
+using SSL/TLS with configured trust or which provides digitally signed metadata._  
+```console
+<bean id="metadata" class="org.springframework.security.saml.metadata.CachingMetadataManager">
+   <constructor-arg>
+      <list>
+         <bean class="org.opensaml.saml2.metadata.provider.HTTPMetadataProvider">
+            <constructor-arg>
+               <value type="java.lang.String">http://idp.ssocircle.com/idp-meta.xml</value>
+            </constructor-arg>
+            <constructor-arg>
+               <value type="int">5000</value>
+            </constructor-arg>
+            <property name="parserPool" ref="parserPool"/>
+         </bean>
+      </list>
+   </constructor-arg>
+</bean>
+```
+#### Generation of SP metadata
+**Modify securityContext.xml again, replacing metadataGeneratorFile bean**
+_Make sure to replace the entityId value with a string which
+is unique within the SSO Circle service (e.g. urn:test:yourname:yourcity):_
+```console
+<bean id="metadataGeneratorFilter" class="org.springframework.security.saml.metadata.MetadataGeneratorFilter">
+   <constructor-arg>
+      <bean class="org.springframework.security.saml.metadata.MetadataGenerator">
+         <property name="entityId" value="replaceWithUniqueIdentifier"/>
+         <property name="extendedMetadata">
+            <bean class="org.springframework.security.saml.metadata.ExtendedMetadata">
+               <property name="signMetadata" value="false"/>
+               <property name="idpDiscoveryEnabled" value="true"/>
+            </bean>
+         </property>
+      </bean>
+   </constructor-arg>
+</bean>
+```
+#### Compilation
+```console
+# Gradle (doesn't work as of 9/12/2019)
+# If building from the source
+# Can find spring-security-saml2-sample.war in directory sample/build/libs
+gradlew build install
+
+# Maven (requires check for 
+# If building from the release zip
+mvn package
+```
+#### As of 9/12/2019, There will be a compilation error when trying to compile 
+#### This means that you need to update the references to a certain compiler
+```console
+[ERROR] COMPILATION ERROR :
+[INFO] -------------------------------------------------------------
+[ERROR] Source option 6 is no longer supported. Use 7 or later.
+[ERROR] Target option 6 is no longer supported. Use 7 or later.
+...
+```
+#### Search within build and update 1.6 --> 1.7
+```console
+<plugin>
+   <groupId>org.apache.maven.plugins</groupId>
+   <artifactId>maven-compiler-plugin</artifactId>
+   <configuration>
+      <source>1.7</source>
+      <target>1.7</target>
+   </configuration>
+</plugin>
+```
+#### Compile & Deploy
+```console
+mvn package
+mvn tomcat7:run
+
+# If you want to see more logging results from compilation, run this :
+mvn -X package
+```
+**Tomcat7 is referenced in the build portion of the pom.xml**
+```
+<plugin>
+   <groupId>org.apache.tomcat.maven</groupId>
+   <artifactId>tomcat7-maven-plugin</artifactId>
+   <version>2.2</version>
+   <configuration>
+       <path>/spring-security-saml2-sample</path>
+   </configuration>
+</plugin>
+```
+After startup the Spring SAML sample application will be available at  
+http://localhost:8080/springsecurity-saml2-sample  
+
+
 
 
 
