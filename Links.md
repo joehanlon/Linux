@@ -22,3 +22,7 @@
 [Callicoder : Spring Security React Ant Design Polls App](https://github.com/callicoder/spring-security-react-ant-design-polls-app)  
 [Callicoder : Spring Boot React OAuth2 Social Login Demo](https://github.com/callicoder/spring-boot-react-oauth2-social-login-demo)  
 [Spring Boot SSO w/ Spring Security OAuth](https://shekhargulati.com/2018/02/15/single-sign-on-in-spring-boot-applications-with-spring-security-oauth/)  
+[OAuth vs SAML](https://tejas619.github.io/2017/07/07/OAuth-vs-SAML/)  
+[How SAML Works](https://dzone.com/articles/how-saml-authentication-works)  
+[SSO / SLO w/ SAML2.0](https://spin.atomicobject.com/2019/04/06/saml-2-0-flow/)  
+[Solving Substantiation w/ SAML](https://www.f5.com/services/resources/white-papers/solving-substantiation-with-saml)  
