@@ -26,3 +26,12 @@
 [How SAML Works](https://dzone.com/articles/how-saml-authentication-works)  
 [SSO / SLO w/ SAML2.0](https://spin.atomicobject.com/2019/04/06/saml-2-0-flow/)  
 [Solving Substantiation w/ SAML](https://www.f5.com/services/resources/white-papers/solving-substantiation-with-saml)  
+[SSO on SAML and SLO](https://medium.com/@BoweiHan/elijd-single-sign-on-saml-and-single-logout-624efd5a224)  
+[What is SAML?](https://www.varonis.com/blog/what-is-saml/)  
+https://www.mutuallyhuman.com/blog/choosing-an-sso-strategy-saml-vs-oauth2/  
+https://medium.com/@Ratnaparkhi/testing-saml-flow-in-your-node-js-application-1ab82f95b69d  
+https://www.springboottutorial.com/spring-boot-react-full-stack-with-spring-security-basic-and-jwt-authentication  
+https://www.npmjs.com/package/saml2-js  
+https://samlify.js.org/#/?id=samlify  
+https://developer.okta.com/blog/2018/07/19/simple-crud-react-and-spring-boot  
+https://github.com/oktadeveloper/okta-spring-boot-react-crud-example/tree/master/app  
