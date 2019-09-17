@@ -21,3 +21,4 @@
 [SAML2.0 Authentication w/ NodeJS & SPA](https://stackoverflow.com/questions/44593120/saml2-0-authentication-with-node-js-and-spa)  
 [Callicoder : Spring Security React Ant Design Polls App](https://github.com/callicoder/spring-security-react-ant-design-polls-app)  
 [Callicoder : Spring Boot React OAuth2 Social Login Demo](https://github.com/callicoder/spring-boot-react-oauth2-social-login-demo)  
+[Spring Boot SSO w/ Spring Security OAuth](https://shekhargulati.com/2018/02/15/single-sign-on-in-spring-boot-applications-with-spring-security-oauth/)  
