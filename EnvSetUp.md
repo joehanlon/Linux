@@ -875,6 +875,67 @@ source "$HOME/.sdkman/bin/sdkman-init.sh"
 # Verify installation succeeded :
 sdk version
 ```
+
+## Setting-Up Git Repos 
+```console
+git config --global user.name
+git config --global user.name "Firstname Lastname"
+
+git config --global user.email
+git config --global user.email "email@address.com"
+```
+1. [Generate new SSH Key and Add it to the ssh-agent](https://help.github.com/en/enterprise/2.15/user/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+2. [Add a new ssh key to your GitHub acct](https://help.github.com/en/enterprise/2.15/user/articles/adding-a-new-ssh-key-to-your-github-account)
+
+1. Open Git Bash
+2. Paste this text into the terminal :
+```console
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+```
+
+
+```console
+604568@BAH5CD9088ZN2 MINGW64 ~
+$ ssh-keygen -t rsa -b 4096 -C "Hanlon_Joseph@bah.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/604568/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/604568/.ssh/id_rsa.
+Your public key has been saved in /c/Users/604568/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:ZlxQQSOqv+TI1AuKDO4E40CWQ+6v6tDdTFGwUuZZUH8 Hanlon_Joseph@bah.com
+The key's randomart image is:
++---[RSA 4096]----+
+| .    =+*o=.     |
+|o .  + * + .     |
+| *  . *   o E    |
+|+ .  o o . .     |
+|+.  . . S        |
+|+o.. * o         |
+|oo..+ *          |
+|*..+ = o         |
+|**. o +          |
++----[SHA256]-----+
+
+604568@BAH5CD9088ZN2 MINGW64 ~
+$ eval $(ssh-agent -s)
+Agent pid 11584
+
+604568@BAH5CD9088ZN2 MINGW64 ~
+$ ssh-add ~/.ssh/id_rsa
+Identity added: /c/Users/604568/.ssh/id_rsa (Hanlon_Joseph@bah.com)
+
+604568@BAH5CD9088ZN2 MINGW64 ~
+$ clip < ~/.ssh/id_rsa.pub
+```
+
+```console
+C:\Users\604568\fda_ui>git clone git@github.boozallencsn.com:fda-epidemic-visualization/fda-opioids-gateway.git
+```
+
+
+
 ## Spring Security
 [Spring Security](https://spring.io/projects/spring-security)  
 [Spring Security SAML](https://projects.spring.io/spring-security-saml/)  
