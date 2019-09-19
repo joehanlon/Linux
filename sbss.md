@@ -140,18 +140,59 @@ sbss/
 | | |     | 
 | | |     |_ controllers/
 | | |     | |_ LandingController.java
+| | |     | | |_ LandingController
+| | |     | |   |_ @Controller
+| | |     | |     |_ String landing(@CurrentUser User user, Model model)
+| | |     | |       |_ @RequestMapping("/landing")
+| | |     | |
 | | |     | |_ SSOController.java
+| | |     |   |_ SSOController
+| | |     |     |_ @Controller
+| | |     |     |_ @RequestMapping("/saml")
+| | |     |       |_ @RequestMapping(value = "/discovery", method = RequestMethod.GET)
 | | |     |
 | | |     |_ core/
 | | |     | |_ CurrentUserHandlerMethodArgumentResolver.java
+| | |     | | |_ CurrentUserHandlerMethodArgumentResolver implements HandlerMethodArgumentResolver
 | | |     | |_ SAMLUserDetailsServiceImpl.java
+| | |     |   |_ SAMLUserDetailsServiceImpl implements SAMLUserDetailsService 
+| | |     |     |_ @Service
+| | |     |       |_ Object loadUserBySAML(SAMLCredential credential) throws UsernameNotFoundException 
+| | |     |         |_ return new User(userID, "<abc123>", true, true, true, true, authorities)
 | | |     |
 | | |     |_ stereotypes/
 | | |     | |_ CurrentUser.java
+| | |     |   |_ public @interface CurrentUser 
+| | |     |     |_ @Target(ElementType.PARAMETER)
+| | |     |     |_ @Retention(RetentionPolicy.RUNTIME)
+| | |     |     |_ @Documented
 | | |     |
 | | |     |_ Application.java
+| | |       |_ MAIN APP
 | | |
 | | |_ resources/
+| |   |_ saml/
+| |   | |_ ssocircle and java keystore
+| |   | 
+| |   |_ static/
+| |   | |_ css/
+| |   | | |_ boostrap.min.css
+| |   | | |_ boostrap.min.css.map
+| |   | | |_ spring-saml-sp.css
+| |   | |
+| |   | |_ img/
+| |   | | |_ favicon.ico
+| |   | | |_ nyan-cat.png
+| |   | | |_ saml-flow.png
+| |   | | |_ spring-boot-saml.png
+| |   | | 
+| |   | |_ js/
+| |   |   |_ boostrap.min.js
+| |   |   |_ boostrap.min.js.map
+| |   | 
+| |   |_ templates/
+| |   | |_ 
+| |   | 
 | |   |_ application.properties
 | | 
 | |_ test/
