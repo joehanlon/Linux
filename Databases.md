@@ -164,19 +164,19 @@ su joseph _(my ubuntu id)_  --> enter joseph pw
 
 
 # GraphQL
-https://news.ycombinator.com/item?id=14676531 
-https://news.ycombinator.com/item?id=14746169 
-https://www.freecodecamp.org/news/graphql-for-front-end-developers-1f59808f4435/ 
-https://medium.com/free-code-camp/graphql-for-front-end-developers-1f59808f4435 
-https://thenewstack.io/graphql-data-query-language-resource-guide/ 
-https://blog.digitalocean.com/learning-graphql-by-doing/ 
-https://leapgraph.com/graphql-postgresql-postgraphile 
-https://graphql.org/learn/queries/#directives 
-https://blog.apollographql.com/the-anatomy-of-a-graphql-query-6dffa9e9e747 
-https://blog.apollographql.com/batching-client-graphql-queries-a685f5bcd41b 
-https://github.com/graphql/graphql-spec/issues/375 
+https://news.ycombinator.com/item?id=14676531  
+https://news.ycombinator.com/item?id=14746169  
+https://www.freecodecamp.org/news/graphql-for-front-end-developers-1f59808f4435/  
+https://medium.com/free-code-camp/graphql-for-front-end-developers-1f59808f4435  
+https://thenewstack.io/graphql-data-query-language-resource-guide/  
+https://blog.digitalocean.com/learning-graphql-by-doing/  
+https://leapgraph.com/graphql-postgresql-postgraphile  
+https://graphql.org/learn/queries/#directives  
+https://blog.apollographql.com/the-anatomy-of-a-graphql-query-6dffa9e9e747  
+https://blog.apollographql.com/batching-client-graphql-queries-a685f5bcd41b  
+https://github.com/graphql/graphql-spec/issues/375  
 
-https://stackoverflow.com/questions/51863657/graphql-querying-with-dynamic-filtering-criteria
-https://stackoverflow.com/questions/34321688/can-graphql-return-aggregate-counts
-https://stackoverflow.com/questions/35036221/support-of-aggregate-function-in-graphql
-https://stackoverflow.com/questions/47331391/graphql-return-calculated-type-dependent-on-argument
+https://stackoverflow.com/questions/51863657/graphql-querying-with-dynamic-filtering-criteria  
+https://stackoverflow.com/questions/34321688/can-graphql-return-aggregate-counts  
+https://stackoverflow.com/questions/35036221/support-of-aggregate-function-in-graphql  
+https://stackoverflow.com/questions/47331391/graphql-return-calculated-type-dependent-on-argument  
