@@ -181,3 +181,4 @@ https://stackoverflow.com/questions/34321688/can-graphql-return-aggregate-counts
 https://stackoverflow.com/questions/35036221/support-of-aggregate-function-in-graphql  
 https://stackoverflow.com/questions/47331391/graphql-return-calculated-type-dependent-on-argument  
 https://stackoverflow.com/questions/40945940/graphql-queries-with-tables-join  
+https://stackoverflow.com/questions/56073110/computed-fields-on-a-graphql-schema-or-query-with-apollo-client  
