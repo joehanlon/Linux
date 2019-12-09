@@ -976,3 +976,4 @@ C:\Users\604568\fda_ui>git clone git@github.boozallencsn.com:fda-epidemic-visual
 [Prisma.io](https://www.prisma.io/docs/1.1/faq/pricing-fae2ooth2u)
 [Jenkins](https://jenkins.io/)
 [Install Gradle](https://www.tutorialspoint.com/gradle/gradle_installation.htm)
+[Instal Tor on Ubuntu](https://itsfoss.com/install-tar-browser-linux/#comments)
