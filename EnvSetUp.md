@@ -934,7 +934,32 @@ $ clip < ~/.ssh/id_rsa.pub
 C:\Users\604568\fda_ui>git clone git@github.boozallencsn.com:fda-epidemic-visualization/fda-opioids-gateway.git
 ```
 
+## [Installing Tor](https://linuxize.com/post/how-to-install-tor-browser-on-ubuntu-18-04/)
+```
+sudo apt update
+sudo apt install apt-transport-https
+sudo add-apt-repository universe
 
+wget -q -O - https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | sudo apt-key add -
+
+echo "deb https://deb.torproject.org/torproject.org $(lsb_release -cs) main" | sudo tee -a /etc/apt/sources.list
+
+sudo apt update
+sudo apt install tor deb.torproject.org-keyring torbrowser-launcher
+```
+
+#### Update Tor Browser
+```
+sudo apt update
+sudo apt upgrade
+```
+
+#### Uninstall Tor
+```
+sudo apt-get remove --purge tor
+sudo apt-get remove --purge torbrowser-launcher
+
+```
 
 ## Spring Security
 [Spring Security](https://spring.io/projects/spring-security)  
