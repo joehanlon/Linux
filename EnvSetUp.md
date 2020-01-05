@@ -958,7 +958,25 @@ sudo apt upgrade
 ```
 sudo apt-get remove --purge tor
 sudo apt-get remove --purge torbrowser-launcher
+```
 
+## [Installing DBeaver](https://computingforgeeks.com/install-and-configure-dbeaver-on-ubuntu-debian/)
+[Install DBeaver on 18.04](https://www.osradar.com/install-dbeaver-ubuntu-18-04-linux-mint-19/)
+```
+## Upgrade the system
+sudo apt update && sudo apt upgrade
+
+## Install default Java development runtime 
+sudo apt install default-jdk
+
+## Find the GPG Key
+wget -O - https://dbeaver.io/debs/dbeaver.gpg.key | sudo apt-key add -
+
+## Add the repo
+echo "deb https://dbeaver.io/debs/dbeaver-ce /" | sudo tee /etc/apt/sources.list.d/dbeaver.list
+
+## Install DBeaver
+sudo apt update && sudo apt install dbeaver-ce
 ```
 
 ## Spring Security
