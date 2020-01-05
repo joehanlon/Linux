@@ -1,3 +1,8 @@
+[Spring Boot + Postgres + Docker Container](https://experto.dev/en/spring-boot-with-postgresql-and-docker-compose/)
+
+https://sebastiankoltun-blog.com/index.php/2019/02/12/postgresql-docker-spring-boot/  
+
+[Postgres + Liquibase + Docker + Maven + Jav](https://www.youtube.com/watch?v=nVmRY4Ri4CA)
 
 https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04  
 
