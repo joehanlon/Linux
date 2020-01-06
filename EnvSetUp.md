@@ -930,6 +930,39 @@ Identity added: /c/Users/604568/.ssh/id_rsa (Hanlon_Joseph@bah.com)
 $ clip < ~/.ssh/id_rsa.pub
 ```
 
+#### [get and copy new key to GitHub](https://virtualzero.net/blog/how-to-add-an-ssh-public-key-to-github-from-Ubuntu-18.04-lts)
+```console
+ssh-keygen -t rsa -b 4096 -C "joehanlon91@gmail.com"
+
+### Can leave blank when prompted: 
+Enter file in which to save the key (/home/joehanlon/.ssh/id_rsa):          
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+
+### Output:  
+The key fingerprint is:
+SHA256:nfOtNxY9F7QkIw1yYTCmEwLsd0EbogqP0rdLcIENL0M joehanlon91@gmail.com
+The key's randomart image is:
++---[RSA 4096]----+
+|  E..o.+ =.=+    |
+| . *. o.* =. + o |
+|. =.+  +.   . = .|
+|.+.+ o ... .   o |
+|o.+ + . S +    ..|
+|.  + .     o ...o|
+|    o       . ..o|
+|   . .       .+  |
+|    .       .o . |
++----[SHA256]-----+
+
+### Output the new key : 
+cat ~/.ssh/id_rsa.pub
+
+### Copy the contents and paste to GitHub
+### Save the new key
+```
+
+
 ```console
 C:\Users\604568\fda_ui>git clone git@github.boozallencsn.com:fda-epidemic-visualization/fda-opioids-gateway.git
 ```
