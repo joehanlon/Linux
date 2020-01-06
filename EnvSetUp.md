@@ -960,8 +960,10 @@ cat ~/.ssh/id_rsa.pub
 
 ### Copy the contents and paste to GitHub
 ### Save the new key
-```
 
+### Make sure that you use SSH to clone the repository, or else you may have to use your username + password every time you use git
+### Related : https://stackoverflow.com/questions/7773181/git-keeps-prompting-me-for-a-password
+```
 
 ```console
 C:\Users\604568\fda_ui>git clone git@github.boozallencsn.com:fda-epidemic-visualization/fda-opioids-gateway.git
