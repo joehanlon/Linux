@@ -1,5 +1,6 @@
 ## Table of Contents
 #### _Follow this list of instructions in order to setup the following in Ubuntu_ : 
+   0. [Ubuntu](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#installing-ubuntu)
    1. [Java](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#installing-java)
    2. [Maven](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#installing-maven)
    3. [Tomcat](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#installing-tomcat)
@@ -11,6 +12,18 @@
    9. [VSCode](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#installing-VSCode)
    10. [Node](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#installing-Node)
 ### Note : Each package will require editing environment variables
+
+## Installing Ubuntu
+1. Download Ubuntu ISO : https://www.ubuntu.com/download/desktop
+2. Create Bootable USB : https://rufus.ie/
+3. https://vitux.com/how-to-install-ubuntu-18-04-along-with-windows-10/
+
+Replace Windows entirely :  
+1. Plug in Ubuntu USB
+2. Restart computer, hit F12 (or F10) as soon as it restarts to get to the BIOS menu
+3. Navigate to something named "BOOT" to find a boot sub-menu
+4. Select Hard Disk Drives > 1st Boot Device > Select USB
+5. Follow Ubuntu Instructions : https://www.avoiderrors.com/boot-computer-using-usb-drive/
 
 Launch terminal by pressing Ctrl+Alt+T  
 ## Installing Java 
@@ -782,6 +795,7 @@ sudo apt install nodejs
 sudo npm install npm@latest -g
 
 # Verify install
+nodejs --version
 node -v
 npm -v
 ```
@@ -805,14 +819,26 @@ export NVM_DIR=”$HOME/.nvm”
 [ -s “$NVM_DIR/nvm.sh” ] && \. “$NVM_DIR/nvm.sh”
 [ -s "$NVM_DIR/bash_completion" ] && \.   "$NVM_DIR/bash_completion"
 
-# Verify
+# Verify the installation
 nvm --version
+## Or use : 
+command -v nvm
+
+# List Nodejs versions installed
+nvm list
 
 # List Node.js versions available 
 nvm ls-remote
 
+# Install the latest version
+nvm install node
+
 # Install a specific version 
 nvm install 8.11.1
+
+# Install the latest Long-Term Support version
+nvm install --lts
+
 # Switch to using most recently installed version
 nvm use 8.11.1
 
@@ -822,13 +848,16 @@ nvm ls
 # Make a version your default type 
 # This version will now be automatically used
 nvm alias default 8.11.1
+
 # It can also be referenced as "default"
 nvm use default
+
+# Specify which version of Node to run (if multiple installed)
+nvm run node v9.3.0
 ```
 #### Remove Node
-[Install & Uninstall Node 1]
-[Install & Uninstall Node 2](https://ircama.github.io/osm-carto-tutorials/nodejs-commands/)
-[Install & Uninstall Node 3](https://dxtright.com/index.php/2018/09/20/install-nvm-node-js-globally-linux-based-system/)
+[Install & Uninstall Node 1](https://ircama.github.io/osm-carto-tutorials/nodejs-commands/)
+[Install & Uninstall Node 2](https://dxtright.com/index.php/2018/09/20/install-nvm-node-js-globally-linux-based-system/)
 
 ```console
 sudo apt remove npm
@@ -836,15 +865,26 @@ sudo apt remove nodejs
 sudo apt purge nodejs
 sudo apt autoremove
 
+## Or 
+sudo apt-get purge --auto-remove nodejs
+
+## Or
+sudo apt-get remove nodejs <br/>
+sudo apt-get remove npm <br/>
+sudo apt-get update <br/>
+which node
+
 # To uninstall a version you have enabled using nvm 
 nvm current
-nvm uninstall node_version
+nvm uninstall node_version # e.g. nvm uninstall v9.3.0
 nvm deactivate
 ```
 #### (Optional) Install Build Tools
 ```console
 # To compile and install native addons from npm you may also need to install build tools
 sudo apt-get install -y build-essential
+# Or use : 
+sudo apt install build-essential
 ```
 #### Install & Create a New React Project
 ```console
@@ -863,6 +903,8 @@ npm start
 ```
 
 ## Installing SDKMan
+[ToC](https://github.com/joehanlon/Linux/blob/master/EnvironmentSetUp.md#table-of-contents)
+
 [Install SDKMan](https://sdkman.io/install)
 [SDKMan GitHub](https://github.com/sdkman/sdkman-cli)
 
@@ -877,6 +919,8 @@ sdk version
 ```
 
 ## Setting-Up Git Repos 
+[ToC](https://github.com/joehanlon/Linux/blob/master/EnvironmentSetUp.md#table-of-contents)
+
 ```console
 git config --global user.name
 git config --global user.name "Firstname Lastname"
@@ -892,8 +936,6 @@ git config --global user.email "email@address.com"
 ```console
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 ```
-
-
 ```console
 604568@BAH5CD9088ZN2 MINGW64 ~
 $ ssh-keygen -t rsa -b 4096 -C "Hanlon_Joseph@bah.com"
@@ -970,6 +1012,8 @@ C:\Users\604568\fda_ui>git clone git@github.boozallencsn.com:fda-epidemic-visual
 ```
 
 ## [Installing Tor](https://linuxize.com/post/how-to-install-tor-browser-on-ubuntu-18-04/)
+[ToC](https://github.com/joehanlon/Linux/blob/master/EnvironmentSetUp.md#table-of-contents)
+
 ```
 sudo apt update
 sudo apt install apt-transport-https
@@ -996,6 +1040,8 @@ sudo apt-get remove --purge torbrowser-launcher
 ```
 
 ## [Installing DBeaver](https://computingforgeeks.com/install-and-configure-dbeaver-on-ubuntu-debian/)
+[ToC](https://github.com/joehanlon/Linux/blob/master/EnvironmentSetUp.md#table-of-contents)
+
 [Install DBeaver on 18.04](https://www.osradar.com/install-dbeaver-ubuntu-18-04-linux-mint-19/)
 ```
 ## Upgrade the system
@@ -1014,7 +1060,35 @@ echo "deb https://dbeaver.io/debs/dbeaver-ce /" | sudo tee /etc/apt/sources.list
 sudo apt update && sudo apt install dbeaver-ce
 ```
 
+## Installing Yarn
+```console
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - 
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list 
+sudo apt update 
+sudo apt install yarn 
+sudo apt install --no-install-recommends yarn 
+yarn --version 
+```
+#### Create a new project with Yarn
+```console
+yarn init my_yarn_project <br/>
+yarn add package_name <br/>
+yarn add package_name@version_or_tag
+yarn upgrade package_name
+yarn upgrade package_name@version_or_tag
+yarn remove package_name
+```
+
+#### Install all project dependencies that are specified in package.json
+```console
+yarn
+## Or use :
+yarn install 
+```
+
 ## Spring Security
+[ToC](https://github.com/joehanlon/Linux/blob/master/EnvironmentSetUp.md#table-of-contents)
+
 [Spring Security](https://spring.io/projects/spring-security)  
 [Spring Security SAML](https://projects.spring.io/spring-security-saml/)  
 [Spring Security SAML GitHub](https://github.com/spring-projects/spring-security-saml)  
@@ -1029,9 +1103,10 @@ sudo apt update && sudo apt install dbeaver-ce
 [Spring Security Authentication](https://www.baeldung.com/spring-security-authentication-provider)  
 [Sample SAML App](https://github.com/Endeios/samlv2app)  
 
+
+
 ## Links
 [ToC](https://github.com/joehanlon/Linux/blob/master/EnvironmentSetUp.md#table-of-contents)
-
 ## A
 ## B 
 ## C
@@ -1041,6 +1116,8 @@ sudo apt update && sudo apt install dbeaver-ce
 ## E
 ## F
 ## G
+#### GIMP
+[GIMP](https://www.gimp.org/downloads/)
 #### Gradle
 [Install Gradle](https://www.tutorialspoint.com/gradle/gradle_installation.htm)
 ### GraphQL 
@@ -1048,6 +1125,8 @@ sudo apt update && sudo apt install dbeaver-ce
 [GraphQL Java](https://www.graphql-java.com/documentation/v12/)
 ## H
 ## I
+#### Inkscape
+[Inkscape](https://inkscape.org/)
 #### IntelliJ
 [Install IntelliJ on Ubuntu 18.04 1](https://linuxize.com/post/how-to-install-intellij-idea-on-ubuntu-18-04/)
 [Install IntelliJ on Ubuntu 18.04 2](https://linuxconfig.org/install-intellij-on-ubuntu-18-04-bionic-beaver-linux)
@@ -1099,10 +1178,17 @@ sudo apt update && sudo apt install dbeaver-ce
 [Spring Security Extension RELEASES : Spring Security SAML](https://repo.spring.io/list/release/org/springframework/security/extensions/spring-security-saml/)
 ## T
 #### Tor
-[Instal Tor on Ubuntu](https://itsfoss.com/install-tar-browser-linux/#comments)
+[Install Tor on Ubuntu](https://itsfoss.com/install-tar-browser-linux/#comments)
 ## U
+#### Ubuntu
+[Install Ubuntu Alongside Windows 10](https://vitux.com/how-to-install-ubuntu-18-04-along-with-windows-10/)
+1. Download Ubuntu ISO : https://www.ubuntu.com/download/desktop
+2. Create Bootable USB : https://rufus.ie/
+3. https://vitux.com/how-to-install-ubuntu-18-04-along-with-windows-10/
 ## V
 ## W
 ## X
 ## Y
+#### Yarn
+[Yarn](https://yarnpkg.com/lang/en/)
 ## Z
