@@ -1,7 +1,7 @@
 ## KeyCloak 
-https://medium.com/@hasnat.saeed/setup-keycloak-server-on-ubuntu-18-04-ed8c7c79a2d9  
-https://www.keycloak.org/downloads.html 
-
+[Medium - Set-up Keycloak on an Ubuntu Server](https://medium.com/@hasnat.saeed/setup-keycloak-server-on-ubuntu-18-04-ed8c7c79a2d9)  
+[Download Keycloak](https://www.keycloak.org/downloads.html)  
+```console
 java -version  
 sudo apt-get update  
 sudo apt-get install default-jdk -y  
@@ -11,12 +11,11 @@ cd /usr/local
 sudo wget https://downloads.jboss.org/keycloak/7.0.0/keycloak-7.0.0.tar.gz   _(This will be a LONG download. ~30min)_  
 sudo tar -xvzf keycloak-7.0.0.tar.gz  
 sudo mv keycloak-7.0.0 /usr/local/keycloak  
-
 ```
 We should not run Keycloak under the root user for security reasons.  
 Let’s create a group keycloak and add a user keycloak to it.  
-```
 
+```console
 sudo groupadd keycloak  
 sudo useradd -r -g keycloak -d /usr/local/keycloak -s /sbin/nologin keycloak  
 sudo chown -R keycloak: keycloak  _(modify the ownership and permission of the /keycloak directory)_  
@@ -26,18 +25,23 @@ sudo mkdir keycloak  _(create a configuration directory for Keycloak under the /
 sudo cp /usr/local/keycloak/docs/contrib/scripts/systemd/wildfly.conf /etc/keycloak/keycloak.conf  _(Copy KeyCloak config file)_
 sudo cp /usr/local/keycloak/docs/contrib/scripts/systemd/launch.sh /usr/local/keycloak/bin/ _(copy the launch script)_  
 sudo chown keycloak: /usr/local/keycloak/bin/launch.sh  _(make keyloack user as the owner of this script so it can execute it)_  
-
+```
 #### Update the installation path in the launch.sh file :
+```console
 sudo nano /usr/local/keycloak/bin/launch.sh
---OR--  
+# --OR--  
 sudo gedit /usr/local/keycloak/bin/launch.sh  
-change WILDFLY_HOME to the root directory of keycloak from /opt/wildfly --> /usr/local/keycloak
+```
+change `WILDFLY_HOME` to the root directory of keycloak from /opt/wildfly --> /usr/local/keycloak
 
 #### Copy service definition file 
+```console
 sudo cp /usr/local/keycloak/docs/contrib/scripts/systemd/wildfly.service /etc/systemd/system/keycloak.service  
-
+```
 #### Edit the service file
+```console
 sudo gedit /etc/systemd/system/keycloak.service  
+```
 
 ```
 [Unit]  
@@ -60,18 +64,22 @@ WantedBy=multi-user.target
 ```
 
 #### Reload the systemd manager config and enable keycloak service on system startup
+```console
 sudo systemctl daemon-reload  
 sudo systemctl enable keycloak  
-
+```
 #### Start the service
+```console
 sudo systemctl start keycloak  
-
+```
 #### Check the status
+```console
 sudo systemctl status keycloak  
-
+```
 #### Can also tail the Keycloak server logs 
+```console
 sudo tail -f /usr/local/keycloak/standalone/log/server.log  
-
+```
 #### Now access the Keycloak server at : 
 ```
 http://<instance-public-ip>:8080/auth/  
@@ -82,10 +90,11 @@ Since we are accessing the server from outside of localhost,
 we have to use the bash script (add-user-keycloak.sh)  
 available under /usr/local/keycloak/bin/ directory  
 to create the initial administrator account.  
-
+```console
 sudo /usr/local/keycloak/bin/add-user-keycloak.sh -r master -u <username> -p <password>  
   
 sudo systemctl restart keycloak  
+```
 navigate to http://<instance-public-ip>:8080/auth/  
 
 /usr/local/keycloak/bin/kcadm.sh --> Admin CLI  
@@ -93,15 +102,16 @@ Admin CLI works by making HTTP requests to Admin REST endpoints.
 Access to them is protected and requires authentication.  
 
 #### Login, in order to CRUD
+```console
 sudo /usr/local/keycloak/bin/kcadm.sh config credentials --server http://localhost:8080/auth --realm master --user <admin-username> –-password <admin-password>  
 
 sudo /usr/local/keycloak/bin/kcadm.sh update realms/master -s sslRequired=NONE  
 http://<instance-public-ip>:8080/auth/admin/  
 
 sudo nano /etc/keycloak/keycloak.conf  
---OR--  
+# --OR--  
 sudo gedit /etc/keycloak.keycloak.conf  
-
+```
 #### Add this to the end of the file 
 ```
 # The address console to bind to 
@@ -109,7 +119,9 @@ WILDFLY_MANAGEMENT_CONSOLE_BIND=0.0.0.0
 ```
 
 #### Open launch.sh in /usr/local/keycloak/bin/ directory and change its contents
+```console
 sudo gedit /usr/local/keycloak/launch.sh  
+```
 
 ```
 #!/bin/bash
@@ -127,16 +139,20 @@ fi
 ```
 
 #### Open Keycloak's system service definition file and make the following changes
+```console
 sudo gedit /etc/systemd/system/keycloak.service  
 ```
 add $WILDFLY_MANAGEMENT_CONSOLE_BIND to ExecStart line (near the bottom)
-```
+```console
 sudo systemctl daemon-reload  
 sudo systemctl restart keycloak  
+```
 Go to http://<instance-public-ip>:9990  
 
 #### Create a management user 
+```console
 sudo /usr/local/keycloak/bin/add-user.sh  
+```
 - What type of user do you wish to add? a) Management User , b) Application User  
 a  
 - Enter username  
@@ -158,19 +174,15 @@ Added user 'wf' with groups to file '/usr/local/keycloak/domain/configuration/mg
 yes  
 
 #### Restart Keycloak
+```console
 sudo systemctl restart keycloak  
+```
 #### Now refresh the browser, which will now prompt for the WildFly credentials 
 ## Now we have setup a Keycloak server and enable / configured remote access to admin and management console
-https://www.keycloak.org/docs/latest/getting_started/index.html?source=post_page-----ed8c7c79a2d9----------------------  
-https://www.keycloak.org/docs/6.0/server_admin/?source=post_page-----ed8c7c79a2d9----------------------  
-https://www.keycloak.org/docs-api/6.0/rest-api/index.html?source=post_page-----ed8c7c79a2d9----------------------  
-https://www.keycloak.org/docs/6.0/server_installation/?source=post_page-----ed8c7c79a2d9----------------------  
-https://www.keycloak.org/downloads.html?source=post_page-----ed8c7c79a2d9----------------------  
-https://www.comakeit.com/quick-guide-using-keycloak-identity-access-management/  
-https://www.baeldung.com/spring-boot-keycloak  
-https://medium.com/@techgeek628/easily-secure-your-spring-boot-applications-with-keycloak-41e09acc88fd?source=post_page-----ed8c7c79a2d9----------------------  
-http://www.mastertheboss.com/jboss-frameworks/keycloak/introduction-to-keycloak  
-
-
-https://bgasparotto.com/start-stop-restart-wildfly/  
-https://hiplab.mc.vanderbilt.edu/projects/soempi/jboss_startstop.html  
+[Keycloak - Getting Started](https://www.keycloak.org/docs/latest/getting_started/index.html?source=post_page-----ed8c7c79a2d9----------------------)  
+[Keycloak - Guide to IAM](https://www.comakeit.com/quick-guide-using-keycloak-identity-access-management/)  
+[Keycloak - Baeldung Spring Boot + Keycloak Example](https://www.baeldung.com/spring-boot-keycloak)  
+[Medium - Spring Boot + Keycloak](https://medium.com/@techgeek628/easily-secure-your-spring-boot-applications-with-keycloak-41e09acc88fd?source=post_page-----ed8c7c79a2d9----------------------)  
+[Intro to Keycloak](http://www.mastertheboss.com/jboss-frameworks/keycloak/introduction-to-keycloak)  
+[Stop and Start Wildfly](https://bgasparotto.com/start-stop-restart-wildfly/)  
+[JBOSS](https://hiplab.mc.vanderbilt.edu/projects/soempi/jboss_startstop.html)  
