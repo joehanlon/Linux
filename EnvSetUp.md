@@ -1032,26 +1032,77 @@ sudo apt update && sudo apt install dbeaver-ce
 ## Links
 [ToC](https://github.com/joehanlon/Linux/blob/master/EnvironmentSetUp.md#table-of-contents)
 
-[PPA](https://itsfoss.com/ppa-guide/ "Personal Package Archive")
-[Linux Permissions](https://www.cyberciti.biz/faq/unix-linux-bsd-chmod-numeric-permissions-notation-command/)  
-[GraphQL Java](https://www.graphql-java.com/documentation/v12/)
-[Postman](https://www.getpostman.com/)
-[Install Postman on Ubuntu 18.04 1](https://linuxize.com/post/how-to-install-postman-on-ubuntu-18-04/)
-[Install Postman on Ubuntu 18.04 2](http://ubuntuhandbook.org/index.php/2018/09/install-postman-app-easily-via-snap-in-ubuntu-18-04/)
-[InVision](https://www.invisionapp.com/)
+## A
+## B 
+## C
+## D
+#### Draw.io
 [Draw.io](https://www.draw.io/)
-[Download MySQL](https://dev.mysql.com/downloads/)
-[Install MySQL on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04)
+## E
+## F
+## G
+#### Gradle
+[Install Gradle](https://www.tutorialspoint.com/gradle/gradle_installation.htm)
+### GraphQL 
+#### GraphQL-Java
+[GraphQL Java](https://www.graphql-java.com/documentation/v12/)
+## H
+## I
+#### IntelliJ
 [Install IntelliJ on Ubuntu 18.04 1](https://linuxize.com/post/how-to-install-intellij-idea-on-ubuntu-18-04/)
 [Install IntelliJ on Ubuntu 18.04 2](https://linuxconfig.org/install-intellij-on-ubuntu-18-04-bionic-beaver-linux)
-[NGINX](https://www.nginx.com/resources/wiki/start/topics/tutorials/install/)
-[Install NGINX on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04)
+#### InVision
+[InVision](https://www.invisionapp.com/)
+## J
+#### Jenkins
+[Jenkins](https://jenkins.io/)
+## K
+## L
+#### Linux Permissions
+[Linux Permissions](https://www.cyberciti.biz/faq/unix-linux-bsd-chmod-numeric-permissions-notation-command/)
+## M
+#### MongoDB
+[Install MongoDB on Ubuntu](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/ "Official")
+[Install MongoDB on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-mongodb-on-ubuntu-18-04)
+#### MySQL  
+[MySQL](https://dev.mysql.com/downloads/)
+[Install MySQL on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04)
+## N  
+#### Neo4j
 [Neo4J](https://debian.neo4j.org/)
 [Install Neo4J on Ubuntu](https://neo4j.com/docs/operations-manual/current/installation/linux/debian/ "Official")
 [Install Neo4J on Ubuntu](https://linuxhint.com/install-neo4j-ubuntu/)
-[Install MongoDB on Ubuntu](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/ "Official")
-[Install MongoDB on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-mongodb-on-ubuntu-18-04)
+#### NGINX  
+[NGINX](https://www.nginx.com/resources/wiki/start/topics/tutorials/install/)
+[Install NGINX on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04)
+## O
+## P
+#### Postman
+[Postman](https://www.getpostman.com/)
+[Install Postman on Ubuntu 18.04 1](https://linuxize.com/post/how-to-install-postman-on-ubuntu-18-04/)
+[Install Postman on Ubuntu 18.04 2](http://ubuntuhandbook.org/index.php/2018/09/install-postman-app-easily-via-snap-in-ubuntu-18-04/)
+#### Personal Package Archive
+[PPA](https://itsfoss.com/ppa-guide/ "Personal Package Archive")
+#### Primia
 [Prisma.io](https://www.prisma.io/docs/1.1/faq/pricing-fae2ooth2u)
-[Jenkins](https://jenkins.io/)
-[Install Gradle](https://www.tutorialspoint.com/gradle/gradle_installation.htm)
+## Q
+## R
+## S
+#### Spring
+[Spring](https://spring.io) 
+[Spring Initializr](https://start.spring.io/)
+[Spring Security](https://spring.io/projects/spring-security)  
+[Spring Security SAML](https://projects.spring.io/spring-security-saml/)  
+[Spring Security SAML Reference](https://docs.spring.io/spring-security-saml/docs/current/reference/htmlsingle/) 
+[Spring Security SAML API](https://docs.spring.io/spring-security-saml/docs/current/api/)  
+[Spring Security SAML GitHub](https://github.com/spring-projects/spring-security-saml)  
+[Spring Security Extension RELEASES : Spring Security SAML](https://repo.spring.io/list/release/org/springframework/security/extensions/spring-security-saml/)
+## T
+#### Tor
 [Instal Tor on Ubuntu](https://itsfoss.com/install-tar-browser-linux/#comments)
+## U
+## V
+## W
+## X
+## Y
+## Z
