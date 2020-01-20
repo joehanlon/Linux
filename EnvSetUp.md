@@ -11,6 +11,9 @@
    8. [Keycloak](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#installing-keycloak)
    9. [VSCode](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#installing-VSCode)
    10. [Node](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#installing-Node)
+   11. [SDKMan](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#installing-SDKMan)
+   12. [Tor](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#installing-Tor)
+   13. [DBeaver](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#installing-DBeaver)
 ### Note : Each package will require editing environment variables
 
 ## Installing Ubuntu
@@ -25,7 +28,15 @@ Replace Windows entirely :
 4. Select Hard Disk Drives > 1st Boot Device > Select USB
 5. Follow Ubuntu Instructions : https://www.avoiderrors.com/boot-computer-using-usb-drive/
 
-Launch terminal by pressing Ctrl+Alt+T  
+Launch terminal by pressing `Ctrl+Alt+T`    
+
+#### Uninstall Ubuntu Software
+1. Open the terminal
+2. Type `dpkg --list` and hit Enter / Return
+3. Find the name of the program to delete
+4. `sudo apt-get --purge remove name_of_program`
+5. Enter root password / Confirm with "Y"
+
 ## Installing Java 
 [ToC](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#table-of-contents) 
 
@@ -330,6 +341,10 @@ mvn spring-boot:run
 
 # GOTO : http://localhost:8080
 ```
+#### Spring Boot CLI on Windows
+1. Download Spring Boot CLI : https://repo.spring.io/release/org/springframework/boot/spring-boot-cli/
+2. Add to Path : C:\Spring\spring-2.1.7.RELEASE\bin
+3. SPRING_HOME : C:\Spring\spring-2.1.7.RELEASE
 
 ## Installing Git
 [ToC](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#table-of-contents)
@@ -353,6 +368,98 @@ git --version
 
 # Clone a repo
 git clone username@hostname:/path/to/repository  
+```
+## Setting-Up Git Repos 
+[ToC](https://github.com/joehanlon/Linux/blob/master/EnvironmentSetUp.md#table-of-contents)
+
+```console
+git config --global user.name
+git config --global user.name "Firstname Lastname"
+
+git config --global user.email
+git config --global user.email "email@address.com"
+```
+1. [Generate new SSH Key and Add it to the ssh-agent](https://help.github.com/en/enterprise/2.15/user/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+2. [Add a new ssh key to your GitHub acct](https://help.github.com/en/enterprise/2.15/user/articles/adding-a-new-ssh-key-to-your-github-account)
+
+1. Open Git Bash
+2. Paste this text into the terminal :
+```console
+ssh-keygen -t rsa -b 4096 -C "your-emailaddress-in-github"
+```
+```console
+user@ID5CD9088ZN2 MINGW64 ~
+$ ssh-keygen -t rsa -b 4096 -C "your-emailaddress-in-github"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/user/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/user/.ssh/id_rsa.
+Your public key has been saved in /c/Users/user/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:randomnumbersandletters your-emailaddress-in-github
+The key's randomart image is:
++---[RSA 4096]----+
+| .    =+*o=.     |
+|o .  + * + .     |
+| *  . *   o E    |
+|+ .  o o . .     |
+|+.  . . S        |
+|+o.. * o         |
+|oo..+ *          |
+|*..+ = o         |
+|**. o +          |
++----[SHA256]-----+
+
+user@ID5CD9088ZN2 MINGW64 ~
+$ eval $(ssh-agent -s)
+Agent pid 11584
+
+user@ID5CD9088ZN2 MINGW64 ~
+$ ssh-add ~/.ssh/id_rsa
+Identity added: /c/Users/user/.ssh/id_rsa (your-emailaddress-in-github)
+
+user@ID5CD9088ZN2 MINGW64 ~
+$ clip < ~/.ssh/id_rsa.pub
+```
+
+#### [get and copy new key to GitHub](https://virtualzero.net/blog/how-to-add-an-ssh-public-key-to-github-from-Ubuntu-18.04-lts)
+```console
+ssh-keygen -t rsa -b 4096 -C "your-emailaddress-in-github"
+
+### Can leave blank when prompted: 
+Enter file in which to save the key (/home/joehanlon/.ssh/id_rsa):          
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+
+### Output:  
+The key fingerprint is:
+SHA256:randomnumbersandletters your-emailaddress-in-github
+The key's randomart image is:
++---[RSA 4096]----+
+|  E..o.+ =.=+    |
+| . *. o.* =. + o |
+|. =.+  +.   . = .|
+|.+.+ o ... .   o |
+|o.+ + . S +    ..|
+|.  + .     o ...o|
+|    o       . ..o|
+|   . .       .+  |
+|    .       .o . |
++----[SHA256]-----+
+
+### Output the new key : 
+cat ~/.ssh/id_rsa.pub
+
+### Copy the contents and paste to GitHub
+### Save the new key
+
+### Make sure that you use SSH to clone the repository, or else you may have to use your username + password every time you use git
+### Related : https://stackoverflow.com/questions/7773181/git-keeps-prompting-me-for-a-password
+```
+
+```console
+C:\path\to\project>git clone git@github.stuff.com:owner_or_groupname/repo_name.git
 ```
 #### Git Cheatsheets : 
 [Git Cheatsheet 1](https://www.atlassian.com/dam/jcr:8132028b-024f-4b6b-953e-e68fcce0c5fa/atlassian-git-cheatsheet.pdf)  
@@ -793,6 +900,13 @@ Pull up command palette : ctrl+shift+p
 
 [How to install Node & npm on Ubuntu 18.04](https://linuxize.com/post/how-to-install-node-js-on-ubuntu-18.04/ "Linuxize")
 [How to install Node on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-18-04 "Digital Ocean")
+
+*Please note* : Avoid installing Node.js with `apt-get` on Ubuntu. If you have already installed it with the built-in package manager, remove it: 
+```console
+sudo apt-get purge nodejs && sudo apt-get autoremove && sudo apt-get autoclean
+```
+
+
 #### Install through the Terminal
 ```console
 sudo apt update
@@ -862,6 +976,14 @@ nvm use default
 # Specify which version of Node to run (if multiple installed)
 nvm run node v9.3.0
 ```
+#### Upgrade Node
+Best thing to do would actually be to remove node and re-install.  
+1. open terminal (crtl+alt+t).
+2. type which node, will give path something like `/usr/local/bin/node`
+4. remove node with `rm -rf node`
+5. make sure node doesn't show up with `node -v`
+6. download it again with `curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -` or with `install sudo apt-get install -y nodejs`
+
 #### Remove Node
 [Install & Uninstall Node 1](https://ircama.github.io/osm-carto-tutorials/nodejs-commands/)
 [Install & Uninstall Node 2](https://dxtright.com/index.php/2018/09/20/install-nvm-node-js-globally-linux-based-system/)
@@ -923,99 +1045,6 @@ source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # Verify installation succeeded :
 sdk version
-```
-
-## Setting-Up Git Repos 
-[ToC](https://github.com/joehanlon/Linux/blob/master/EnvironmentSetUp.md#table-of-contents)
-
-```console
-git config --global user.name
-git config --global user.name "Firstname Lastname"
-
-git config --global user.email
-git config --global user.email "email@address.com"
-```
-1. [Generate new SSH Key and Add it to the ssh-agent](https://help.github.com/en/enterprise/2.15/user/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
-2. [Add a new ssh key to your GitHub acct](https://help.github.com/en/enterprise/2.15/user/articles/adding-a-new-ssh-key-to-your-github-account)
-
-1. Open Git Bash
-2. Paste this text into the terminal :
-```console
-ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
-```
-```console
-604568@BAH5CD9088ZN2 MINGW64 ~
-$ ssh-keygen -t rsa -b 4096 -C "Hanlon_Joseph@bah.com"
-Generating public/private rsa key pair.
-Enter file in which to save the key (/c/Users/604568/.ssh/id_rsa):
-Enter passphrase (empty for no passphrase):
-Enter same passphrase again:
-Your identification has been saved in /c/Users/604568/.ssh/id_rsa.
-Your public key has been saved in /c/Users/604568/.ssh/id_rsa.pub.
-The key fingerprint is:
-SHA256:ZlxQQSOqv+TI1AuKDO4E40CWQ+6v6tDdTFGwUuZZUH8 Hanlon_Joseph@bah.com
-The key's randomart image is:
-+---[RSA 4096]----+
-| .    =+*o=.     |
-|o .  + * + .     |
-| *  . *   o E    |
-|+ .  o o . .     |
-|+.  . . S        |
-|+o.. * o         |
-|oo..+ *          |
-|*..+ = o         |
-|**. o +          |
-+----[SHA256]-----+
-
-604568@BAH5CD9088ZN2 MINGW64 ~
-$ eval $(ssh-agent -s)
-Agent pid 11584
-
-604568@BAH5CD9088ZN2 MINGW64 ~
-$ ssh-add ~/.ssh/id_rsa
-Identity added: /c/Users/604568/.ssh/id_rsa (Hanlon_Joseph@bah.com)
-
-604568@BAH5CD9088ZN2 MINGW64 ~
-$ clip < ~/.ssh/id_rsa.pub
-```
-
-#### [get and copy new key to GitHub](https://virtualzero.net/blog/how-to-add-an-ssh-public-key-to-github-from-Ubuntu-18.04-lts)
-```console
-ssh-keygen -t rsa -b 4096 -C "joehanlon91@gmail.com"
-
-### Can leave blank when prompted: 
-Enter file in which to save the key (/home/joehanlon/.ssh/id_rsa):          
-Enter passphrase (empty for no passphrase): 
-Enter same passphrase again: 
-
-### Output:  
-The key fingerprint is:
-SHA256:nfOtNxY9F7QkIw1yYTCmEwLsd0EbogqP0rdLcIENL0M joehanlon91@gmail.com
-The key's randomart image is:
-+---[RSA 4096]----+
-|  E..o.+ =.=+    |
-| . *. o.* =. + o |
-|. =.+  +.   . = .|
-|.+.+ o ... .   o |
-|o.+ + . S +    ..|
-|.  + .     o ...o|
-|    o       . ..o|
-|   . .       .+  |
-|    .       .o . |
-+----[SHA256]-----+
-
-### Output the new key : 
-cat ~/.ssh/id_rsa.pub
-
-### Copy the contents and paste to GitHub
-### Save the new key
-
-### Make sure that you use SSH to clone the repository, or else you may have to use your username + password every time you use git
-### Related : https://stackoverflow.com/questions/7773181/git-keeps-prompting-me-for-a-password
-```
-
-```console
-C:\Users\604568\fda_ui>git clone git@github.boozallencsn.com:fda-epidemic-visualization/fda-opioids-gateway.git
 ```
 
 ## [Installing Tor](https://linuxize.com/post/how-to-install-tor-browser-on-ubuntu-18-04/)
@@ -1093,125 +1122,139 @@ yarn
 yarn install 
 ```
 
-## Spring Security
-[ToC](https://github.com/joehanlon/Linux/blob/master/EnvironmentSetUp.md#table-of-contents)
-
-[Spring Security](https://spring.io/projects/spring-security)  
-[Spring Security SAML](https://projects.spring.io/spring-security-saml/)  
-[Spring Security SAML GitHub](https://github.com/spring-projects/spring-security-saml)  
-[Spring Security SAML Reference](https://docs.spring.io/spring-security-saml/docs/current/reference/htmlsingle/)  
-[Spring Security SAML API](https://docs.spring.io/spring-security-saml/docs/current/api/)  
-[Keycloak SAML Tomcat Adapter](https://www.keycloak.org/docs/5.0/securing_apps/index.html#_saml-tomcat-adapter)  
-[Keycloak Documentation](https://github.com/keycloak/keycloak-documentation/blob/master/securing_apps/topics/oidc/java/spring-security-adapter.adoc)  
-[Keycloak Downloads](https://www.keycloak.org/downloads.html)  
-[Good Presentation Java Web Security](https://events.static.linuxfound.org/sites/events/files/slides/anatomy-secure-web-app-acna-2017-v2.pdf)  
-[SAML SSO w/ Tomcat](https://dzone.com/articles/saml-single-sign-on-with-tomcat-and-picketlink)  
-[StackOverflow Spring Security SAML Tomcat](https://stackoverflow.com/questions/25212087/spring-security-saml-metadata-url-on-tomcat)  
-[Spring Security Authentication](https://www.baeldung.com/spring-security-authentication-provider)  
-[Sample SAML App](https://github.com/Endeios/samlv2app)  
-
-
-
 ## Links
-[ToC](https://github.com/joehanlon/Linux/blob/master/EnvironmentSetUp.md#table-of-contents)
+[ToC](https://github.com/joehanlon/Linux/blob/master/EnvironmentSetUp.md#table-of-contents)  
 ## A
 ## B 
 ## C
+#### Cassandra
+[Apache Cassandra](http://cassandra.apache.org/download/)  
 #### Commons
-[Apache Commons](http://commons.apache.org/)
+[Apache Commons](http://commons.apache.org/)  
+#### CouchDB
+[Apache CouchDB](http://couchdb.apache.org/)  
 ## D
+#### Docker 
+[Docker](https://www.docker.com/)  
 #### Draw.io
-[Draw.io](https://www.draw.io/)
+[Draw.io](https://www.draw.io/)  
 ## E
 ## F
 ## G
 #### GIMP
-[GIMP](https://www.gimp.org/downloads/)
+[GIMP](https://www.gimp.org/downloads/)  
+#### Git
+[Download Git](https://git-scm.com/download/)  
 #### Gradle
-[Install Gradle](https://www.tutorialspoint.com/gradle/gradle_installation.htm)
+[Install Gradle](https://www.tutorialspoint.com/gradle/gradle_installation.htm)  
 ### GraphQL 
 #### GraphQL-Java
-[GraphQL Java](https://www.graphql-java.com/documentation/v12/)
+[GraphQL Java](https://www.graphql-java.com/documentation/v12/)  
 ## H
+#### HTTP Server
+[Apache HTTP Server](http://httpd.apache.org/download.cgi)  
 ## I
 #### Inkscape
-[Inkscape](https://inkscape.org/)
+[Inkscape](https://inkscape.org/)  
 #### IntelliJ
-[Install IntelliJ on Ubuntu 18.04 1](https://linuxize.com/post/how-to-install-intellij-idea-on-ubuntu-18-04/)
-[Install IntelliJ on Ubuntu 18.04 2](https://linuxconfig.org/install-intellij-on-ubuntu-18-04-bionic-beaver-linux)
+[Install IntelliJ on Ubuntu 18.04 1](https://linuxize.com/post/how-to-install-intellij-idea-on-ubuntu-18-04/)  
+[Install IntelliJ on Ubuntu 18.04 2](https://linuxconfig.org/install-intellij-on-ubuntu-18-04-bionic-beaver-linux)  
 #### InVision
-[InVision](https://www.invisionapp.com/)
+[InVision](https://www.invisionapp.com/)  
 ## J
 #### Java
-[Oracle Java](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
+[Oracle Java](https://www.oracle.com/technetwork/java/javase/downloads/index.html)  
 #### Jenkins
-[Jenkins](https://jenkins.io/)
-[Download Jenkins Windows Installer](https://jenkins.io/download/thank-you-downloading-windows-installer-stable)
+[Jenkins](https://jenkins.io/)  
+[Download Jenkins Windows Installer](https://jenkins.io/download/thank-you-downloading-windows-installer-stable)  
+#### Jupyter Notebook
+[Install Jupyter Notebook](https://jupyter.org/install)  
 ## K
 #### Kafka 
 NB: Depends on Apache Zookeeper to run  
-[Download Kafka](https://kafka.apache.org/downloads) 
+[Download Kafka](https://kafka.apache.org/downloads)  
+#### Keycloak
+[Keycloak Documentation](https://github.com/keycloak/keycloak-documentation/blob/master/securing_apps/topics/oidc/java/spring-security-adapter.adoc)  
+[Keycloak Downloads](https://www.keycloak.org/downloads.html)  
+[Keycloak SAML Tomcat Adapter](https://www.keycloak.org/docs/5.0/securing_apps/index.html#_saml-tomcat-adapter)  
+#### Kubernetes
+[Kubernetes](https://kubernetes.io/)  
 ## L
 #### Linux Permissions
-[Linux Permissions](https://www.cyberciti.biz/faq/unix-linux-bsd-chmod-numeric-permissions-notation-command/)
+[Linux Permissions](https://www.cyberciti.biz/faq/unix-linux-bsd-chmod-numeric-permissions-notation-command/)  
 ## M
+#### Mattermost (Alt. to Slack)
+[Mattermost](https://mattermost.com/download/)  
 #### MongoDB
-[Install MongoDB on Ubuntu](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/ "Official")
-[Install MongoDB on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-mongodb-on-ubuntu-18-04)
+[Install MongoDB on Ubuntu](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/ "Official")  
+[Install MongoDB on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-mongodb-on-ubuntu-18-04)  
 #### MySQL  
-[MySQL](https://dev.mysql.com/downloads/)
-[Install MySQL on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04)
+[MySQL](https://dev.mysql.com/downloads/)  
+[Install MySQL on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04)  
 ## N  
 #### Neo4j
-[Neo4J](https://debian.neo4j.org/)
-[Install Neo4J on Ubuntu](https://neo4j.com/docs/operations-manual/current/installation/linux/debian/ "Official")
-[Install Neo4J on Ubuntu](https://linuxhint.com/install-neo4j-ubuntu/)
+[Neo4J](https://debian.neo4j.org/)  
+[Install Neo4J on Ubuntu](https://neo4j.com/docs/operations-manual/current/installation/linux/debian/ "Official")  
+[Install Neo4J on Ubuntu](https://linuxhint.com/install-neo4j-ubuntu/)  
 #### NGINX  
-[NGINX](https://www.nginx.com/resources/wiki/start/topics/tutorials/install/)
-[Install NGINX on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04)
+[NGINX](https://www.nginx.com/resources/wiki/start/topics/tutorials/install/)  
+[Install NGINX on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04)  
 #### Nifi
-[Download Nifi](https://nifi.apache.org/download.html)
+[Download Nifi](https://nifi.apache.org/download.html)  
 ## O
 ## P
 #### Postman
-[Postman](https://www.getpostman.com/)
-[Install Postman on Ubuntu 18.04 1](https://linuxize.com/post/how-to-install-postman-on-ubuntu-18-04/)
-[Install Postman on Ubuntu 18.04 2](http://ubuntuhandbook.org/index.php/2018/09/install-postman-app-easily-via-snap-in-ubuntu-18-04/)
+[Postman](https://www.getpostman.com/)  
+[Install Postman on Ubuntu 18.04 1](https://linuxize.com/post/how-to-install-postman-on-ubuntu-18-04/)  
+[Install Postman on Ubuntu 18.04 2](http://ubuntuhandbook.org/index.php/2018/09/install-postman-app-easily-via-snap-in-ubuntu-18-04/)  
 #### Personal Package Archive
-[PPA](https://itsfoss.com/ppa-guide/ "Personal Package Archive")
+[PPA](https://itsfoss.com/ppa-guide/ "Personal Package Archive")  
 #### Primia
-[Prisma.io](https://www.prisma.io/docs/1.1/faq/pricing-fae2ooth2u)
+[Prisma.io](https://www.prisma.io/docs/1.1/faq/pricing-fae2ooth2u)  
+#### Python
+[Python](https://www.python.org/downloads/)  
 ## Q
 ## R
+#### R
+[R](https://cran.r-project.org/)  
+[R Studio](https://www.rstudio.com/products/rstudio/)  
 ## S
 #### Spark
-[Download Apache Spark](http://spark.apache.org/downloads.html)
+[Download Apache Spark](http://spark.apache.org/downloads.html)  
 #### Spring
-[Spring](https://spring.io) 
-[Spring Initializr](https://start.spring.io/)
+[Spring](https://spring.io)  
+[Spring Initializr](https://start.spring.io/)  
 [Spring Security](https://spring.io/projects/spring-security)  
 [Spring Security SAML](https://projects.spring.io/spring-security-saml/)  
-[Spring Security SAML Reference](https://docs.spring.io/spring-security-saml/docs/current/reference/htmlsingle/) 
+[Spring Security SAML Reference](https://docs.spring.io/spring-security-saml/docs/current/reference/htmlsingle/)  
 [Spring Security SAML API](https://docs.spring.io/spring-security-saml/docs/current/api/)  
 [Spring Security SAML GitHub](https://github.com/spring-projects/spring-security-saml)  
-[Spring Security Extension RELEASES : Spring Security SAML](https://repo.spring.io/list/release/org/springframework/security/extensions/spring-security-saml/)
+[Spring Security Extension RELEASES : Spring Security SAML](https://repo.spring.io/list/release/org/springframework/security/extensions/spring-security-saml/)  
+[Spring Boot CLI](https://repo.spring.io/release/org/springframework/boot/spring-boot-cli/)  
 ## T
 #### Tomcat
-[Tomcat](http://tomcat.apache.org/)
+[Tomcat](http://tomcat.apache.org/)  
 #### Tor
-[Install Tor on Ubuntu](https://itsfoss.com/install-tar-browser-linux/#comments)
+[Install Tor on Ubuntu](https://itsfoss.com/install-tar-browser-linux/#comments)  
 ## U
 #### Ubuntu
-[Install Ubuntu Alongside Windows 10](https://vitux.com/how-to-install-ubuntu-18-04-along-with-windows-10/)
+[Install Ubuntu Alongside Windows 10](https://vitux.com/how-to-install-ubuntu-18-04-along-with-windows-10/)  
 1. Download Ubuntu ISO : https://www.ubuntu.com/download/desktop
 2. Create Bootable USB : https://rufus.ie/
 3. https://vitux.com/how-to-install-ubuntu-18-04-along-with-windows-10/
 ## V
+#### Visual Studio Code
+[VSCode](https://code.visualstudio.com/download)  
 ## W
 ## X
 ## Y
 #### Yarn
-[Yarn](https://yarnpkg.com/lang/en/)
+[Yarn](https://yarnpkg.com/lang/en/)  
 ## Z
 #### Zookeeper
-[Download Apache Zookeeper](https://zookeeper.apache.org/releases.html#download)
+[Download Apache Zookeeper](https://zookeeper.apache.org/releases.html#download)  
+## # 
+[7-zip](https://www.7-zip.org/)  
+## Misc.
+[Good Presentation Java Web Security](https://events.static.linuxfound.org/sites/events/files/slides/anatomy-secure-web-app-acna-2017-v2.pdf)  
+[Sample SAML App](https://github.com/Endeios/samlv2app)  
