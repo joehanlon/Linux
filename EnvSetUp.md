@@ -105,6 +105,10 @@ source /etc/environment
 [How to Install on Linux](https://www.javahelps.com/2017/10/install-apache-maven-on-linux.html)  
 [Install Maven on Ubuntu](https://tecadmin.net/install-apache-maven-on-ubuntu/)  
 [Maven Environment Variables](https://askubuntu.com/questions/275704/how-to-permanently-set-environmental-variables-path-and-m2-home-in-ubuntu-for-ma)  
+1. Download Binary or Source file. Source == human-readable and needs to be compiled first
+2. Unzip the file in the preferred location
+3. Edit PATH variable to the `./bin` directory. E.g. `"C:\Program Files\Java\apache-maven-3.6.1\bin"`
+
 
 ### Install with Apt
 ```console
@@ -175,6 +179,7 @@ java -jar target/gs-securing-web-0.1.0.jar
 ## Installing Tomcat
 [ToC](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#table-of-contents)
 
+[Tomcat](http://tomcat.apache.org/)
 [Install Tomcat on Ubuntu](https://www.javahelps.com/2015/03/install-apache-tomcat-on-ubuntu.html)  
 [Install Tomcat8 on Ubuntu16.04](https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-8-on-ubuntu-16-04)  
 
@@ -205,6 +210,8 @@ sudo gedit /etc/environment
 # Add this to the end of the line 
 CATALINA_HOME="/opt/apache-tomcat"  
 source /etc/environment  
+
+## Windows example for CATALINA_HOME : "C:\Program Files\Java\apache-tomcat-9.0.22"
 
 # Start the Tomcat Server :
 $CATALINA_HOME/bin/startup.sh  
@@ -1110,6 +1117,8 @@ yarn install
 ## A
 ## B 
 ## C
+#### Commons
+[Apache Commons](http://commons.apache.org/)
 ## D
 #### Draw.io
 [Draw.io](https://www.draw.io/)
@@ -1133,9 +1142,15 @@ yarn install
 #### InVision
 [InVision](https://www.invisionapp.com/)
 ## J
+#### Java
+[Oracle Java](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
 #### Jenkins
 [Jenkins](https://jenkins.io/)
+[Download Jenkins Windows Installer](https://jenkins.io/download/thank-you-downloading-windows-installer-stable)
 ## K
+#### Kafka 
+NB: Depends on Apache Zookeeper to run  
+[Download Kafka](https://kafka.apache.org/downloads) 
 ## L
 #### Linux Permissions
 [Linux Permissions](https://www.cyberciti.biz/faq/unix-linux-bsd-chmod-numeric-permissions-notation-command/)
@@ -1154,6 +1169,8 @@ yarn install
 #### NGINX  
 [NGINX](https://www.nginx.com/resources/wiki/start/topics/tutorials/install/)
 [Install NGINX on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04)
+#### Nifi
+[Download Nifi](https://nifi.apache.org/download.html)
 ## O
 ## P
 #### Postman
@@ -1167,6 +1184,8 @@ yarn install
 ## Q
 ## R
 ## S
+#### Spark
+[Download Apache Spark](http://spark.apache.org/downloads.html)
 #### Spring
 [Spring](https://spring.io) 
 [Spring Initializr](https://start.spring.io/)
@@ -1177,6 +1196,8 @@ yarn install
 [Spring Security SAML GitHub](https://github.com/spring-projects/spring-security-saml)  
 [Spring Security Extension RELEASES : Spring Security SAML](https://repo.spring.io/list/release/org/springframework/security/extensions/spring-security-saml/)
 ## T
+#### Tomcat
+[Tomcat](http://tomcat.apache.org/)
 #### Tor
 [Install Tor on Ubuntu](https://itsfoss.com/install-tar-browser-linux/#comments)
 ## U
@@ -1192,3 +1213,5 @@ yarn install
 #### Yarn
 [Yarn](https://yarnpkg.com/lang/en/)
 ## Z
+#### Zookeeper
+[Download Apache Zookeeper](https://zookeeper.apache.org/releases.html#download)
