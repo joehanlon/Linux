@@ -12,8 +12,9 @@
    9. [VSCode](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#installing-VSCode)
    10. [Node](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#installing-Node)
    11. [SDKMan](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#installing-SDKMan)
-   12. [Tor](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#installing-Tor)
+   12. [Tor](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#installing-tor)
    13. [DBeaver](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#installing-DBeaver)
+  
 ### Note : Each package will require editing environment variables
 
 ## Installing Ubuntu
@@ -190,13 +191,13 @@ java -jar target/gs-securing-web-0.1.0.jar
 ## Installing Tomcat
 [ToC](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#table-of-contents)
 
-[Tomcat](http://tomcat.apache.org/)
+[Tomcat](http://tomcat.apache.org/)  
 [Install Tomcat on Ubuntu](https://www.javahelps.com/2015/03/install-apache-tomcat-on-ubuntu.html)  
 [Install Tomcat8 on Ubuntu16.04](https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-8-on-ubuntu-16-04)  
 
 #### Download Tomcat 
 [Download Tomcat](https://tomcat.apache.org/download-80.cgi)  
-**Note : Tomcat should not be run under the root user. Create a new system user named "tomcat" and group with home directory /opt/tomcat that will run the Tomcat service :**
+**Note : Tomcat should not be run under the root user. Create a new system user named "tomcat" and group with home directory /opt/tomcat that will run the Tomcat service :**  
 ```console
 sudo useradd -r -m -U -d /opt/tomcat -s /bin/false tomcat  
 
@@ -370,7 +371,7 @@ git --version
 git clone username@hostname:/path/to/repository  
 ```
 ## Setting-Up Git Repos 
-[ToC](https://github.com/joehanlon/Linux/blob/master/EnvironmentSetUp.md#table-of-contents)
+[ToC](https://github.com/joehanlon/Linux/blob/master/EnvironmentSetUp.md#table-of-contents)  
 
 ```console
 git config --global user.name
@@ -468,10 +469,10 @@ C:\path\to\project>git clone git@github.stuff.com:owner_or_groupname/repo_name.g
 [Git Cheatsheet 4](https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet)  
 
 ## Installing Docker
-[ToC](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#table-of-contents)
+[ToC](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#table-of-contents)  
 
 [Install Docker on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04)  
-[Install Docker-CE Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+[Install Docker-CE Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/)  
 ### Uninstall old versions 
 ```console
 sudo apt-get remove docker docker-engine docker.io  
@@ -518,7 +519,7 @@ sudo apt-get install docker-ce=<VERSION>
 ```
 
 ## Installing Postgres 
-[ToC](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#table-of-contents)
+[ToC](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#table-of-contents)  
 
 [Install PostreSQL on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-18-04)  
 [Install PostgreSQL Server on Ubuntu](https://tecadmin.net/install-postgresql-server-on-ubuntu/)  
@@ -668,9 +669,8 @@ locate bin/psql
 
 [Install Keycloak on Ubuntu 18.04](https://medium.com/@hasnat.saeed/setup-keycloak-server-on-ubuntu-18-04-ed8c7c79a2d9)  
 [Download Keycloak](https://www.keycloak.org/downloads.html)  
-
 [Keycloak : Getting Started](https://www.keycloak.org/docs/latest/getting_started/index.html?source=post_page-----ed8c7c79a2d9----------------------)  
-[Keycloak : REST API](https://www.keycloak.org/docs-api/6.0/rest-api/index.html?source=post_page-----ed8c7c79a2d9----------------------) 
+[Keycloak : REST API](https://www.keycloak.org/docs-api/6.0/rest-api/index.html?source=post_page-----ed8c7c79a2d9----------------------)  
 [Keycloak : Server Installation](https://www.keycloak.org/docs/6.0/server_installation/?source=post_page-----ed8c7c79a2d9----------------------)  
 [Quick Guide to Using Keycloak](https://www.comakeit.com/quick-guide-using-keycloak-identity-access-management/)  
 [Spring Boot & Keycloak w/ OIDC](https://www.baeldung.com/spring-boot-keycloak "Baeldung")  
@@ -860,7 +860,7 @@ sudo systemctl restart keycloak
 ```
 
 ## Installing VSCode
-[ToC](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#table-of-contents)
+[ToC](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#table-of-contents)  
 
 [Install VSCode on Ubuntu 18.04](https://linuxize.com/post/how-to-install-visual-studio-code-on-ubuntu-18-04/)  
 [Best VSCode Extensions for Web Dev](https://scotch.io/bar-talk/22-best-visual-studio-code-extensions-for-web-development)  
@@ -896,10 +896,10 @@ Pull up extensions : ctrl+shift+x
 Pull up command palette : ctrl+shift+p  
 
 ## Installing Node
-[ToC](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#table-of-contents)
+[ToC](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#table-of-contents)  
 
-[How to install Node & npm on Ubuntu 18.04](https://linuxize.com/post/how-to-install-node-js-on-ubuntu-18.04/ "Linuxize")
-[How to install Node on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-18-04 "Digital Ocean")
+[How to install Node & npm on Ubuntu 18.04](https://linuxize.com/post/how-to-install-node-js-on-ubuntu-18.04/ "Linuxize")  
+[How to install Node on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-18-04 "Digital Ocean")  
 
 *Please note* : Avoid installing Node.js with `apt-get` on Ubuntu. If you have already installed it with the built-in package manager, remove it: 
 ```console
@@ -921,14 +921,14 @@ node -v
 npm -v
 ```
 #### Install using PPA
-[Install Node on Ubuntu](https://github.com/nodesource/distributions#debinstall "Nodesource")
+[Install Node on Ubuntu](https://github.com/nodesource/distributions#debinstall "Nodesource")  
 ```console
 # Install with sudo privileges
 curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 #### Install using NVM (Node Version Manager)
-[NVM Github](https://github.com/nvm-sh/nvm)
+[NVM Github](https://github.com/nvm-sh/nvm)  
 ```console
 # Download and install the package with either of the following commands 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
@@ -985,8 +985,8 @@ Best thing to do would actually be to remove node and re-install.
 6. download it again with `curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -` or with `install sudo apt-get install -y nodejs`
 
 #### Remove Node
-[Install & Uninstall Node 1](https://ircama.github.io/osm-carto-tutorials/nodejs-commands/)
-[Install & Uninstall Node 2](https://dxtright.com/index.php/2018/09/20/install-nvm-node-js-globally-linux-based-system/)
+[Install & Uninstall Node 1](https://ircama.github.io/osm-carto-tutorials/nodejs-commands/)  
+[Install & Uninstall Node 2](https://dxtright.com/index.php/2018/09/20/install-nvm-node-js-globally-linux-based-system/)  
 
 ```console
 sudo apt remove npm
@@ -1032,10 +1032,10 @@ npm start
 ```
 
 ## Installing SDKMan
-[ToC](https://github.com/joehanlon/Linux/blob/master/EnvironmentSetUp.md#table-of-contents)
+[ToC](https://github.com/joehanlon/Linux/blob/master/EnvironmentSetUp.md#table-of-contents)  
 
-[Install SDKMan](https://sdkman.io/install)
-[SDKMan GitHub](https://github.com/sdkman/sdkman-cli)
+[Install SDKMan](https://sdkman.io/install)  
+[SDKMan GitHub](https://github.com/sdkman/sdkman-cli)  
 
 ```console
 curl -s "https://get.sdkman.io" | bash
@@ -1047,8 +1047,8 @@ source "$HOME/.sdkman/bin/sdkman-init.sh"
 sdk version
 ```
 
-## [Installing Tor](https://linuxize.com/post/how-to-install-tor-browser-on-ubuntu-18-04/)
-[ToC](https://github.com/joehanlon/Linux/blob/master/EnvironmentSetUp.md#table-of-contents)
+## [Installing Tor](https://linuxize.com/post/how-to-install-tor-browser-on-ubuntu-18-04/)  
+[ToC](https://github.com/joehanlon/Linux/blob/master/EnvironmentSetUp.md#table-of-contents)  
 
 ```
 sudo apt update
@@ -1075,10 +1075,10 @@ sudo apt-get remove --purge tor
 sudo apt-get remove --purge torbrowser-launcher
 ```
 
-## [Installing DBeaver](https://computingforgeeks.com/install-and-configure-dbeaver-on-ubuntu-debian/)
-[ToC](https://github.com/joehanlon/Linux/blob/master/EnvironmentSetUp.md#table-of-contents)
+## [Installing DBeaver](https://computingforgeeks.com/install-and-configure-dbeaver-on-ubuntu-debian/)  
+[ToC](https://github.com/joehanlon/Linux/blob/master/EnvironmentSetUp.md#table-of-contents)  
 
-[Install DBeaver on 18.04](https://www.osradar.com/install-dbeaver-ubuntu-18-04-linux-mint-19/)
+[Install DBeaver on 18.04](https://www.osradar.com/install-dbeaver-ubuntu-18-04-linux-mint-19/)  
 ```
 ## Upgrade the system
 sudo apt update && sudo apt upgrade
