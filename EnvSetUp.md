@@ -14,6 +14,7 @@
    11. [SDKMan](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#installing-SDKMan)
    12. [Tor](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#installing-tor)
    13. [DBeaver](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#installing-DBeaver)
+   14. [Yarn](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#installing-yarn)
   
 ### Note : Each package will require editing environment variables
 
@@ -1032,7 +1033,7 @@ npm start
 ```
 
 ## Installing SDKMan
-[ToC](https://github.com/joehanlon/Linux/blob/master/EnvironmentSetUp.md#table-of-contents)  
+[ToC](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#table-of-contents)  
 
 [Install SDKMan](https://sdkman.io/install)  
 [SDKMan GitHub](https://github.com/sdkman/sdkman-cli)  
@@ -1048,7 +1049,7 @@ sdk version
 ```
 
 ## [Installing Tor](https://linuxize.com/post/how-to-install-tor-browser-on-ubuntu-18-04/)  
-[ToC](https://github.com/joehanlon/Linux/blob/master/EnvironmentSetUp.md#table-of-contents)  
+[ToC](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#table-of-contents)  
 
 ```
 sudo apt update
@@ -1076,7 +1077,7 @@ sudo apt-get remove --purge torbrowser-launcher
 ```
 
 ## [Installing DBeaver](https://computingforgeeks.com/install-and-configure-dbeaver-on-ubuntu-debian/)  
-[ToC](https://github.com/joehanlon/Linux/blob/master/EnvironmentSetUp.md#table-of-contents)  
+[ToC](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#table-of-contents)  
 
 [Install DBeaver on 18.04](https://www.osradar.com/install-dbeaver-ubuntu-18-04-linux-mint-19/)  
 ```
@@ -1097,6 +1098,8 @@ sudo apt update && sudo apt install dbeaver-ce
 ```
 
 ## Installing Yarn
+[ToC](https://github.com/joehanlon/Linux/blob/master/EnvSetUp.md#table-of-contents)  
+
 ```console
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - 
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list 
