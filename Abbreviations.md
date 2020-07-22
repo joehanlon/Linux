@@ -5,13 +5,17 @@
 |AES|Advanced Encryption Standard||
 |API|Application Programming Interface||
 |ARC|Archive File||
+|ARM|Advanced RISC Machine||
 |ARP|Address Resolution Protocol||
 |AVI|Audio Video Interleave||
 |BAT|Batch||
 |BIN|Binary||
+|BIOS|Basic Input/Output System||
 |BOF|Beginning of File||
+|BSD|Berkeley Software Distribution||
 |CA|Certificate Authority||
 |CD|Compact Disc||
+|CISC|Complex Instruction Set Computing||
 |CMD|Command||
 |CPP|C++||
 |CPU|Central Processing Unit||
@@ -21,12 +25,19 @@
 |DMG|Disk Image|Apple|
 |DOC|Microsoft Word Document|Proprietary Microsoft format|
 |DOCX|Microsoft Word Document|XML-based open file format|
+|DOM|Document Object Model||
 |DOS|Disk Operating System||
 |DVD|Digital Video Disc||
 |EOF|End of File||
+|EOL|End of Life||
 |FAT|File Allocation Table||
+|FSF|Free Software Foundation||
 |GB|Gigabyte||
+|GNU|GNU's Not Unix||
+|GCC|GNU Compiler Collection||
+|GPL|General Public License||
 |gRPC|gRPC Remote Procedure Calls|Google|
+|GUI|Graphical User Interface||
 |HDD|Hard Disk Drive||
 |HEVC|High Efficiency Video Coding||
 |HFS|Hierarchical File System||
@@ -41,10 +52,12 @@
 |ISO|International Organization for Standardization||
 |ISP|Internet Service Provider||
 |IT|Information Technology||
+|JAR|Java Archive||
 |JS|JavaScript||
 |JSON|JavaScript Object Notation||
 |KB|Kilobyte||
 |LAN|Local Area Network||
+|LTS|Long-term Support||
 |OEM|Original Equipment Manufacturer||
 |MAC|Medium Access Control||
 |MB|Megabyte||
@@ -62,6 +75,7 @@
 |PPTX|Microsoft PowerPoint|XML-based open file format|
 |RAM|Random Access Memory||
 |RFC|Request for Comments||
+|RISC|Reduced Instruction Set Computing||
 |RPC|Remote Procedure Call||
 |RSA|Rivest–Shamir–Adleman||
 |SAML|Security Assertion Markup Language||
@@ -75,9 +89,11 @@
 |TLS|Transport Layer Security||
 |TXT|Text||
 |UDF|Universal Disk Format||
+|UEFI|Unified Extensible Firmware Interface||
 |URL|Uniform Resource Locator||
 |UNIX|Uniplexed Information and Computing Service||
 |VPN|Virtual Private Network||
+|WAR|Web Application Resource or Web application ARchive||
 |WAN|Wide Area Network||
 |XLS|Microsoft Excel Spreadsheet|Proprietary Microsoft format|
 |XLSX|Microsoft Excel Spreadsheet|XML-based open file format|
