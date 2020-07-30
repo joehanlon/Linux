@@ -10,6 +10,7 @@
 |ARP|Address Resolution Protocol||
 |AVI|Audio Video Interleave||
 |BAT|Batch||
+|BE|Back-end||
 |BIN|Binary||
 |BIOS|Basic Input/Output System||
 |BOF|Beginning of File||
@@ -18,13 +19,16 @@
 |CD|Compact Disc||
 |CDI|Contexts and Dependency Injection||
 |CISC|Complex Instruction Set Computing||
+|CI/CD|Continuous Integration / Continuous Delivery or Continuous Deployment||
 |CMD|Command||
+|COTS|Commercial Off-the-Shelf||
 |CPP|C++||
 |CPU|Central Processing Unit||
 |CRC|Cyclic Redundancy Check||
 |CSS|Cascading Style Sheet||
 |CSV|Comma Separated Value||
 |DAO|Data Access Object||
+|DevOps|Software Development and IT Operations||
 |DMG|Disk Image|Apple|
 |DOC|Microsoft Word Document|Proprietary Microsoft format|
 |DOCX|Microsoft Word Document|XML-based open file format|
@@ -36,6 +40,8 @@
 |EOF|End of File||
 |EOL|End of Life||
 |FAT|File Allocation Table||
+|FE|Front-end||
+|FS|Full-stack||
 |FSF|Free Software Foundation||
 |GB|Gigabyte||
 |GNU|GNU's Not Unix||
@@ -89,6 +95,8 @@
 |POJO|Plain Old Java Object||
 |PPT|Microsoft PowerPoint|Proprietary Microsoft format|
 |PPTX|Microsoft PowerPoint|XML-based open file format|
+|Pub/Sub|Publish-Subscribe pattern||
+|QA|Quality Assurance||
 |RAM|Random Access Memory||
 |RFC|Request for Comments||
 |RISC|Reduced Instruction Set Computing||
@@ -96,6 +104,7 @@
 |RSA|Rivest–Shamir–Adleman||
 |SAML|Security Assertion Markup Language||
 |SH|Shell||
+|SME|Subject Matter Expert||
 |SMTP|Simple Mail Transfer Protocol||
 |SQL|Structured Query Language||
 |SSD|Solid State Drive||
@@ -107,6 +116,7 @@
 |TXT|Text||
 |UDF|Universal Disk Format||
 |UEFI|Unified Extensible Firmware Interface||
+|UI/UX|User Interface / User Experience||
 |URL|Uniform Resource Locator||
 |UNIX|Uniplexed Information and Computing Service||
 |VM|Virtual Machine||
