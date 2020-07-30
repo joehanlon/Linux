@@ -3,6 +3,7 @@
 |Abbreviation|Meaning|Description|
 |---:|---|---|
 |AES|Advanced Encryption Standard||
+|AMQP|Advanced Message Queueing Protocol||
 |API|Application Programming Interface||
 |ARC|Archive File||
 |ARM|Advanced RISC Machine||
@@ -15,6 +16,7 @@
 |BSD|Berkeley Software Distribution||
 |CA|Certificate Authority||
 |CD|Compact Disc||
+|CDI|Contexts and Dependency Injection||
 |CISC|Complex Instruction Set Computing||
 |CMD|Command||
 |CPP|C++||
@@ -22,11 +24,14 @@
 |CRC|Cyclic Redundancy Check||
 |CSS|Cascading Style Sheet||
 |CSV|Comma Separated Value||
+|DAO|Data Access Object||
 |DMG|Disk Image|Apple|
 |DOC|Microsoft Word Document|Proprietary Microsoft format|
 |DOCX|Microsoft Word Document|XML-based open file format|
 |DOM|Document Object Model||
 |DOS|Disk Operating System||
+|DRY|Don't Repeat Yourself||
+|DTO|Data Transfer Object||
 |DVD|Digital Video Disc||
 |EOF|End of File||
 |EOL|End of Life||
@@ -38,6 +43,7 @@
 |GPL|General Public License||
 |gRPC|gRPC Remote Procedure Calls|Google|
 |GUI|Graphical User Interface||
+|HATEOAS|Hypermedia as the Engine of Application State||
 |HDD|Hard Disk Drive||
 |HEVC|High Efficiency Video Coding||
 |HFS|Hierarchical File System||
@@ -47,18 +53,27 @@
 |HTTPS|Hypertext Transfer Protocol Secure||
 |IEEE|Institute of Electrical and Electronics Engineers||
 |IMG|Image||
+|IoT|Internet of Things||
 |IP|Identity Platform||
 |IP|Internet Protocol||
 |ISO|International Organization for Standardization||
 |ISP|Internet Service Provider||
 |IT|Information Technology||
 |JAR|Java Archive||
+|JNDI|Java Naming and Directory Interface||
+|JPA|Java Persistence API||
 |JS|JavaScript||
 |JSON|JavaScript Object Notation||
+|JVM|Java Virtual Machine||
+|JWT|JSON Web Token||
 |KB|Kilobyte||
 |LAN|Local Area Network||
 |LTS|Long-term Support||
+|MDC|Mapped Diagnostic Context||
+|NDC|Nested Diagnostic Context||
+|OAI|Open API Initiative||
 |OEM|Original Equipment Manufacturer||
+|ORM|Object Relational Mapper||
 |MAC|Medium Access Control||
 |MB|Megabyte||
 |MIME|Multipurpose Internet Mail Extensions||
@@ -71,6 +86,7 @@
 |OS|Operating System||
 |PC|Personal Computer||
 |PDF|Portable Document Format||
+|POJO|Plain Old Java Object||
 |PPT|Microsoft PowerPoint|Proprietary Microsoft format|
 |PPTX|Microsoft PowerPoint|XML-based open file format|
 |RAM|Random Access Memory||
@@ -81,6 +97,7 @@
 |SAML|Security Assertion Markup Language||
 |SH|Shell||
 |SMTP|Simple Mail Transfer Protocol||
+|SQL|Structured Query Language||
 |SSD|Solid State Drive||
 |SSL|Secure Sockets Layer||
 |SSH|Secure Shell||
@@ -92,6 +109,7 @@
 |UEFI|Unified Extensible Firmware Interface||
 |URL|Uniform Resource Locator||
 |UNIX|Uniplexed Information and Computing Service||
+|VM|Virtual Machine||
 |VPN|Virtual Private Network||
 |WAR|Web Application Resource or Web application ARchive||
 |WAN|Wide Area Network||
