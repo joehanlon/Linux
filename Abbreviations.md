@@ -102,7 +102,7 @@
 |SSL|Secure Sockets Layer||
 |SSH|Secure Shell||
 |SUDO|Super User Do||
-|TCP|||
+|TCP|Transmission Control Protocol||
 |TLS|Transport Layer Security||
 |TXT|Text||
 |UDF|Universal Disk Format||
